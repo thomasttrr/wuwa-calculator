@@ -153,7 +153,7 @@ export interface EchoDef {
   skill: {
     description: string
     cooldown: number
-    /** Skill values at rarity 2 to 5 (index 0 is rarity 2), exactly as the source gives them. */
+    /** Skill values per Echo rarity, lowest first, exactly as the source gives them. */
     params: readonly (readonly string[])[]
   }
   provenance: Provenance
@@ -164,6 +164,8 @@ export interface SonataPieceEffect {
   pieces: number
   description: string
   params: readonly string[]
+  /** Plain stat bonuses the game stores as structured data (most 2-piece effects). Always on. */
+  fixed: readonly { stat: StatKey; scope?: Scope; value: number }[]
 }
 
 export interface SonataDef {
@@ -189,7 +191,14 @@ export interface EchoStatTables {
   /** The fixed second stat every Echo of that cost has, at maximum level for a 5-star Echo. */
   fixedStats: Record<EchoCost, { stat: StatKey; value: number; label: string }>
   /** Each substat with every value it can roll, lowest first. */
-  substats: readonly { stat: StatKey; scope?: Scope; label: string; rolls: readonly number[] }[]
+  substats: readonly {
+    stat: StatKey
+    scope?: Scope
+    label: string
+    rolls: readonly number[]
+    /** Chance of each roll value, parallel to rolls, as published by Kuro Games. */
+    chances: readonly number[]
+  }[]
   provenance: Provenance
 }
 

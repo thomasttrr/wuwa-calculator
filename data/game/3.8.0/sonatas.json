@@ -1,0 +1,1307 @@
+[
+  {
+    "id": 9,
+    "name": "Lingering Tunes",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "ATK +10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "atkPct",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "While on the field, ATK increases by 5% every 1.5s. This effect stacks up to 4 times. Outro Skill DMG + 60%.",
+        "params": [
+          "1.5",
+          "5%",
+          "20%",
+          "60%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[9]",
+      "verified": false
+    }
+  },
+  {
+    "id": 4,
+    "name": "Sierra Gale",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Aero DMG + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "aero"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Aero DMG + 30% for 15s after releasing Intro Skill.",
+        "params": [
+          "30%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[4]",
+      "verified": false
+    }
+  },
+  {
+    "id": 3,
+    "name": "Void Thunder",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Electro DMG + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "electro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Electro DMG + 15% after releasing Heavy Attack or Resonance Skill. This effect stacks up to 2 times, each stack lasts 15s.",
+        "params": [
+          "15%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[3]",
+      "verified": false
+    }
+  },
+  {
+    "id": 7,
+    "name": "Rejuvenating Glow",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Healing Bonus + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "healingBonus",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Increases the ATK of all party members by 15% for 30s upon healing allies.",
+        "params": [
+          "15%",
+          "30"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[7]",
+      "verified": false
+    }
+  },
+  {
+    "id": 8,
+    "name": "Moonlit Clouds",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Energy Regen + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "energyRegen",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Upon using Outro Skill, increases the ATK of the next Resonator by 22.5% for 15s.",
+        "params": [
+          "22.5%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[8]",
+      "verified": false
+    }
+  },
+  {
+    "id": 6,
+    "name": "Havoc Eclipse",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Havoc DMG + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "havoc"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Havoc DMG + 7.5% after releasing Basic Attack or Heavy Attack. This effect stacks up to 4 times, each stack lasts 15s.",
+        "params": [
+          "6%",
+          "5",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[6]",
+      "verified": false
+    }
+  },
+  {
+    "id": 1,
+    "name": "Freezing Frost",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Glacio DMG + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "glacio"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Glacio DMG + 10% after releasing Basic Attack or Heavy Attack. This effect stacks up to 3 times, each stack lasts 15s.",
+        "params": [
+          "30%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[1]",
+      "verified": false
+    }
+  },
+  {
+    "id": 5,
+    "name": "Celestial Light",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Spectro DMG + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "spectro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Spectro DMG + 30% for 15s after releasing Intro Skill.",
+        "params": [
+          "30%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[5]",
+      "verified": false
+    }
+  },
+  {
+    "id": 2,
+    "name": "Molten Rift",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Fusion DMG + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "fusion"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Fusion DMG + 30% for 15s after releasing Resonance Skill.",
+        "params": [
+          "30%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[2]",
+      "verified": false
+    }
+  },
+  {
+    "id": 10,
+    "name": "Frosty Resolve",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Resonance Skill DMG + 12%",
+        "params": [
+          "12%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "damageTypes": [
+                "skill"
+              ]
+            },
+            "value": 0.12
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Casting Resonance Skill grants 22.5% Glacio DMG Bonus for 15s and casting Resonance Liberation increases Resonance Skill DMG by 18%, lasting for 5s. This effect stacks up to 2 times.",
+        "params": [
+          "22.5%",
+          "15",
+          "18%",
+          "5",
+          "2"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[10]",
+      "verified": false
+    }
+  },
+  {
+    "id": 13,
+    "name": "Empyrean Anthem",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Energy Regen + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "energyRegen",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Increase the Resonator's Coordinated Attack DMG by 80%. Upon a critical hit of Coordinated Attack, increase the active Resonator's ATK by 20% for 4s.",
+        "params": [
+          "80%",
+          "20%",
+          "4"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[13]",
+      "verified": false
+    }
+  },
+  {
+    "id": 12,
+    "name": "Midnight Veil",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Havoc DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "havoc"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "When Outro Skill is triggered, deal additional 480% Havoc DMG to surrounding enemies, considered Outro Skill DMG, and grant the incoming Resonator 15% Havoc DMG Bonus for 15s.",
+        "params": [
+          "480%",
+          "15%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[12]",
+      "verified": false
+    }
+  },
+  {
+    "id": 11,
+    "name": "Eternal Radiance",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Spectro DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "spectro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Spectro Frazzle on enemies increases Crit. Rate by 20% for 15s. Attacking enemies inflicted with 10 stacks of Spectro Frazzle grants 15% Spectro DMG Bonus for 15s.",
+        "params": [
+          "20%",
+          "15",
+          "10",
+          "15%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[11]",
+      "verified": false
+    }
+  },
+  {
+    "id": 14,
+    "name": "Tidebreaking Courage",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Energy Regen + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "energyRegen",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Increase the Resonator's ATK by 15%. Reaching 250% Energy Regen increases all Attribute DMG by 30% for the Resonator.",
+        "params": [
+          "15%",
+          "250%",
+          "30%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[14]",
+      "verified": false
+    }
+  },
+  {
+    "id": 19,
+    "name": "Dream of the Lost",
+    "effects": [
+      {
+        "pieces": 3,
+        "description": "Holding 0 Resonance Energy increases Crit. Rate by 20% and grants 35% Echo Skill DMG Bonus.",
+        "params": [
+          "0",
+          "20%",
+          "35%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[19]",
+      "verified": false
+    }
+  },
+  {
+    "id": 22,
+    "name": "Flamewing's Shadow",
+    "effects": [
+      {
+        "pieces": 3,
+        "description": "Dealing Echo Skill DMG increases Heavy Attack Crit. Rate by 20% for 6s. Dealing Heavy Attack DMG increases Echo Skill Crit. Rate by 20% for 6s. While both effects are active, gain 16% Fusion DMG Bonus.",
+        "params": [
+          "20%",
+          "6",
+          "20%",
+          "6",
+          "16%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[22]",
+      "verified": false
+    }
+  },
+  {
+    "id": 23,
+    "name": "Thread of Severed Fate",
+    "effects": [
+      {
+        "pieces": 3,
+        "description": "Inflicting Havoc Bane increases the Resonator's ATK by 20% and grants 30% Resonance Liberation DMG Bonus for 5s.",
+        "params": [
+          "20%",
+          "30%",
+          "5"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[23]",
+      "verified": false
+    }
+  },
+  {
+    "id": 21,
+    "name": "Law of Harmony",
+    "effects": [
+      {
+        "pieces": 3,
+        "description": "Casting Echo Skill grants 30% Heavy Attack DMG Bonus to the caster for 4s.\nAdditionally, all Resonators in the team gain 4% Echo Skill DMG Bonus for 30s, stacking up to 4 times. Echoes of the same name can only trigger this effect once. The record of Echo triggering this effect is cleared along with this effect. At 4 stacks, casting Echo Skill again resets the duration of this effect.",
+        "params": [
+          "30%",
+          "4",
+          "4%",
+          "4",
+          "30"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[21]",
+      "verified": false
+    }
+  },
+  {
+    "id": 20,
+    "name": "Crown of Valor",
+    "effects": [
+      {
+        "pieces": 3,
+        "description": "Upon gaining a Shield, increase the Resonator's ATK by 6% and Crit. DMG by 4% for 4s. This effect can be triggered once every 0.5s and stacks up to 5 times.",
+        "params": [
+          "6%",
+          "4%",
+          "5",
+          "4",
+          "0.5"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[20]",
+      "verified": false
+    }
+  },
+  {
+    "id": 16,
+    "name": "Gusts of Welkin",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Aero DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "aero"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Aero Erosion upon enemies increases Aero DMG for all Resonators in the team by 15%, and for the Resonator triggering this effect by an additional 15%, lasting for 20s.",
+        "params": [
+          "15%",
+          "15%",
+          "20"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[16]",
+      "verified": false
+    }
+  },
+  {
+    "id": 18,
+    "name": "Flaming Clawprint",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Fusion DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "fusion"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Casting Resonance Liberation grants all Resonators in the team 15% Fusion DMG Bonus and the caster 20% Resonance Liberation DMG Bonus, lasting for 35s.",
+        "params": [
+          "15%",
+          "20%",
+          "35"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[18]",
+      "verified": false
+    }
+  },
+  {
+    "id": 17,
+    "name": "Windward Pilgrimage",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Aero DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "aero"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Hitting a target with Aero Erosion increases Crit. Rate by 10% and grants 30% Aero DMG Bonus, lasting for 10s.",
+        "params": [
+          "10%",
+          "30%",
+          "10"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[17]",
+      "verified": false
+    }
+  },
+  {
+    "id": 25,
+    "name": "Halo of Starry Radiance",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Healing Bonus + 10%.",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "healingBonus",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "When healing a Resonator in the team, every 1% of Off-Tune Buildup Rate grants a 0.2% ATK increase to all Resonators in the team for 4s, up to 25%. Effects of the same name cannot be stacked.",
+        "params": [
+          "1%",
+          "0.2%",
+          "25%",
+          "4"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[25]",
+      "verified": false
+    }
+  },
+  {
+    "id": 28,
+    "name": "Chromatic Foam",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Fusion DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "fusion"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "When the Resonator inflicts Fusion Burst on the enemies, they gain the following effects: Gain 10% Fusion DMG Bonus for 15 s. While this effect is active, casting an Outro Skill grants the incoming Resonator 25% Fusion DMG Bonus for 15s.",
+        "params": [
+          "10%",
+          "15",
+          "25%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[28]",
+      "verified": false
+    }
+  },
+  {
+    "id": 30,
+    "name": "Wishes of Quiet Snowfall",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Glacio DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "glacio"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Glacio Chafe on enemies increases Glacio DMG dealt by 10% for 15s. The Resonator gains the Snowfall effect for 15s, which can be triggered once every 25s. While Snowfall is active:\n- Dealing Resonance Liberation DMG removes Snowfall and increases the Resonator's Crit. Rate by 25% for 6s. While the effect is active, dealing Resonance Liberation DMG extends its duration by 4s, triggered once every 0.5s, up to 6 times.\n- Casting Outro Skill removes Snowfall and grants 25% Glacio DMG Bonus to the incoming Resonator for 15s.\nWhen Snowfall is removed, only one of the effects above can be triggered.",
+        "params": [
+          "10%",
+          "15",
+          "25",
+          "1",
+          "25%",
+          "6",
+          "25%",
+          "15",
+          "4",
+          "0.5",
+          "6",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[30]",
+      "verified": false
+    }
+  },
+  {
+    "id": 24,
+    "name": "Pact of Neonlight Leap",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Spectro DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "spectro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Casting Outro Skill increases the ATK of the incoming Resonator who casts Intro Skill by 15%. Each point of Tune Break Boost the incoming Resonator has additionally increases their ATK by 0.3%, up to 15%. This effect lasts for 15s, or until the Resonator is switched out.",
+        "params": [
+          "15%",
+          "0.3%",
+          "15%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[24]",
+      "verified": false
+    }
+  },
+  {
+    "id": 26,
+    "name": "Rite of Gilded Revelation",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Spectro DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "spectro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Dealing Basic Attack DMG increases Spectro DMG by 10% for 5s, stacking up to 3 times. With 3 stacks, casting Resonance Liberation grants 40% Basic Attack DMG Bonus.",
+        "params": [
+          "10%",
+          "3",
+          "5",
+          "40%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[26]",
+      "verified": false
+    }
+  },
+  {
+    "id": 29,
+    "name": "Sound of True Name",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Aero DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "aero"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Dealing Echo Skill DMG to enemies increases the Resonator's Echo Skill Crit. Rate by 20%, and grants 15% Aero DMG Bonus for 5s.",
+        "params": [
+          "20%",
+          "15%",
+          "5"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[29]",
+      "verified": false
+    }
+  },
+  {
+    "id": 31,
+    "name": "Reel of Spliced Memories",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "ATK + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "atkPct",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Tune Rupture - Shifting or Tune Strain - Shifting on enemies increases the Tune Break Boost of Resonators in the team by 20 for 30s. Effects of the same name do not stack.",
+        "params": [
+          "20",
+          "30"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[31]",
+      "verified": false
+    }
+  },
+  {
+    "id": 27,
+    "name": "Trailblazing Star",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Fusion DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "fusion"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Fusion Burst or Tune Rupture - Shifting increases the Resonator's Crit. Rate by 20% and grants 20% Fusion DMG Bonus for 8s.",
+        "params": [
+          "20%",
+          "20%",
+          "8"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[27]",
+      "verified": false
+    }
+  },
+  {
+    "id": 32,
+    "name": "Shadow of Shattered Dreams",
+    "effects": [
+      {
+        "pieces": 1,
+        "description": "Inflicting Hack - Shifting on the target grants 35% Basic Attack DMG Bonus and Heavy Attack DMG Bonus for 15s.",
+        "params": [
+          "15%",
+          "35%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[32]",
+      "verified": false
+    }
+  },
+  {
+    "id": 33,
+    "name": "Song of Feathered Trace",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Energy Regen + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "energyRegen",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Upon inflicting Havoc Bane, gain Xuanling's Feather, which grants a 20% increase in Crit. Rate and 35% increase in Heavy Attack DMG Bonus to the Resonator, lasting 15s.\nUpon inflicting Glacio Chafe, gain Chongming's Feather, which grants a 0.1% increase in ATK to Resonators in the team for every 1% of the Resonator's Energy Regen, up to 25%, lasting 10s.",
+        "params": [
+          "20%",
+          "35%",
+          "15",
+          "1%",
+          "0.1%",
+          "25%",
+          "10"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[33]",
+      "verified": false
+    }
+  },
+  {
+    "id": 35,
+    "name": "Lamp of Nether Road",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "HP + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "hpPct",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Upon gaining a Shield, gain 5% increase in Crit. Rate for 5s, max 4 stacks. This effect can be triggered every 0.5s. At max stacks, gain 15% Fusion DMG Bonus.",
+        "params": [
+          "5%",
+          "4",
+          "5",
+          "0.5",
+          "15%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[35]",
+      "verified": false
+    }
+  },
+  {
+    "id": 37,
+    "name": "Flash of Electric Reflection",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Electro DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "electro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "When the Resonator inflicts Electro Flare on enemies, they gain the following effects: Gain 10% Electro DMG Bonus for 15s. While this effect is active, casting Outro Skill grants the incoming Resonator 25% Electro DMG Bonus for 15s.",
+        "params": [
+          "10%",
+          "15",
+          "25%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[37]",
+      "verified": false
+    }
+  },
+  {
+    "id": 34,
+    "name": "Heart of Evil's Purge",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Aero DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "aero"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Tune Strain - Shifting increases Crit. DMG by 20% and Aero DMG Bonus 30% for 15s.",
+        "params": [
+          "20%",
+          "30%",
+          "15"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[34]",
+      "verified": false
+    }
+  },
+  {
+    "id": 36,
+    "name": "Heart of Sworn Vigil",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Electro DMG + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "dmgBonus",
+            "scope": {
+              "elements": [
+                "electro"
+              ]
+            },
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Inflicting Electro Flare on the target, obtaining Unison, or triggering Unison Response increases the Resonator's Crit. Rate by 15% and grants them 22.5% Electro DMG for 30s.",
+        "params": [
+          "15%",
+          "22.5%",
+          "30"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[36]",
+      "verified": false
+    }
+  },
+  {
+    "id": 38,
+    "name": "Flower of Tinged Yearning",
+    "effects": [
+      {
+        "pieces": 2,
+        "description": "Healing + 10%",
+        "params": [
+          "10%"
+        ],
+        "fixed": [
+          {
+            "stat": "healingBonus",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "pieces": 5,
+        "description": "Healing a Resonator in the team increases the ATK of all Resonators in the team by 10% for 30s. Effects of the same name cannot be stacked. While the effect is active, if the Resonator gains Unison or triggers Unison Response, their ATK is further increased by 15%.",
+        "params": [
+          "10%",
+          "30",
+          "15%"
+        ],
+        "fixed": []
+      }
+    ],
+    "provenance": {
+      "source": "encore",
+      "sourceId": "echo.json#FetterGroups[38]",
+      "verified": false
+    }
+  }
+]

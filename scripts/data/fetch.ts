@@ -28,6 +28,8 @@ const ARIKATSU_FILES = [
   'BinData/property/propertyindex.json',
   'BinData/property/rolepropertygrowth.json',
   'BinData/property/weaponpropertygrowth.json',
+  // English names of the stat ids, in id order. Confirms which id is which stat.
+  'Textmaps/en/property/PropertyIndex.json',
   'README.md',
 ]
 

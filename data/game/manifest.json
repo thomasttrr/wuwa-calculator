@@ -1,0 +1,39 @@
+{
+  "gameVersion": "3.8.0",
+  "dataDate": "2026-11-11",
+  "fetchedAt": "2026-11-11T15:08:31.794Z",
+  "sources": [
+    {
+      "name": "encore.moe",
+      "url": "https://api-v2.encore.moe/api/en",
+      "role": "primary"
+    },
+    {
+      "name": "nanoka.cc",
+      "url": "https://static.nanoka.cc/ww/3.8",
+      "role": "cross-check"
+    },
+    {
+      "name": "Arikatsu/WutheringWaves_Data",
+      "url": "https://github.com/Arikatsu/WutheringWaves_Data/tree/49d65625340a32cec6851a12baedc03b5a630b25",
+      "role": "Echo stat tables"
+    },
+    {
+      "name": "Wuthering Waves Wiki (Fandom, CC-BY-SA)",
+      "url": "https://wutheringwaves.fandom.com/wiki/Echo/Stats",
+      "role": "substat rolls, formula text"
+    }
+  ],
+  "counts": {
+    "resonators": 61,
+    "weapons": 125,
+    "echoes": 227,
+    "sonatas": 37,
+    "enemies": 252,
+    "actions": 1283,
+    "actionsNotModelled": 28,
+    "actionsWithNotes": 77,
+    "healActions": 42
+  },
+  "warnings": []
+}

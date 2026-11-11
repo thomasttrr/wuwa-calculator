@@ -1,0 +1,27 @@
+{
+  "_source": "Wuthering Waves Wiki (Fandom), page 'Echo/Stats', https://wutheringwaves.fandom.com/wiki/Echo/Stats",
+  "_licence": "CC-BY-SA",
+  "_accessed": "2026-11-11",
+  "_note": "Transcribed by hand from the page's 'Detailed substat values distribution' tables. The page states the roll chances were disclosed by Kuro Games. Percent values are written as the page shows them (6.4 means 6.4%).",
+  "substats": [
+    { "label": "ATK", "values": [30, 40, 50, 60], "chances": [6.7961, 52.4272, 37.8641, 2.9126], "percent": false },
+    { "label": "DEF", "values": [40, 50, 60, 70], "chances": [14.5631, 44.6602, 32.0388, 8.7379], "percent": false },
+    { "label": "HP", "values": [320, 360, 390, 430, 470, 510, 540, 580], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": false },
+    { "label": "DEF%", "values": [8.1, 9.0, 10.0, 10.9, 11.8, 12.8, 13.8, 14.7], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "ATK%", "values": [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "HP%", "values": [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "Resonance Liberation DMG Bonus", "values": [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "Heavy Attack DMG Bonus", "values": [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "Resonance Skill DMG Bonus", "values": [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "Basic Attack DMG Bonus", "values": [6.4, 7.1, 7.9, 8.6, 9.4, 10.1, 10.9, 11.6], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "Energy Regen", "values": [6.8, 7.6, 8.4, 9.2, 10.0, 10.8, 11.6, 12.4], "chances": [6.7961, 7.767, 20.3883, 24.2718, 17.4757, 14.5631, 5.8252, 2.9126], "percent": true },
+    { "label": "Crit. Rate", "values": [6.3, 6.9, 7.5, 8.1, 8.7, 9.3, 9.9, 10.5], "chances": [23.3333, 23.3333, 23.3333, 8.0, 8.0, 8.0, 3.0, 3.0], "percent": true },
+    { "label": "Crit. DMG", "values": [12.6, 13.8, 15.0, 16.2, 17.4, 18.6, 19.8, 21.0], "chances": [23.3333, 23.3333, 23.3333, 8.0, 8.0, 8.0, 3.0, 3.0], "percent": true }
+  ],
+  "mainStatMaxRarity5": {
+    "_note": "Maximum (level 25) main stat values for a 5-star Echo, from the page's Mainstats table. Used only to cross-check the values computed from the raw game tables.",
+    "1": { "HP%": 22.8, "ATK%": 18.0, "DEF%": 18.0, "fixed HP": 2280 },
+    "3": { "HP%": 30, "ATK%": 30, "DEF%": 38, "Element DMG Bonus": 30, "Energy Regen": 32.0, "fixed ATK": 100 },
+    "4": { "HP%": 33.0, "ATK%": 33.0, "fixed ATK": 150 }
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "mainStats": {
+    "1": [
+      {
+        "stat": "atkPct",
+        "value": 0.18,
+        "label": "ATK%"
+      },
+      {
+        "stat": "hpPct",
+        "value": 0.228,
+        "label": "HP%"
+      },
+      {
+        "stat": "defPct",
+        "value": 0.18,
+        "label": "DEF%"
+      }
+    ],
+    "3": [
+      {
+        "stat": "dmgBonus",
+        "scope": {
+          "elements": [
+            "glacio"
+          ]
+        },
+        "value": 0.3,
+        "label": "Glacio DMG Bonus"
+      },
+      {
+        "stat": "dmgBonus",
+        "scope": {
+          "elements": [
+            "fusion"
+          ]
+        },
+        "value": 0.3,
+        "label": "Fusion DMG Bonus"
+      },
+      {
+        "stat": "dmgBonus",
+        "scope": {
+          "elements": [
+            "electro"
+          ]
+        },
+        "value": 0.3,
+        "label": "Electro DMG Bonus"
+      },
+      {
+        "stat": "dmgBonus",
+        "scope": {
+          "elements": [
+            "aero"
+          ]
+        },
+        "value": 0.3,
+        "label": "Aero DMG Bonus"
+      },
+      {
+        "stat": "dmgBonus",
+        "scope": {
+          "elements": [
+            "spectro"
+          ]
+        },
+        "value": 0.3,
+        "label": "Spectro DMG Bonus"
+      },
+      {
+        "stat": "dmgBonus",
+        "scope": {
+          "elements": [
+            "havoc"
+          ]
+        },
+        "value": 0.3,
+        "label": "Havoc DMG Bonus"
+      },
+      {
+        "stat": "atkPct",
+        "value": 0.3,
+        "label": "ATK%"
+      },
+      {
+        "stat": "hpPct",
+        "value": 0.3,
+        "label": "HP%"
+      },
+      {
+        "stat": "defPct",
+        "value": 0.38,
+        "label": "DEF%"
+      },
+      {
+        "stat": "energyRegen",
+        "value": 0.32,
+        "label": "Energy Regen"
+      }
+    ],
+    "4": [
+      {
+        "stat": "critRate",
+        "value": 0.22,
+        "label": "Crit. Rate"
+      },
+      {
+        "stat": "critDmg",
+        "value": 0.44,
+        "label": "Crit. DMG"
+      },
+      {
+        "stat": "atkPct",
+        "value": 0.33,
+        "label": "ATK%"
+      },
+      {
+        "stat": "hpPct",
+        "value": 0.33,
+        "label": "HP%"
+      },
+      {
+        "stat": "defPct",
+        "value": 0.418,
+        "label": "DEF%"
+      },
+      {
+        "stat": "healingBonus",
+        "value": 0.264,
+        "label": "Healing Bonus"
+      }
+    ]
+  },
+  "fixedStats": {
+    "1": {
+      "stat": "hpFlat",
+      "value": 2280,
+      "label": "HP"
+    },
+    "3": {
+      "stat": "atkFlat",
+      "value": 100,
+      "label": "ATK"
+    },
+    "4": {
+      "stat": "atkFlat",
+      "value": 150,
+      "label": "ATK"
+    }
+  },
+  "substats": [
+    {
+      "stat": "atkFlat",
+      "label": "ATK",
+      "rolls": [
+        30,
+        40,
+        50,
+        60
+      ],
+      "chances": [
+        0.067961,
+        0.524272,
+        0.378641,
+        0.029126
+      ]
+    },
+    {
+      "stat": "defFlat",
+      "label": "DEF",
+      "rolls": [
+        40,
+        50,
+        60,
+        70
+      ],
+      "chances": [
+        0.145631,
+        0.446602,
+        0.320388,
+        0.087379
+      ]
+    },
+    {
+      "stat": "hpFlat",
+      "label": "HP",
+      "rolls": [
+        320,
+        360,
+        390,
+        430,
+        470,
+        510,
+        540,
+        580
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "defPct",
+      "label": "DEF%",
+      "rolls": [
+        0.081,
+        0.09,
+        0.1,
+        0.109,
+        0.118,
+        0.128,
+        0.138,
+        0.147
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "atkPct",
+      "label": "ATK%",
+      "rolls": [
+        0.064,
+        0.071,
+        0.079,
+        0.086,
+        0.094,
+        0.101,
+        0.109,
+        0.116
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "hpPct",
+      "label": "HP%",
+      "rolls": [
+        0.064,
+        0.071,
+        0.079,
+        0.086,
+        0.094,
+        0.101,
+        0.109,
+        0.116
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "dmgBonus",
+      "scope": {
+        "damageTypes": [
+          "liberation"
+        ]
+      },
+      "label": "Resonance Liberation DMG Bonus",
+      "rolls": [
+        0.064,
+        0.071,
+        0.079,
+        0.086,
+        0.094,
+        0.101,
+        0.109,
+        0.116
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "dmgBonus",
+      "scope": {
+        "damageTypes": [
+          "heavy"
+        ]
+      },
+      "label": "Heavy Attack DMG Bonus",
+      "rolls": [
+        0.064,
+        0.071,
+        0.079,
+        0.086,
+        0.094,
+        0.101,
+        0.109,
+        0.116
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "dmgBonus",
+      "scope": {
+        "damageTypes": [
+          "skill"
+        ]
+      },
+      "label": "Resonance Skill DMG Bonus",
+      "rolls": [
+        0.064,
+        0.071,
+        0.079,
+        0.086,
+        0.094,
+        0.101,
+        0.109,
+        0.116
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "dmgBonus",
+      "scope": {
+        "damageTypes": [
+          "basic"
+        ]
+      },
+      "label": "Basic Attack DMG Bonus",
+      "rolls": [
+        0.064,
+        0.071,
+        0.079,
+        0.086,
+        0.094,
+        0.101,
+        0.109,
+        0.116
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "energyRegen",
+      "label": "Energy Regen",
+      "rolls": [
+        0.068,
+        0.076,
+        0.084,
+        0.092,
+        0.1,
+        0.108,
+        0.116,
+        0.124
+      ],
+      "chances": [
+        0.067961,
+        0.07767,
+        0.203883,
+        0.242718,
+        0.174757,
+        0.145631,
+        0.058252,
+        0.029126
+      ]
+    },
+    {
+      "stat": "critRate",
+      "label": "Crit. Rate",
+      "rolls": [
+        0.063,
+        0.069,
+        0.075,
+        0.081,
+        0.087,
+        0.093,
+        0.099,
+        0.105
+      ],
+      "chances": [
+        0.233333,
+        0.233333,
+        0.233333,
+        0.08,
+        0.08,
+        0.08,
+        0.03,
+        0.03
+      ]
+    },
+    {
+      "stat": "critDmg",
+      "label": "Crit. DMG",
+      "rolls": [
+        0.126,
+        0.138,
+        0.15,
+        0.162,
+        0.174,
+        0.186,
+        0.198,
+        0.21
+      ],
+      "chances": [
+        0.233333,
+        0.233333,
+        0.233333,
+        0.08,
+        0.08,
+        0.08,
+        0.03,
+        0.03
+      ]
+    }
+  ],
+  "provenance": {
+    "source": "arikatsu",
+    "sourceId": "BinData/phantom/* @ 49d6562; substats: snapshots/wiki/echo-stats.json",
+    "verified": true,
+    "note": "Main stats: raw game tables, checked against the wiki. Substat rolls and chances: wiki only (it cites Kuro Games published rates)."
+  }
+}

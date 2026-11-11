@@ -1,0 +1,490 @@
+[
+  {
+    "id": 1102,
+    "name": "Sanhua",
+    "rarity": 4,
+    "element": "glacio",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1103,
+    "name": "Baizhi",
+    "rarity": 4,
+    "element": "glacio",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1104,
+    "name": "Lingyang",
+    "rarity": 5,
+    "element": "glacio",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1105,
+    "name": "Zhezhi",
+    "rarity": 5,
+    "element": "glacio",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1106,
+    "name": "Youhu",
+    "rarity": 4,
+    "element": "glacio",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1107,
+    "name": "Carlotta",
+    "rarity": 5,
+    "element": "glacio",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1108,
+    "name": "Hiyuki",
+    "rarity": 5,
+    "element": "glacio",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1109,
+    "name": "Lucilla",
+    "rarity": 5,
+    "element": "glacio",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1110,
+    "name": "Suisui",
+    "rarity": 5,
+    "element": "glacio",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1202,
+    "name": "Chixia",
+    "rarity": 4,
+    "element": "fusion",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1203,
+    "name": "Encore",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1204,
+    "name": "Mortefi",
+    "rarity": 4,
+    "element": "fusion",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1205,
+    "name": "Changli",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1206,
+    "name": "Brant",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1207,
+    "name": "Lupa",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1208,
+    "name": "Galbrena",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1209,
+    "name": "Mornye",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1210,
+    "name": "Aemeath",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1211,
+    "name": "Denia",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1212,
+    "name": "Jingran",
+    "rarity": 5,
+    "element": "fusion",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1301,
+    "name": "Calcharo",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1302,
+    "name": "Yinlin",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1303,
+    "name": "Yuanwu",
+    "rarity": 4,
+    "element": "electro",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1304,
+    "name": "Jinhsi",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1305,
+    "name": "Xiangli Yao",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1306,
+    "name": "Augusta",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1307,
+    "name": "Buling",
+    "rarity": 4,
+    "element": "electro",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1308,
+    "name": "Rebecca",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1309,
+    "name": "Rover: Electro",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1311,
+    "name": "Hsin",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1312,
+    "name": "Suoming",
+    "rarity": 5,
+    "element": "electro",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1402,
+    "name": "Yangyang",
+    "rarity": 4,
+    "element": "aero",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1403,
+    "name": "Aalto",
+    "rarity": 4,
+    "element": "aero",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1404,
+    "name": "Jiyan",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1405,
+    "name": "Jianxin",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1406,
+    "name": "Rover: Aero",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1407,
+    "name": "Ciaccona",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1409,
+    "name": "Cartethyia",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1410,
+    "name": "Iuno",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1411,
+    "name": "Qiuyuan",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1412,
+    "name": "Sigrika",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1413,
+    "name": "Qingxiao",
+    "rarity": 5,
+    "element": "aero",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1501,
+    "name": "Rover: Spectro",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1503,
+    "name": "Verina",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1504,
+    "name": "Lumi",
+    "rarity": 4,
+    "element": "electro",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1505,
+    "name": "Shorekeeper",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1506,
+    "name": "Phoebe",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1507,
+    "name": "Zani",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1508,
+    "name": "Chisa",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1509,
+    "name": "Lynae",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1510,
+    "name": "Luuk Herssen",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1511,
+    "name": "Lucy",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1512,
+    "name": "Lily",
+    "rarity": 5,
+    "element": "spectro",
+    "weaponType": "pistols",
+    "model": "basic"
+  },
+  {
+    "id": 1601,
+    "name": "Taoqi",
+    "rarity": 4,
+    "element": "havoc",
+    "weaponType": "broadblade",
+    "model": "basic"
+  },
+  {
+    "id": 1602,
+    "name": "Danjin",
+    "rarity": 4,
+    "element": "havoc",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1603,
+    "name": "Camellya",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1604,
+    "name": "Rover: Havoc",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "sword",
+    "model": "basic"
+  },
+  {
+    "id": 1606,
+    "name": "Roccia",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "gauntlets",
+    "model": "basic"
+  },
+  {
+    "id": 1607,
+    "name": "Cantarella",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1608,
+    "name": "Phrolova",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "rectifier",
+    "model": "basic"
+  },
+  {
+    "id": 1610,
+    "name": "Yangyang: Xuanling",
+    "rarity": 5,
+    "element": "havoc",
+    "weaponType": "sword",
+    "model": "basic"
+  }
+]
