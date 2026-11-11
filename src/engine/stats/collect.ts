@@ -81,7 +81,8 @@ export function ownedEffects(build: Build, catalog: Catalog): OwnedEffect[] {
         key: teammateEffectKey(slot, effect.id),
         rank: teammate.weaponRank ?? 1,
         holder: slot,
-        label: `${name}: ${effect.name}`,
+        // Effects read from a Resonator's own skills already start with its name.
+        label: effect.name.startsWith(name) ? effect.name : `${name}: ${effect.name}`,
       })
     }
   })

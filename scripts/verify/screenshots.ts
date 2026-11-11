@@ -53,9 +53,34 @@ async function main() {
           () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
         )
         if (overflow > 0) problems.push(`[${viewport.label}] ${route.path} scrolls sideways by ${overflow}px`)
+        // Also catch content that runs past the screen edge without making the page scroll.
+        const outside = await page.evaluate(() => {
+          const width = window.innerWidth
+          return [...document.querySelectorAll('main *')]
+            .filter((element) => {
+              const box = element.getBoundingClientRect()
+              const style = getComputedStyle(element)
+              return box.width > 0 && box.right > width + 1 && style.position !== 'fixed' && style.visibility !== 'hidden'
+            })
+            .slice(0, 5)
+            .map((element) => `${element.tagName.toLowerCase()}${element.id ? `#${element.id}` : ''} "${(element.textContent ?? '').trim().slice(0, 40)}"`)
+        })
+        if (outside.length > 0) problems.push(`[${viewport.label}] ${route.path} has content past the screen edge: ${outside.join('; ')}`)
         const file = resolve(outDir, `${route.name}-${viewport.label}.png`)
         await page.screenshot({ path: file, fullPage: true })
         console.log(`saved ${file}`)
+        // Phone pages are long: also save screen-sized slices so details can be inspected.
+        if (viewport.width < 768) {
+          const height = await page.evaluate(() => document.documentElement.scrollHeight)
+          const slices = Math.min(Math.ceil(height / viewport.height), 8)
+          for (let slice = 0; slice < slices; slice += 1) {
+            await page.evaluate((y) => window.scrollTo(0, y), slice * viewport.height)
+            const sliceFile = resolve(outDir, `${route.name}-${viewport.label}-screen${slice + 1}.png`)
+            await page.screenshot({ path: sliceFile })
+          }
+          await page.evaluate(() => window.scrollTo(0, 0))
+          console.log(`saved ${slices} screen slices`)
+        }
       }
       await context.close()
     }
