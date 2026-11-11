@@ -1,6 +1,6 @@
 import type { Build, EffectStates } from '../types/build'
 import type { Catalog, EffectDef } from '../types/catalog'
-import type { Modifier } from '../types/stats'
+import type { Modifier, SourceKind } from '../types/stats'
 import { findGrowthPoint } from './base'
 
 /** How many different Echoes of each Sonata set are equipped. The same Echo twice counts once. */
@@ -30,9 +30,67 @@ export function ownsEffect(effect: EffectDef, build: Build, pieces: Map<number, 
   }
 }
 
+/** The effect-state key for a teammate's effect, so it can be switched apart from the build's own. */
+export function teammateEffectKey(slot: number, effectId: string): string {
+  return `teammate${slot}:${effectId}`
+}
+
+/** An effect that reaches this build, with the key its on/off state is stored under. */
+export interface OwnedEffect {
+  effect: EffectDef
+  key: string
+  /** Weapon refinement rank for weapon effects. */
+  rank: number
+  /** "self", or the teammate slot (0 or 1). */
+  holder: 'self' | number
+  /** Name shown in breakdowns: the effect, prefixed by the teammate's name when it is theirs. */
+  label: string
+}
+
+/** Does this teammate own the thing that grants the effect? */
+function teammateOwns(effect: EffectDef, teammate: NonNullable<Build['teammates'][number]>): boolean {
+  const owner = effect.owner
+  switch (owner.kind) {
+    case 'resonator':
+      return owner.id === teammate.resonatorId && (owner.sequence ?? 0) <= teammate.sequence
+    case 'weapon':
+      return teammate.weaponId === owner.id
+    case 'sonata':
+      return teammate.sonatas.some(([id, pieces]) => id === owner.id && pieces >= owner.pieces)
+    case 'echo':
+      return false
+  }
+}
+
+/** Every effect that reaches the active Resonator: its own (except "next Resonator" ones) and its teammates' shared ones. */
+export function ownedEffects(build: Build, catalog: Catalog): OwnedEffect[] {
+  const pieces = countSonataPieces(build)
+  const owned: OwnedEffect[] = []
+  for (const effect of catalog.effects) {
+    if (effect.target !== 'nextResonator' && ownsEffect(effect, build, pieces)) {
+      owned.push({ effect, key: effect.id, rank: build.weapon?.rank ?? 1, holder: 'self', label: effect.name })
+    }
+  }
+  build.teammates.forEach((teammate, slot) => {
+    if (!teammate) return
+    const name = catalog.resonators[teammate.resonatorId]?.name ?? 'Teammate'
+    for (const effect of catalog.effects) {
+      if (effect.target === 'self' || !teammateOwns(effect, teammate)) continue
+      owned.push({
+        effect,
+        key: teammateEffectKey(slot, effect.id),
+        rank: teammate.weaponRank ?? 1,
+        holder: slot,
+        label: `${name}: ${effect.name}`,
+      })
+    }
+  })
+  return owned
+}
+
 /** Active stack count of an effect: 0 when off, 1 for a plain toggle or an always-on effect. */
-export function activeStacks(effect: EffectDef, states: EffectStates): number {
-  const state = states[effect.id]
+export function activeStacks(effect: EffectDef, states: EffectStates, key: string = effect.id): number {
+  const state = states[key]
   switch (effect.control.kind) {
     case 'always':
       return 1
@@ -44,6 +102,40 @@ export function activeStacks(effect: EffectDef, states: EffectStates): number {
       return Math.min(Math.max(stacks, 0), effect.control.max)
     }
   }
+}
+
+/** The modifiers an owned effect grants in its current state (none when switched off). */
+export function effectModifiers(owned: OwnedEffect, states: EffectStates): Modifier[] {
+  const { effect, rank, label } = owned
+  const stacks = activeStacks(effect, states, owned.key)
+  if (stacks === 0) return []
+  const kind: SourceKind =
+    owned.holder !== 'self'
+      ? 'teammate'
+      : effect.owner.kind === 'weapon'
+        ? 'weaponPassive'
+        : effect.owner.kind === 'sonata'
+          ? 'sonata'
+          : effect.owner.kind === 'echo'
+            ? 'echoEffect'
+            : effect.owner.sequence
+              ? 'sequence'
+              : 'resonatorEffect'
+  return effect.modifiers.map((modifier) => {
+    const perRank = effect.owner.kind === 'weapon' && modifier.values.length === 5
+    const value = (perRank ? modifier.values[rank - 1] : modifier.values[0]) ?? 0
+    return {
+      stat: modifier.stat,
+      value: modifier.perStack ? value * stacks : value,
+      scope: modifier.scope,
+      source: {
+        kind,
+        id: owned.key,
+        name: modifier.perStack && stacks > 1 ? `${label} (${stacks} stacks)` : label,
+        verified: effect.provenance.verified,
+      },
+    }
+  })
 }
 
 /**
@@ -121,37 +213,10 @@ export function collectModifiers(build: Build, catalog: Catalog, effectStates: E
     }
   }
 
-  // Hand-encoded effects: weapon passives, set effects, Sequence nodes, Resonator mechanics.
-  const rank = build.weapon?.rank ?? 1
-  for (const effect of catalog.effects) {
-    if (effect.target === 'nextResonator') continue // benefits whoever comes in next, not this Resonator
-    if (!ownsEffect(effect, build, pieces)) continue
-    const stacks = activeStacks(effect, effectStates)
-    if (stacks === 0) continue
-    for (const modifier of effect.modifiers) {
-      const perRank = effect.owner.kind === 'weapon' && modifier.values.length === 5
-      const value = (perRank ? modifier.values[rank - 1] : modifier.values[0]) ?? 0
-      modifiers.push({
-        stat: modifier.stat,
-        value: modifier.perStack ? value * stacks : value,
-        scope: modifier.scope,
-        source: {
-          kind:
-            effect.owner.kind === 'weapon'
-              ? 'weaponPassive'
-              : effect.owner.kind === 'sonata'
-                ? 'sonata'
-                : effect.owner.kind === 'echo'
-                  ? 'echoEffect'
-                  : effect.owner.sequence
-                    ? 'sequence'
-                    : 'resonatorEffect',
-          id: effect.id,
-          name: modifier.perStack && stacks > 1 ? `${effect.name} (${stacks} stacks)` : effect.name,
-          verified: effect.provenance.verified,
-        },
-      })
-    }
+  // Hand-encoded effects: weapon passives, set effects, Sequence nodes, Resonator mechanics,
+  // and teammates' shared buffs.
+  for (const owned of ownedEffects(build, catalog)) {
+    modifiers.push(...effectModifiers(owned, effectStates))
   }
 
   // Modifiers the user typed in.

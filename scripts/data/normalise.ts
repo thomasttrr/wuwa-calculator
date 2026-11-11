@@ -275,6 +275,11 @@ function rowElement(rowId: number): Element {
   return element ?? 'physical'
 }
 
+/** A value named like a hit ("Stage 1 DMG") rather than a bonus or a reduction. */
+function looksLikeHit(name: string): boolean {
+  return /\bDMG\b|Damage/i.test(name) && !/Reduction|Increase|Multiplier|Bonus|Shield|per /i.test(name)
+}
+
 function rowMatches(row: DamageRow, multipliers: number[]): boolean {
   const close = (a: number, b: number) => Math.abs(a - b) < 1e-6
   if (row.rates.length === multipliers.length) return row.rates.every((rate, i) => close(rate, multipliers[i] ?? NaN))
@@ -370,7 +375,9 @@ function buildActions(raw: any, skill: any, skillType: SkillType, element: Eleme
       specialFormula !== 0
         ? `Uses a special formula (type ${specialFormula}) that has no public description.`
         : !anyMatched && !heal
-          ? 'No damage entry in the game data matches this value, so it may not be a hit (for example a shield, a speed change or a bonus per stack).'
+          ? looksLikeHit(base.name)
+            ? 'The game data splits this hit into smaller parts that could not be matched to it, so it is left out of totals.'
+            : 'No damage entry in the game data matches this value, so it may not be a hit (for example a shield, a speed change or a bonus per stack).'
           : undefined
 
     actions.push({

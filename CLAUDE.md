@@ -68,5 +68,6 @@ Known shapes (verified by fetching, 3.8.0): 65 Resonators, 125 weapons, 319 Echo
 - **Set bonuses can count twice.** Most 2-piece bonuses arrive as structured data (`SonataPieceEffect.fixed`) and are applied automatically in `collectModifiers`. Never author an effect for a set piece whose bonus is already in `fixed`.
 - **Skill tables list more than hits.** A value counts as damage only if it matches a raw damage entry (`ActionPart.matched`). Shields, speed changes and "per stack" bonuses match none and are left out on purpose.
 - **The core set is guarded by a test** (`tests/data/core-set.test.ts`). If a data update makes any of its damage values unmodelled or unverified, the test fails and that Resonator must leave the set, with a line in `REPORT.md`.
+- **Never write regex escapes through `node -e` in Bash.** A `\b` became a raw backspace character in `normalise.ts` and silently broke a pattern. Edit source files with the Edit or Write tool. Check with `grep -rlP '\x08' src scripts tests data/authored`.
 - **Commit attribution follows the session's model.** Use the attribution line the harness gives at the time of the commit.
 - **The engine has its own tsconfig** (`tsconfig.engine.json`, no DOM, `types: []`). A type error that only appears under `npm run build` and names a DOM or Node global inside `src/engine/` means the engine has leaked a dependency.
