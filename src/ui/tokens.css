@@ -1,0 +1,100 @@
+/* Design tokens. Source of truth: DESIGN.md. Change that file first. */
+@import 'tailwindcss';
+@import '@fontsource-variable/archivo/wdth.css';
+
+@theme {
+  /* Tailwind's default palette, radii and type scale are replaced, not extended. */
+  --color-*: initial;
+  --radius-*: initial;
+  --text-*: initial;
+  --font-*: initial;
+  --shadow-*: initial;
+
+  --color-page: #1f2124;
+  --color-panel: #282b2f;
+  --color-raised: #32363b;
+  --color-rule: #3a3e44;
+  --color-rule-strong: #565b63;
+  --color-ink: #e9e6df;
+  --color-ink-2: #b4b5b6;
+  --color-ink-3: #a3a5a8;
+  --color-signal: #f0a73a;
+  --color-on-signal: #2a1c05;
+  --color-signal-dim: #5a4420;
+
+  --color-glacio: #6ec1e4;
+  --color-fusion: #f0744e;
+  --color-electro: #b88cf2;
+  --color-aero: #5fd0a8;
+  --color-spectro: #eadf8c;
+  --color-havoc: #d7669b;
+  --color-physical: #b9bbbe;
+  --color-gain: #7fcf8e;
+  --color-loss: #f0806e;
+  --color-caution: #e9c46a;
+
+  --font-sans: 'Archivo Variable', system-ui, sans-serif;
+
+  --text-12: 0.75rem;
+  --text-13: 0.8125rem;
+  --text-14: 0.875rem;
+  --text-16: 1rem;
+  --text-20: 1.25rem;
+  --text-26: 1.625rem;
+  --text-34: 2.125rem;
+  --text-44: 2.75rem;
+
+  /* Spacing scale is 4, 8, 12, 16, 24, 32, 48, 64: use p-1, 2, 3, 4, 6, 8, 12, 16 only. */
+  --spacing: 0.25rem;
+
+  --radius-control: 3px;
+  --radius-panel: 4px;
+
+  --shadow-float: 0 8px 24px rgb(0 0 0 / 0.4);
+
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums lining-nums;
+    font-stretch: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-size: var(--text-16);
+  }
+
+  @media (min-width: 48rem) {
+    body {
+      font-size: var(--text-14);
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility font-display {
+  font-stretch: 125%;
+  font-weight: 650;
+  line-height: 1.15;
+}
