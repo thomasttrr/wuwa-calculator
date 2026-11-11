@@ -27,3 +27,7 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Task 7 (core set and 3.x mechanics) complete.
 - Task 8 (Phase 0 gate) complete: build, 195/195 tests, lint and data check pass; token page rendered and inspected at 1440 and 390; reports written.
 - Final review: self-review (no subagent used, per plan). Findings carried to Phase 1: teammate buffs not yet collected; guard against set bonuses counting twice; improve damage-row matching.
+
+## Phase 1
+
+- Owner (11 Nov 2026): "I will go with whatever you think is the best route and options." Core set of 12 confirmed as recorded in data/authored/core-set.ts.
