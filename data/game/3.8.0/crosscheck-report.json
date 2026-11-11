@@ -23,9 +23,15 @@
     "enemies": {
       "checked": 252,
       "verified": 247
+    },
+    "sonatas": {
+      "checked": 37,
+      "verified": 35
     }
   },
   "mismatches": [
+    "Havoc Eclipse (5 pieces): text shows 7.5%; the raw game table has 6%, 5, 15",
+    "Freezing Frost (5 pieces): text shows 10%; the raw game table has 30%, 15",
     "Glacio Prism: resistances do not follow the wiki's 10% / 40% rule",
     "Fusion Prism: resistances do not follow the wiki's 10% / 40% rule",
     "Spectro Prism: resistances do not follow the wiki's 10% / 40% rule",

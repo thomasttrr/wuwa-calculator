@@ -133,6 +133,14 @@ describe('cross-check against the second source', () => {
     expect(report.summary.weapons?.verified).toBe(report.summary.weapons?.checked)
   })
 
+  it('Sonata sets agree with the raw game tables, except two where the shown text and the table differ', () => {
+    // Found 11 Nov 2026: the text says "+7.5% per stack, up to 4" (Havoc Eclipse) and "+10% per stack,
+    // up to 3" (Freezing Frost) while the raw table holds 6% / 5 and 30%. They stay unverified and their
+    // 5-piece effects are not encoded until the sources agree.
+    const unverified = Object.values(catalog.sonatas).filter((s) => !s.provenance.verified).map((s) => s.name).sort()
+    expect(unverified).toEqual(['Freezing Frost', 'Havoc Eclipse'])
+  })
+
   it('no skill value disagrees between the sources', () => {
     expect(report.mismatches.filter((line) => line.includes('damage row'))).toEqual([])
   })

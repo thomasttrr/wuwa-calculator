@@ -31,7 +31,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[9]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -68,7 +68,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[4]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -106,7 +106,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[3]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -139,7 +139,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[7]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -172,7 +172,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[8]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -286,7 +286,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[5]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -323,7 +323,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[2]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -364,7 +364,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[10]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -398,7 +398,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[13]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -437,7 +437,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[12]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -478,7 +478,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[11]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -512,7 +512,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[14]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -533,7 +533,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[19]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -556,7 +556,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[22]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -577,7 +577,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[23]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -600,7 +600,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[21]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -623,7 +623,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[20]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -662,7 +662,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[16]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -701,7 +701,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[18]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -740,7 +740,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[17]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -775,7 +775,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[25]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -815,7 +815,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[28]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -863,7 +863,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[30]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -903,7 +903,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[24]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -943,7 +943,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[26]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -982,7 +982,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[29]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1015,7 +1015,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[31]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1054,7 +1054,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[27]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1075,7 +1075,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[32]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1113,7 +1113,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[33]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1149,7 +1149,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[35]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1189,7 +1189,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[37]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1228,7 +1228,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[34]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1267,7 +1267,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[36]",
-      "verified": false
+      "verified": true
     }
   },
   {
@@ -1301,7 +1301,7 @@
     "provenance": {
       "source": "encore",
       "sourceId": "echo.json#FetterGroups[38]",
-      "verified": false
+      "verified": true
     }
   }
 ]

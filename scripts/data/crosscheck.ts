@@ -145,6 +145,50 @@ const checkedEchoes = echoes.map((echo) => {
 })
 writeFileSync(resolve(`${OUT}/echoes.json`), `${JSON.stringify(checkedEchoes)}\n`)
 
+// ---- Sonata sets: numbers come from the raw game table (Arikatsu phantomfetter). encore.moe
+// writes each piece's text out in full (FetterDetails). Every percentage that text shows must be
+// one of the raw table's numbers (the table may hold extra ones the text does not use, such as a
+// stack cap), and every structured bonus must appear in the text.
+const encoreSetText = new Map<string, Map<number, string>>()
+for (const file of readdirSync(resolve('data/raw/encore/echo'))) {
+  const detail = read(`data/raw/encore/echo/${file}`)
+  for (const [setName, info] of Object.entries<any>(detail.FetterDetails ?? {})) {
+    if (encoreSetText.has(setName)) continue
+    const keys: number[] = info.EffectKeys ?? []
+    const texts: string[] = info.EffectDescriptions ?? []
+    encoreSetText.set(setName, new Map(keys.map((key, i) => [key, String(texts[i] ?? '')])))
+  }
+}
+const numbersIn = (text: string) => new Set([...text.matchAll(/\d+(?:\.\d+)?%?/g)].map((m) => m[0]))
+const sonatas: any[] = read(`${OUT}/sonatas.json`)
+let sonatasVerified = 0
+const checkedSonatas = sonatas.map((sonata) => {
+  const pieces = encoreSetText.get(sonata.name)
+  let ok = pieces !== undefined
+  for (const piece of sonata.effects) {
+    const text = pieces?.get(piece.pieces)
+    if (text === undefined) {
+      ok = false
+      continue
+    }
+    const shown = [...numbersIn(text)].filter((value) => value.endsWith('%'))
+    const fixed = piece.fixed.map((f: any) => `${Math.round(f.value * 1e4) / 100}%`)
+    const raw = new Set([...piece.params.map((p: string) => p.trim()), ...fixed])
+    const notInTable = shown.filter((value) => !raw.has(value))
+    const fixedNotShown = fixed.filter((value: string) => !shown.includes(value))
+    if (notInTable.length > 0 || fixedNotShown.length > 0) {
+      ok = false
+      mismatches.push(
+        `${sonata.name} (${piece.pieces} pieces): text shows ${[...notInTable, ...fixedNotShown].join(', ')}; the raw game table has ${[...raw].join(', ') || 'no numbers'}`,
+      )
+    }
+  }
+  if (ok) sonatasVerified += 1
+  return { ...sonata, provenance: { ...sonata.provenance, verified: ok } }
+})
+writeFileSync(resolve(`${OUT}/sonatas.json`), `${JSON.stringify(checkedSonatas, null, 2)}\n`)
+;(summary as any).sonatas = { checked: sonatas.length, verified: sonatasVerified }
+
 // ---- Enemies: there is no second database for resistances. The wiki's Damage page states the
 // rule (10% base, 40% for a boss's own element); an enemy whose values follow it counts as verified.
 const enemies: EnemyDef[] = read(`${OUT}/enemies.json`)

@@ -5812,7 +5812,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#2.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Fusion DMG + 30% for 15s after releasing Resonance Skill."
    }
   },
@@ -5849,7 +5849,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#3.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Electro DMG + 15% after releasing Heavy Attack or Resonance Skill."
    }
   },
@@ -5884,7 +5884,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#4.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Aero DMG + 30% for 15s after releasing Intro Skill."
    }
   },
@@ -5919,7 +5919,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#5.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Spectro DMG + 30% for 15s after releasing Intro Skill."
    }
   },
@@ -5949,7 +5949,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#7.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Increases the ATK of all party members by 15% for 30s upon healing allies."
    }
   },
@@ -5981,7 +5981,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#9.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: While on the field, ATK increases by 5% every 1.5s."
    }
   },
@@ -6015,7 +6015,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#9.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Outro Skill DMG + 60%."
    }
   },
@@ -6066,7 +6066,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#10.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Casting Resonance Skill grants 22.5% Glacio DMG Bonus for 15s and casting Resonance Liberation increases Resonance Skill DMG by 18%, lasting for 5s."
    }
   },
@@ -6096,7 +6096,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#11.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Inflicting Spectro Frazzle on enemies increases Crit. Rate by 20% for 15s."
    }
   },
@@ -6131,7 +6131,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#11.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Attacking enemies inflicted with 10 stacks of Spectro Frazzle grants 15% Spectro DMG Bonus for 15s."
    }
   },
@@ -6166,7 +6166,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#12.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: When Outro Skill is triggered, deal additional 480% Havoc DMG to surrounding enemies, considered Outro Skill DMG, and grant the incoming Resonator 15% Havoc DMG Bonus for 15s."
    }
   },
@@ -6195,7 +6195,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#14.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Increase the Resonator's ATK by 15%."
    }
   },
@@ -6235,7 +6235,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#14.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Reaching 250% Energy Regen increases all Attribute DMG by 30% for the Resonator."
    }
   },
@@ -6277,7 +6277,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#17.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Hitting a target with Aero Erosion increases Crit. Rate by 10% and grants 30% Aero DMG Bonus, lasting for 10s."
    }
   },
@@ -6312,7 +6312,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#18.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Casting Resonance Liberation grants all Resonators in the team 15% Fusion DMG Bonus and the caster 20% Resonance Liberation DMG Bonus, lasting for 35s."
    }
   },
@@ -6354,7 +6354,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#19.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Holding 0 Resonance Energy increases Crit. Rate by 20% and grants 35% Echo Skill DMG Bonus."
    }
   },
@@ -6391,7 +6391,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#20.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Upon gaining a Shield, increase the Resonator's ATK by 6% and Crit. DMG by 4% for 4s."
    }
   },
@@ -6426,7 +6426,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#21.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Casting Echo Skill grants 30% Heavy Attack DMG Bonus to the caster for 4s."
    }
   },
@@ -6464,7 +6464,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#21.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Additionally, all Resonators in the team gain 4% Echo Skill DMG Bonus for 30s, stacking up to 4 times."
    }
   },
@@ -6499,7 +6499,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#22.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Dealing Echo Skill DMG increases Heavy Attack Crit. Rate by 20% for 6s."
    }
   },
@@ -6534,7 +6534,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#22.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Dealing Heavy Attack DMG increases Echo Skill Crit. Rate by 20% for 6s."
    }
   },
@@ -6569,7 +6569,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#22.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: While both effects are active, gain 16% Fusion DMG Bonus."
    }
   },
@@ -6611,7 +6611,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#23.3 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Inflicting Havoc Bane increases the Resonator's ATK by 20% and grants 30% Resonance Liberation DMG Bonus for 5s."
    }
   },
@@ -6643,7 +6643,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#24.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Each point of Tune Break Boost the incoming Resonator has additionally increases their ATK by 0.3%, up to 15%."
    }
   },
@@ -6675,7 +6675,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#25.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: When healing a Resonator in the team, every 1% of Off-Tune Buildup Rate grants a 0.2% ATK increase to all Resonators in the team for 4s, up to 25%."
    }
   },
@@ -6713,7 +6713,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#26.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Dealing Basic Attack DMG increases Spectro DMG by 10% for 5s, stacking up to 3 times."
    }
   },
@@ -6748,7 +6748,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#26.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: With 3 stacks, casting Resonance Liberation grants 40% Basic Attack DMG Bonus."
    }
   },
@@ -6790,7 +6790,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#27.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Inflicting Fusion Burst or Tune Rupture Shifting increases the Resonator's Crit. Rate by 20% and grants 20% Fusion DMG Bonus for 8s."
    }
   },
@@ -6825,7 +6825,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#28.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: When the Resonator inflicts Fusion Burst on the enemies, they gain the following effects: Gain 10% Fusion DMG Bonus for 15 s."
    }
   },
@@ -6860,7 +6860,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#28.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: While this effect is active, casting an Outro Skill grants the incoming Resonator 25% Fusion DMG Bonus for 15s."
    }
   },
@@ -6907,7 +6907,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#29.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Dealing Echo Skill DMG to enemies increases the Resonator's Echo Skill Crit. Rate by 20%, and grants 15% Aero DMG Bonus for 5s."
    }
   },
@@ -6937,7 +6937,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#30.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: While Snowfall is active: Dealing Resonance Liberation DMG removes Snowfall and increases the Resonator's Crit. Rate by 25% for 6s."
    }
   },
@@ -6972,7 +6972,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#30.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Casting Outro Skill removes Snowfall and grants 25% Glacio DMG Bonus to the incoming Resonator for 15s."
    }
   },
@@ -7007,7 +7007,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#32.1 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Inflicting Hack Shifting on the target grants 35% Basic Attack DMG Bonus and Heavy Attack DMG Bonus for 15s."
    }
   },
@@ -7037,7 +7037,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#34.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Inflicting Tune Strain Shifting increases Crit. DMG by 20% and Aero DMG Bonus 30% for 15s."
    }
   },
@@ -7072,7 +7072,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#35.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: At max stacks, gain 15% Fusion DMG Bonus."
    }
   },
@@ -7114,7 +7114,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#36.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Inflicting Electro Flare on the target, obtaining Unison, or triggering Unison Response increases the Resonator's Crit. Rate by 15% and grants them 22.5% Electro DMG for 30s."
    }
   },
@@ -7149,7 +7149,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#37.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: When the Resonator inflicts Electro Flare on enemies, they gain the following effects: Gain 10% Electro DMG Bonus for 15s."
    }
   },
@@ -7184,7 +7184,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#37.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: While this effect is active, casting Outro Skill grants the incoming Resonator 25% Electro DMG Bonus for 15s."
    }
   },
@@ -7214,7 +7214,7 @@
    "provenance": {
     "source": "authored",
     "sourceId": "sonatas.json#38.5 (read by scripts/data/extract-effects.ts)",
-    "verified": false,
+    "verified": true,
     "note": "From: Healing a Resonator in the team increases the ATK of all Resonators in the team by 10% for 30s."
    }
   },
