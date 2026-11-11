@@ -206,7 +206,13 @@ export interface EchoStatTables {
 export type EffectControl =
   | { kind: 'always' }
   | { kind: 'toggle'; default: boolean }
-  | { kind: 'stacks'; max: number; default: number }
+  | {
+      kind: 'stacks'
+      max: number
+      default: number
+      /** Index of the owner's description parameter that states the stack limit, when it has one. */
+      maxParamIndex?: number
+    }
 
 /** What grants an effect. */
 export type EffectOwner =
