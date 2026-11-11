@@ -67,6 +67,18 @@ describe('design tokens: text contrast', () => {
   })
 })
 
+describe('border beam (DESIGN.md, "The beam")', () => {
+  it('is defined, and switched off under reduced motion', () => {
+    expect(css).toMatch(/\.border-beam\s*\{/)
+    const reduced = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)', css.indexOf('.border-beam')))
+    expect(reduced).toMatch(/\.border-beam[^{]*\{\s*display:\s*none/)
+  })
+
+  it('is hidden where the browser cannot move it along the border', () => {
+    expect(css).toMatch(/@supports not \(offset-path: rect\(0 auto auto 0\)\)\s*\{\s*\.border-beam\s*\{\s*display:\s*none/)
+  })
+})
+
 // Owner's rule (DESIGN.md): no yellows and no purples anywhere.
 function hue(hex: string): { h: number; s: number } {
   const r = parseInt(hex.slice(1, 3), 16) / 255

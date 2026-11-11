@@ -7,6 +7,7 @@ import type { Build, EchoInstance, EchoSubstat } from '../../engine/types/build'
 import type { Catalog } from '../../engine/types/catalog'
 import type { Scope } from '../../engine/types/stats'
 import { COST_BUDGET } from '../../engine/score/ideal'
+import { BorderBeam } from '../../ui/BorderBeam'
 import { Button } from '../../ui/Button'
 import { SelectField } from '../../ui/Field'
 import { formatStatValue, statLabel } from '../../ui/format'
@@ -71,8 +72,9 @@ export function EchoSection({ build }: { build: Build }) {
                 <button
                   type="button"
                   onClick={() => setEditing(slot)}
-                  className={`flex w-full items-center gap-3 rounded-panel border-2 bg-raised px-3 py-2.5 text-left hover:border-rule-strong ${slot === 0 ? 'border-ink' : 'border-transparent'}`}
+                  className={`relative flex w-full items-center gap-3 rounded-panel border-2 bg-raised px-3 py-2.5 text-left hover:border-rule-strong ${slot === 0 ? 'border-transparent motion-reduce:border-ink' : 'border-transparent'}`}
                 >
+                  {slot === 0 ? <BorderBeam colours="ember" duration={8} delay={3} size={120} /> : null}
                   <span className="sr-only">Edit Echo {slot + 1}: {def.name}. </span>
                   <CostBadge cost={echo.cost} />
                   <div className="min-w-0 flex-1">

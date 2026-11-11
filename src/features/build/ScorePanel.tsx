@@ -5,6 +5,7 @@ import { CORE_RESONATOR_IDS } from '../../../data/authored/core-set'
 import { formatDataDate } from '../../data/catalog'
 import { buildVerdict } from '../../explain/verdict'
 import { GRADE_BANDS } from '../../engine/score/score'
+import { BorderBeam } from '../../ui/BorderBeam'
 import { Button } from '../../ui/Button'
 import { ELEMENT_NAME, formatDamage, formatStatValue } from '../../ui/format'
 import { Mark } from '../../ui/Mark'
@@ -68,7 +69,8 @@ export function ScorePanel() {
   ]
 
   return (
-    <section aria-labelledby="score-title" className="mb-3 rounded-section bg-panel p-4 md:p-8">
+    <section aria-labelledby="score-title" className="relative mb-3 rounded-section bg-panel p-4 md:p-8">
+      <BorderBeam colours="tide" duration={12} size={240} />
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-8">
         <p className={`m-0 font-display font-extrabold leading-[0.95] break-words lg:rotate-180 lg:self-stretch lg:text-end lg:[writing-mode:vertical-rl] ${nameSize}`}>
           {name}

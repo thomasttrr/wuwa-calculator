@@ -109,6 +109,63 @@
   }
 }
 
+/*
+ * The beam (DESIGN.md): a short band of light that travels the border of its container.
+ * The ring is the padding box minus the content box; a gradient square rides an offset path
+ * around the edge and is only visible through that ring. Speed is constant along every edge.
+ * overflow: hidden keeps the travelling square from widening the page.
+ */
+@layer components {
+  .border-beam {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    overflow: hidden;
+    padding: var(--beam-width, 2px);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0) padding-box;
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0) padding-box;
+  }
+
+  .border-beam::after {
+    content: '';
+    position: absolute;
+    width: var(--beam-size, 180px);
+    aspect-ratio: 1;
+    offset-path: rect(0 auto auto 0 round var(--beam-size, 180px));
+    offset-anchor: 90% 50%;
+    background: linear-gradient(to left, var(--beam-from, var(--color-signal)), var(--beam-to, var(--color-tone-energy-regen)), transparent);
+    animation: border-beam var(--beam-duration, 9s) linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+  }
+
+  @keyframes border-beam {
+    from {
+      offset-distance: 0%;
+    }
+    to {
+      offset-distance: 100%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-beam {
+    display: none;
+  }
+}
+
+@supports not (offset-path: rect(0 auto auto 0)) {
+  .border-beam {
+    display: none;
+  }
+}
+
 @utility font-display {
   font-family: var(--font-display);
   font-weight: 700;

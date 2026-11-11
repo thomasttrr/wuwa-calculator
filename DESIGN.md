@@ -76,7 +76,7 @@ Two families, self-hosted from `@fontsource-variable`. No network font requests.
 
 - Spacing scale (px): 4, 8, 12, 16, 24, 32, 48, 64.
 - Corners by rank: controls 12px, cards and rows 18px, section panels and sheets 22px, chips and the grade badge fully round.
-- Borders are 1px `--color-rule`. The main Echo's card gets a 2px `--color-ink` border.
+- Borders are 1px `--color-rule`. The main Echo's card carries the ember beam (2px ink border under reduced motion).
 - Shadows only under floating layers.
 
 ## Layout
@@ -132,10 +132,26 @@ The Resonator's name runs vertically up the left edge at 120px. It is the one la
 - The score and grade sit in the centre. The bloom is never the only way to read anything: the Echo list beside it names every substat, its value and its tier.
 - The meter (0, 100, 200 ticks, jade fill) stays for the score scale, suggestion gains and optimizer progress.
 
+## The beam (owner's addition, 11 Nov 2026)
+
+A short band of light that travels the border of a container, at a constant speed along every edge (`src/ui/BorderBeam.tsx`, CSS in `tokens.css`). It is the one looping motion in the app, so it marks only the few things that are live or most important:
+
+| Where | Colours | Lap | Why |
+|---|---|---|---|
+| Score and bloom panel | `tide`: jade into sky | 12s | The answer the page exists to give |
+| Main Echo card (slot 1) | `ember`: coral into rose | 8s | The one Echo whose skill effect applies |
+| "Trying a change" strip | `frost`: ice into jade | 6s | A temporary state you must keep or discard |
+
+Rules:
+- At most two beams in view at once, and never on a list of like items (no beam on every Echo, row or card).
+- Colours come only from the stat tones. Laps are 6 to 14 seconds; two beams on one screen start at different points.
+- Decorative only: `aria-hidden`, no layout effect, nothing depends on it.
+- Gone under `prefers-reduced-motion`, and where the browser cannot draw it (`@supports not (offset-path: rect(...))`). The thing it marks must still read without it: the main Echo then falls back to a 2px ink border.
+
 ## Motion
 
-- Only in response to the user's own action: a sheet opening, a row expanding, a wedge growing to a new length.
-- 120 to 160ms, ease-out. No entrance animations, no hover lifts, no looping motion. Off under `prefers-reduced-motion`.
+- Apart from the beam, motion only answers the user's own action: a sheet opening, a row expanding, a wedge growing to a new length.
+- 120 to 160ms, ease-out. No entrance animations, no hover lifts. Off under `prefers-reduced-motion`.
 
 ## Focus and states
 

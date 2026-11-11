@@ -2,6 +2,7 @@ import { FlaskConical, GitCompareArrows, Layers, Redo2, Undo2, X } from 'lucide-
 import { useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router'
 import { useStore } from 'zustand'
+import { BorderBeam } from '../ui/BorderBeam'
 import { Button, IconButton } from '../ui/Button'
 import { Meter } from '../ui/Meter'
 import { BuildSwitcher } from './BuildSwitcher'
@@ -88,8 +89,9 @@ function PreviewStrip() {
   const preview = useWorkspace((s) => s.session.preview)
   if (!preview) return null
   return (
-    <div role="status" className="border-b border-signal-dim bg-raised">
-      <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-3 px-4 py-2 md:px-6">
+    <div role="status" className="mx-auto max-w-[1280px] px-4 pt-2 md:px-6">
+      <div className="relative flex flex-wrap items-center gap-3 rounded-panel bg-raised px-4 py-3">
+        <BorderBeam colours="frost" duration={6} size={140} />
         <span className="text-ink">
           Trying: <span className="font-medium">{preview.label}</span>. Every tool shows this change until you keep or discard it.
         </span>
