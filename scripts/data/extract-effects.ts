@@ -151,14 +151,17 @@ function mapStat(phrase: string, amplify: boolean): { stat: StatKey; scope?: Sco
   }
 }
 
+/** Stands in for the full stop in "Crit." while splitting sentences (a private-use character). */
+const CRIT_DOT = ''
+
 function sentences(text: string): string[] {
   return text
     .replace(/\{Cus:[^}]*\}/g, 'times')
     .replace(/\s+/g, ' ')
     .replace(/\s-\s(?=[A-Z])/g, ' ') // bullet lists: "targets. - Absolution Enhancement: ..."
-    .replace(/Crit\. /g, 'Crit\u0000 ')
+    .replace(/Crit\. /g, `Crit${CRIT_DOT} `)
     .split(/(?<=[.!?])\s+(?=[A-Z])/)
-    .map((sentence) => sentence.replace(/Crit\u0000/g, 'Crit.').trim())
+    .map((sentence) => sentence.replaceAll(`Crit${CRIT_DOT}`, 'Crit.').trim())
     .filter((sentence) => sentence.length > 0)
 }
 
@@ -296,7 +299,10 @@ function stackLimit(sentence: string, next: string | undefined, cursor: ParamCur
  * whole number at every rank. Returns null when there is no cap, undefined when the cap does
  * not divide evenly (the sentence is then reported, not guessed).
  */
-function capLimit(sentence: string, modifiers: readonly EffectModifier[]): { max: number } | null | undefined {
+function capLimit(
+  sentence: string,
+  modifiers: readonly EffectModifier[],
+): { max: number; paramIndex?: number } | null | undefined {
   const cap = sentence.match(CAP)?.[1]
   if (!cap || modifiers.length !== 1) return null
   const caps = cap.split('/').map(percent)
