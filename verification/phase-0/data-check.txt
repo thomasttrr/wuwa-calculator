@@ -1,0 +1,5 @@
+
+> wuwa-calculator@0.0.0 data:check
+> tsx scripts/data/check.ts
+
+Catalog 3.8.0 (data 2026-11-11) is valid.

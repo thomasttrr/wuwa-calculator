@@ -1,0 +1,9 @@
+
+ RUN  v5.1.0 C:/Users/thoma/OneDrive/Desktop/Projects/Web/theWuthering/wuwa-calculator
+
+
+ Test Files  16 passed (16)
+      Tests  195 passed (195)
+   Start at  13:29:14
+   Duration  667ms (import 55%, tests 24%, transform 15%, worker 6%)
+

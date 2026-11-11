@@ -25,3 +25,5 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Ruling: core set changed from the plan. Out: Jinhsi, Camellya, Carlotta, Zani, Taoqi, Cartethyia (reasons in data/authored/core-set.ts). In: Encore, Xiangli Yao, Calcharo, Zhezhi, Roccia, Sanhua. Rule applied: every damage value modelled and verified. Enforced by tests/data/core-set.test.ts — cost if wrong: the owner may want a dropped Resonator; it stays selectable as a basic model.
 - Ruling: no separate docs/plans/phase-0.md; this ledger served as the step record for Phase 0 — cost if wrong: none.
 - Task 7 (core set and 3.x mechanics) complete.
+- Task 8 (Phase 0 gate) complete: build, 195/195 tests, lint and data check pass; token page rendered and inspected at 1440 and 390; reports written.
+- Final review: self-review (no subagent used, per plan). Findings carried to Phase 1: teammate buffs not yet collected; guard against set bonuses counting twice; improve damage-row matching.

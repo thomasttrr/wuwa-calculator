@@ -1,0 +1,21 @@
+
+> wuwa-calculator@0.0.0 build
+> npm run typecheck && vite build
+
+
+> wuwa-calculator@0.0.0 typecheck
+> tsc -p tsconfig.engine.json && tsc -p tsconfig.app.json && tsc -p tsconfig.node.json
+
+vite v8.3.8 building client environment for production...
+transforming...
+✓ 18 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              0.44 kB │ gzip:  0.28 kB
+dist/assets/archivo-vietnamese-wdth-normal-rJmnGBSt.woff2   34.46 kB
+dist/assets/archivo-latin-ext-wdth-normal-7khWdh9v.woff2    86.24 kB
+dist/assets/archivo-latin-wdth-normal-DY7AcnAa.woff2        90.10 kB
+dist/assets/index-BI9Qi42_.css                              14.90 kB │ gzip:  4.20 kB
+dist/assets/index-DmQ7jj9F.js                              225.92 kB │ gzip: 70.49 kB
+
+✓ built in 300ms
