@@ -24,7 +24,8 @@ export function Sheet({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/50" />
+        {/* Tailwind's black is removed by the token reset (DESIGN.md palette only), so the dim is written out. */}
+        <Dialog.Overlay className="fixed inset-0 z-40 bg-[rgb(0_0_0/0.55)]" />
         <Dialog.Content
           className="fixed inset-0 z-50 flex flex-col bg-panel shadow-float md:inset-y-0 md:right-0 md:left-auto md:w-[min(560px,100vw)] md:border-l md:border-rule"
           // Radix links the description automatically; with none, say so explicitly.

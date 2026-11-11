@@ -104,6 +104,23 @@ describe('simulateRotation', () => {
     expect(result.uncounted).toEqual([{ stepId: 'h', name: heal?.name, reason: 'This is healing, not damage.' }])
   })
 
+  it('actions that share a name are told apart by their skill type', () => {
+    // Jiyan has a "Skill DMG" under both his Resonance Skill and his Intro Skill.
+    const jiyan = bareBuild(1404, {
+      rotation: {
+        id: 'r',
+        name: 'T',
+        items: [
+          { kind: 'step', id: 'a', actionId: 1404015, enabled: true },
+          { kind: 'step', id: 'b', actionId: 1404018, enabled: true },
+          { kind: 'step', id: 'c', actionId: 1404001, enabled: true },
+        ],
+      },
+    })
+    const names = simulateRotation(jiyan, catalog).steps.map((s) => s.action.name)
+    expect(names).toEqual(['Skill DMG (Resonance Skill)', 'Skill DMG (Intro Skill)', 'Stage 1 DMG'])
+  })
+
   it('adds up step times only when every counted step has one', () => {
     const timed = simulateRotation(buildWith([step('a', STAGE_1, { seconds: 0.5 }), step('b', STAGE_2, { seconds: 0.7 })]), catalog)
     expect(timed.seconds).toBeCloseTo(1.2, 9)

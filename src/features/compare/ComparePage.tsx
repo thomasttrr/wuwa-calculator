@@ -149,6 +149,14 @@ function CompareTable({ a, b }: { a: Build; b: Build }) {
       <h3 className="mt-6 font-medium">Damage by skill</h3>
       <div className="mt-2 overflow-x-auto">
         <table className="w-full min-w-[20rem] text-left">
+          <thead className="text-13 text-ink-3">
+            <tr className="border-b border-rule">
+              <th className="py-2 font-normal">Skill</th>
+              <th className="py-2 font-normal">{a.name}</th>
+              <th className="py-2 font-normal">{b.name}</th>
+              <th className="py-2 text-right font-normal">Change</th>
+            </tr>
+          </thead>
           <tbody className="tabular-nums">
             {actionIds.map((id) => {
               const x = ra.byAction.find((r) => r.key === id)

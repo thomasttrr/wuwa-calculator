@@ -1,0 +1,95 @@
+
+> wuwa-calculator@0.0.0 build
+> npm run typecheck && vite build
+
+
+> wuwa-calculator@0.0.0 typecheck
+> tsc -p tsconfig.engine.json && tsc -p tsconfig.app.json && tsc -p tsconfig.node.json
+
+vite v8.3.8 building client environment for production...
+transforming...
+✓ 2398 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                0.44 kB │ gzip:   0.28 kB
+dist/assets/archivo-vietnamese-wdth-normal-rJmnGBSt.woff2     34.46 kB
+dist/assets/archivo-latin-ext-wdth-normal-7khWdh9v.woff2      86.24 kB
+dist/assets/archivo-latin-wdth-normal-DY7AcnAa.woff2          90.10 kB
+dist/assets/score.worker-36wuOoIm.js                       3,036.48 kB
+dist/assets/index-CkiaH-JF.css                                29.73 kB │ gzip:   6.75 kB
+dist/assets/crosscheck-report-BF2bK7KL.js                      0.85 kB │ gzip:   0.35 kB
+dist/assets/echo-stat-tables-_1CrveHO.js                       3.50 kB │ gzip:   0.94 kB
+dist/assets/resonators-index-R4yyoV4T.js                       5.31 kB │ gzip:   0.85 kB
+dist/assets/1402-Cp7LEKkz.js                                  16.84 kB │ gzip:   4.68 kB
+dist/assets/1202-CNhZqb9_.js                                  16.94 kB │ gzip:   4.87 kB
+dist/assets/1102-_dA-XGf6.js                                  17.13 kB │ gzip:   4.79 kB
+dist/assets/1204-Bi7CHc1Y.js                                  17.48 kB │ gzip:   4.84 kB
+dist/assets/1302-CIS11Y3x.js                                  17.77 kB │ gzip:   4.89 kB
+dist/assets/1606-BbCusgcO.js                                  17.95 kB │ gzip:   5.09 kB
+dist/assets/sonatas-BWW80avL.js                               18.02 kB │ gzip:   3.27 kB
+dist/assets/1403-BM2I0Gmb.js                                  18.20 kB │ gzip:   4.99 kB
+dist/assets/1103-75hZ6DJ6.js                                  18.95 kB │ gzip:   5.17 kB
+dist/assets/1105-C2193tOB.js                                  18.97 kB │ gzip:   5.16 kB
+dist/assets/1602-UG8JfvAi.js                                  19.69 kB │ gzip:   5.17 kB
+dist/assets/1404-BLqeLKdM.js                                  20.29 kB │ gzip:   5.39 kB
+dist/assets/1407-B-wOaodQ.js                                  20.32 kB │ gzip:   5.78 kB
+dist/assets/1307-CREV4R6U.js                                  20.95 kB │ gzip:   5.51 kB
+dist/assets/1305-B5KhElI8.js                                  21.00 kB │ gzip:   5.27 kB
+dist/assets/1406-U0oZb7KI.js                                  21.01 kB │ gzip:   5.61 kB
+dist/assets/1205-DB3SHF4I.js                                  21.21 kB │ gzip:   5.48 kB
+dist/assets/1104-DKsIo_0E.js                                  21.23 kB │ gzip:   5.56 kB
+dist/assets/1203-CBWJd7rB.js                                  21.25 kB │ gzip:   5.39 kB
+dist/assets/1604-C70LRcYx.js                                  21.40 kB │ gzip:   5.30 kB
+dist/assets/1506-CtTbE619.js                                  21.45 kB │ gzip:   5.88 kB
+dist/assets/1501-BEsUJPsr.js                                  21.63 kB │ gzip:   4.96 kB
+dist/assets/1505-DNX_4SE3.js                                  21.97 kB │ gzip:   5.98 kB
+dist/assets/1601-CQAzMxG_.js                                  22.27 kB │ gzip:   5.46 kB
+dist/assets/1106-BQnsxUL7.js                                  22.32 kB │ gzip:   6.19 kB
+dist/assets/1504-epNo6d7r.js                                  22.34 kB │ gzip:   5.61 kB
+dist/assets/1503-P4DC2BOi.js                                  22.46 kB │ gzip:   5.59 kB
+dist/assets/1301-wR4LcMxe.js                                  23.12 kB │ gzip:   5.74 kB
+dist/assets/1303-BaYWM_NE.js                                  23.64 kB │ gzip:   5.83 kB
+dist/assets/1603-wWdTLSd9.js                                  23.96 kB │ gzip:   5.84 kB
+dist/assets/1405-C6NMsjTt.js                                  24.82 kB │ gzip:   6.22 kB
+dist/assets/1607-nPef_UE3.js                                  25.13 kB │ gzip:   6.40 kB
+dist/assets/1107-33Bssl8s.js                                  25.61 kB │ gzip:   6.61 kB
+dist/assets/1304-Dys_NJqU.js                                  26.88 kB │ gzip:   6.84 kB
+dist/assets/1411-DTG0R9pG.js                                  26.94 kB │ gzip:   6.39 kB
+dist/assets/1206-BjAoCxBT.js                                  27.15 kB │ gzip:   6.58 kB
+dist/assets/1512-B_pjehNV.js                                  28.06 kB │ gzip:   6.68 kB
+dist/assets/1608-CoEtN5Zp.js                                  28.13 kB │ gzip:   7.28 kB
+dist/assets/1507-Z7zA7h9G.js                                  28.67 kB │ gzip:   7.04 kB
+dist/assets/1109-MiPCogZZ.js                                  29.30 kB │ gzip:   7.29 kB
+dist/assets/1410-BZqW3hcf.js                                  29.76 kB │ gzip:   6.95 kB
+dist/assets/1412-6VcD13I6.js                                  29.80 kB │ gzip:   7.04 kB
+dist/assets/1306-BgijTaoe.js                                  29.90 kB │ gzip:   6.92 kB
+dist/assets/1209-D2q79PgF.js                                  30.24 kB │ gzip:   7.55 kB
+dist/assets/1510-BAYo-kQ4.js                                  30.69 kB │ gzip:   7.53 kB
+dist/assets/1110-Bb65iVrM.js                                  31.45 kB │ gzip:   7.39 kB
+dist/assets/1413-BtgltjHS.js                                  32.46 kB │ gzip:   7.76 kB
+dist/assets/1207-CSssorh9.js                                  32.69 kB │ gzip:   7.66 kB
+dist/assets/1309-BNFNaYJA.js                                  33.38 kB │ gzip:   7.32 kB
+dist/assets/1211-BukxC0r8.js                                  34.46 kB │ gzip:   7.65 kB
+dist/assets/1208-D7cNSt0Z.js                                  35.45 kB │ gzip:   7.64 kB
+dist/assets/1212-DUM9Cqlz.js                                  36.12 kB │ gzip:   7.33 kB
+dist/assets/1312-CzF3Il46.js                                  36.35 kB │ gzip:   7.71 kB
+dist/assets/1509-DykSdAua.js                                  36.88 kB │ gzip:   8.50 kB
+dist/assets/1508-B3vnCN1J.js                                  38.63 kB │ gzip:   8.56 kB
+dist/assets/1409-J9WmJZxM.js                                  39.14 kB │ gzip:   8.06 kB
+dist/assets/1108-DIkwdSbR.js                                  39.22 kB │ gzip:   8.47 kB
+dist/assets/1308-DcbqHuRX.js                                  40.00 kB │ gzip:   8.20 kB
+dist/assets/1610-UG3U7t5F.js                                  42.11 kB │ gzip:   8.22 kB
+dist/assets/1210-i89Vy5VL.js                                  44.97 kB │ gzip:   9.68 kB
+dist/assets/1511-oD3KWXf-.js                                  48.14 kB │ gzip:   9.41 kB
+dist/assets/1311-PC6Sd0Ak.js                                  61.05 kB │ gzip:  12.30 kB
+dist/assets/enemies-CPKHpLtO.js                               82.04 kB │ gzip:   4.75 kB
+dist/assets/echoes-81fy4eNA.js                               133.46 kB │ gzip:  23.30 kB
+dist/assets/index-DfGj9STS.js                                785.49 kB │ gzip: 195.80 kB
+dist/assets/weapons-Kg_fokVH.js                              809.38 kB │ gzip:  87.23 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 949ms

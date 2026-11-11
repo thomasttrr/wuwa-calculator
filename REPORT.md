@@ -2,6 +2,57 @@
 
 Running report for the v1 build. One section per phase. Evidence for each phase is in `verification/phase-N/`.
 
+## Phase 1: shared build and the Build tool (complete, 11 Nov 2026)
+
+### What works now
+
+Run `npm run dev` and open `/build`. A first visit loads a sample build (Jiyan) with a short guide. You can change the Resonator, level, Sequence, weapon and rank, all five Echoes (Echo, set, main stat, five substats with legal rolls), two teammates and the target, and switch effects on. The score, verdict and every number update at once, and each number opens to show how it was worked out. Builds save in the browser as you go; undo and redo work by button and Ctrl+Z / Ctrl+Shift+Z. Saved builds and Compare are on their own tabs.
+
+### Improvements over the reference, by area
+
+**Area 1, the shared build**
+- One store; every tool reads the same build view, so a change shows everywhere.
+- Undo and redo per build (100 steps), kept across reloads; every edit has a plain label ("Set Echo 1 Crit. DMG to 21.0%").
+- Autosave, plus a synchronous backup on leaving so the last change before closing a tab is never lost.
+- Named builds: create, rename, duplicate, delete. Compare any two side by side, with the setup differences listed in plain words and a clear statement of whether their scores can be compared.
+- Preview layer: a change can be tried everywhere and then kept or discarded (used by Suggestions in Phase 2).
+
+**Area 2, Modulation (the Build tool)**
+- A plain-English verdict under the score, worked out by measuring which stat group, raised to the reference level, adds the most damage.
+- Simple mode by default; one "Show everything" switch reveals skill levels, the skill tree, ascension, resistances, teammates' weapons and your own buffs. Nothing is removed.
+- Every picker works by keyboard (focus starts in search, arrows, Enter) and as a full-height sheet on phone.
+- "Last change" line with the score difference it made, shown only when the scale did not change.
+- Effects list shows the game's own condition sentence, the stat it grants, and whether it changes this rotation (with the reason when it does not).
+- Equipment sentences that could not be read into stats are listed under "not modelled", not guessed.
+
+**Area 7, target, buffs and trust**
+- Every result is stamped with patch and data date.
+- Whole-build "How this was calculated" sheet, built from the same functions as the results.
+- The "compare only under identical setups" note is part of the score display, not a modal.
+- Each hit's formula with the player's own numbers in it, including enemy level, DEF and resistance.
+- Unverified inputs and Basic-model Resonators carry a mark wherever they affect a number.
+
+**Effects coverage (data)**
+- 317 effects read from game descriptions by a tested reader; every number checked against its source parameter; 85 of 94 four- and five-star weapons covered; 372 sentences listed as not modelled.
+- Sonata sets cross-checked: 35 of 37 agree; Havoc Eclipse and Freezing Frost do not and are marked unverified.
+
+### Deviations from the plan, with reasons
+
+1. **Effects are read from descriptions by a tested reader** instead of all being typed by hand. Faster and more consistent, and every number is still machine-checked against its source. Every always-on effect and every core-Resonator effect was reviewed by eye.
+2. **The Build Score is defined independently**: anchors keep the build's own Echoes, sets, main Echo, rotation, team and target, and vary only Echo stats. Numbers will differ from other tools by design; "What the score means" explains the scale.
+3. **Tool tabs show only what exists** (Build, Saved builds, Compare). Suggestions, Optimizer, Rotation and Card are added as their phases land, so there are no dead ends.
+4. **Not built yet:** the two-tabs-open notice from the plan. Two open tabs can overwrite each other's saves. Planned with the saving work in Phase 5.
+
+### Known gaps carried forward
+
+- Main bundle is 196 kB gzipped (mostly effect data); split when it matters.
+- Damage-row matching still leaves some real hits (for example some of Taoqi's Basic Attack stages) as not modelled, with a plain reason.
+- The pattern reader leaves 372 sentences unread; the most common kinds are energy, healing, shields and skill-specific multipliers.
+
+### NOT CHECKED
+
+See `verification/phase-1/REPORT.md`: real phones and touch, browsers other than Chromium, in-game accuracy, two tabs open at once, and screen reader use by a person.
+
 ## Phase 0: scaffold, design, data, engine (complete, 11 Nov 2026)
 
 ### What exists now

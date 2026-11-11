@@ -5,6 +5,9 @@ import type { Build, EchoInstance, EchoSubstat } from '../engine/types/build'
 import type { Catalog, EchoCost } from '../engine/types/catalog'
 import { defaultBuildFor } from './defaults'
 
+/** The first-run guide shows only while this build is open. */
+export const SAMPLE_BUILD_ID = 'sample-build'
+
 const JIYAN = 1404
 const VERDANT_SUMMIT = 21010016
 const VERINA = 1503
@@ -83,6 +86,7 @@ export function createSampleBuild(catalog: Catalog): Build {
   const base = defaultBuildFor(JIYAN, catalog, 'Sample build: Jiyan')
   return {
     ...base,
+    id: SAMPLE_BUILD_ID,
     weapon: { id: VERDANT_SUMMIT, level: 90, ascended: false, rank: 1 },
     echoes,
     teammates: [{ resonatorId: VERINA, sequence: 0, sonatas: [] }, null],

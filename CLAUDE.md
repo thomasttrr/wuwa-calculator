@@ -20,7 +20,10 @@ The spec is `../wuwa-calculator-build-v1.md`. The approved plan is `docs/plan.md
 | `npm run data:fetch` | Download source data into `data/raw/` and trimmed snapshots into `data/snapshots/` |
 | `npm run data:build` | Normalise snapshots into `data/game/<version>/` and cross-check the sources |
 | `npm run data:check` | Validate the catalog against its schemas |
-| `npm run verify:screens` | Render pages at 1440px and 390px into `verification/` |
+| `npm run verify:screens -- <phase> name=route` | Render pages at 1440px and 390px into `verification/<phase>/` (phone pages also as screen slices) |
+| `npm run test:e2e` | Playwright end-to-end tests at 1440px and 390px (`tests/e2e`), including axe and edge checks |
+| `npx playwright test screens` | Capture every screen state into `verification/phase-1/` |
+| `npm run data:build` | Normalise, cross-check, then read effects from descriptions (`data/authored/effects/generated.json`) |
 
 ## Layout
 
@@ -69,5 +72,12 @@ Known shapes (verified by fetching, 3.8.0): 65 Resonators, 125 weapons, 319 Echo
 - **Skill tables list more than hits.** A value counts as damage only if it matches a raw damage entry (`ActionPart.matched`). Shields, speed changes and "per stack" bonuses match none and are left out on purpose.
 - **The core set is guarded by a test** (`tests/data/core-set.test.ts`). If a data update makes any of its damage values unmodelled or unverified, the test fails and that Resonator must leave the set, with a line in `REPORT.md`.
 - **Never write regex escapes through `node -e` in Bash.** A `\b` became a raw backspace character in `normalise.ts` and silently broke a pattern. Edit source files with the Edit or Write tool. Check with `grep -rlP '\x08' src scripts tests data/authored`.
+- **Tailwind's default colours are removed** (`--color-*: initial` in `tokens.css`). `bg-black/50`, `text-white` and similar silently draw nothing. Use DESIGN.md tokens, or write a literal like `bg-[rgb(0_0_0/0.55)]`.
+- **The React lint rules forbid reading refs during render and setting state in effects.** Track "previous value" with the adjust-state-while-rendering pattern (see `ScorePanel.tsx`).
+- **Assigning a read-only value inside an Immer recipe** needs `castDraft(...)`.
+- **Accessible names must contain the visible text** (axe `label-content-name-mismatch`). Add words with `<span className="sr-only">`, never an `aria-label` that replaces visible text.
+- **Leaving the page can abandon an IndexedDB write.** The app writes a synchronous local-storage backup on `pagehide` / hidden (`src/state/persist/pending.ts`); keep it when touching boot or saving.
+- **`tsx -e` prints nothing here.** Put throwaway checks in a file in the scratchpad and run `npx tsx <file>`.
+- **Effects are generated.** Never hand-edit `data/authored/effects/generated.json`; change `scripts/data/extract-effects.ts` (test first) and run `npm run data:build`. Hand-encoded effects go in `data/authored/effects/weapons.ts` and make the reader skip that owner.
 - **Commit attribution follows the session's model.** Use the attribution line the harness gives at the time of the commit.
 - **The engine has its own tsconfig** (`tsconfig.engine.json`, no DOM, `types: []`). A type error that only appears under `npm run build` and names a DOM or Node global inside `src/engine/` means the engine has leaked a dependency.

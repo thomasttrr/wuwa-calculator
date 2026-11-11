@@ -38,6 +38,23 @@ export function atLevel(values: readonly number[], level: number): number {
   return values[Math.min(Math.max(level, 1), values.length) - 1] ?? 0
 }
 
+const SKILL_TYPE_NAME: Record<SkillType, string> = {
+  normal: 'Basic Attack',
+  skill: 'Resonance Skill',
+  forte: 'Forte Circuit',
+  liberation: 'Resonance Liberation',
+  intro: 'Intro Skill',
+  outro: 'Outro Skill',
+  inherent: 'Inherent Skill',
+  tuneBreak: 'Tune Break',
+}
+
+/** The action's name, with its skill type added when another action of the Resonator shares the name. */
+export function actionDisplayName(resonator: ResonatorDef, action: ActionDef): string {
+  const shared = resonator.actions.some((other) => other.id !== action.id && other.name === action.name)
+  return shared ? `${action.name} (${SKILL_TYPE_NAME[action.skillType]})` : action.name
+}
+
 export function findAction(resonator: ResonatorDef, actionId: number): ActionDef {
   const action = resonator.actions.find((candidate) => candidate.id === actionId)
   if (!action) throw new Error(`${resonator.name} has no action ${actionId}`)
@@ -70,7 +87,7 @@ export function prepareBuild(build: Build, catalog: Catalog, effectStates?: Effe
 export function computeActionIn(context: BuildContext, actionId: number): ActionResult {
   const { build, resonator } = context
   const action = findAction(resonator, actionId)
-  const header = { actionId: action.id, name: action.name, skillType: action.skillType, kind: action.kind }
+  const header = { actionId: action.id, name: actionDisplayName(resonator, action), skillType: action.skillType, kind: action.kind }
   const skipped = (reason: string): ActionResult => ({
     ...header,
     counted: false,

@@ -70,7 +70,7 @@ function SavedRow({ build, active }: { build: Build; active: boolean }) {
           </span>
         </button>
         <div className="flex items-center gap-4 sm:w-56 sm:justify-end">
-          <div className="text-right">
+          <div className="sm:text-right">
             <div className="font-display text-20 tabular-nums">{summary?.score ? `${summary.score.percent.toFixed(1)}%` : 'Scoring'}</div>
             <div className="text-12 text-ink-3 tabular-nums">
               {summary ? `${formatDamage(summary.damage)} per rotation` : ''}
