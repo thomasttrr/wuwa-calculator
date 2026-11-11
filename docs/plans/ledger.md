@@ -16,3 +16,6 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Ruling: enemy resistances count as verified when they follow the 10% / 40% rule stated on the wiki Damage page (no second database carries them); 5 "Prism" enemies do not and stay unverified.
 - Ruling: Resonator DEF of 0 is allowed (Jingran, both sources agree).
 - Task 4 (data layer) complete: 1,040 requests, 0 failures; catalog 3.8.0 validated; cross-check: 61/61 Resonators, 125/125 weapons, 1,207/1,283 actions verified, 0 value disagreements.
+- Task 5 (engine) complete: formula, stats, actions, rotation (loops, step effects, breakdowns), compiled evaluator (equals full simulation on 120 random loadouts, relative error < 1e-9), ledger, boundary test (watched it fail on a planted import).
+- Task 6 (hand-checks) complete: Yangyang, Taoqi, Jinhsi with hand-worked expected values in each test.
+- Ruling: the effects audit (which effects touch the rotation) moves to Phase 1 with the effects view that shows it — it is UI-driven and the plan lists it under Area 7 — cost if wrong: none, it reads the same modifiers.

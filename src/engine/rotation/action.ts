@@ -82,8 +82,8 @@ export function computeActionIn(context: BuildContext, actionId: number): Action
     hasUnverified: false,
   })
 
-  if (!action.modelled) return skipped(action.notModelledReason ?? 'This action is not modelled.')
   if (action.kind === 'heal') return skipped('This is healing, not damage.')
+  if (!action.modelled) return skipped(action.notModelledReason ?? 'This action is not modelled.')
 
   const level = skillLevelFor(build, action.skillType)
   const parts = action.parts.map((part) => {

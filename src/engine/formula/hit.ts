@@ -54,6 +54,8 @@ export interface HitResult extends HitDamage {
   /** Damage of a single landing, before multiplying by count. */
   perHit: HitDamage
   count: number
+  /** Element, damage type and tags of the hit, for breakdowns. */
+  facets: HitFacets
   formula: FormulaTrace
   /** The stats this hit was computed from, with every contribution listed. */
   sheet: StatSheet
@@ -107,6 +109,7 @@ export function computeHit(hit: HitInput, sheet: StatSheet, attackerLevel: numbe
     average: perHit.average * hit.count,
     perHit,
     count: hit.count,
+    facets: hit.facets,
     formula: {
       scalingStat: hit.scalingStat,
       scalingValue: stat,
