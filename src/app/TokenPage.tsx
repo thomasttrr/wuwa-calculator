@@ -9,7 +9,7 @@ const SURFACES = [
   { name: 'Raised', token: 'bg-raised', hex: '#32363B' },
   { name: 'Rule', token: 'bg-rule', hex: '#3A3E44' },
   { name: 'Ink', token: 'bg-ink', hex: '#E9E6DF' },
-  { name: 'Signal', token: 'bg-signal', hex: '#F0A73A' },
+  { name: 'Signal', token: 'bg-signal', hex: '#4DA3FF' },
 ] as const
 
 const DATA_COLOURS = [
@@ -67,8 +67,8 @@ export function TokenPage() {
           >
             How this was calculated
           </button>
-          <span className="rounded-control border border-rule px-2 py-0.5 text-12 text-caution">Unverified</span>
-          <span className="rounded-control border border-rule px-2 py-0.5 text-12 text-caution">Basic model</span>
+          <span className="rounded-control border border-rule-strong px-2 py-0.5 text-12 text-ink">Unverified</span>
+          <span className="rounded-control border border-rule-strong px-2 py-0.5 text-12 text-ink">Basic model</span>
         </div>
       </section>
 

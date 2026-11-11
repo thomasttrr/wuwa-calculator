@@ -1,4 +1,4 @@
-// The signature element (see DESIGN.md): a ruled scale with ticks and an amber needle.
+// The signature element (see DESIGN.md): a ruled scale with ticks and a signal-blue needle.
 // A meter never stands alone: callers always render the number and a label beside it.
 
 export interface MeterTick {

@@ -4,7 +4,7 @@ This is the single locked visual direction. Every screen is built strictly to it
 
 ## The idea
 
-The game is about sound: Resonators, Echoes, Sonata, Forte, Tune. This app measures that sound. So it looks like a piece of audio test equipment: a calm graphite panel where the numbers are the content and one amber signal colour marks what is live right now.
+The game is about sound: Resonators, Echoes, Sonata, Forte, Tune. This app measures that sound. So it looks like a piece of audio test equipment: a calm graphite panel where the numbers are the content and one signal-blue colour marks what is live right now.
 
 Who it is for: a player who wants to know how good a build is and what to change, on a desktop or a phone.
 What a screen must do: show the answer first in plain words, with every number one tap from its working.
@@ -23,9 +23,9 @@ One dark theme. One accent.
 | `--color-ink` | `#E9E6DF` | Primary text and numbers |
 | `--color-ink-2` | `#B4B5B6` | Supporting text |
 | `--color-ink-3` | `#A3A5A8` | Hints, units, captions (at least 4.5:1 on page, panel and raised; enforced by `tests/ui/tokens-contrast.test.ts`) |
-| `--color-signal` | `#F0A73A` | The accent: current value, primary action, focus ring, meter needle |
-| `--color-on-signal` | `#2A1C05` | Text on the accent |
-| `--color-signal-dim` | `#5A4420` | Accent at rest: filled part of a meter track behind the needle |
+| `--color-signal` | `#4DA3FF` | The accent (signal blue): current value, primary action, focus ring, meter needle |
+| `--color-on-signal` | `#06203F` | Text on the accent |
+| `--color-signal-dim` | `#23466E` | Accent at rest: filled part of a meter track behind the needle |
 
 Accent rules:
 - The accent means "this is the live value" or "this is the main thing to do". It is never decoration.
@@ -36,18 +36,19 @@ Data colours exist only to tell data apart. They never style the interface, and 
 
 | Token | Hex | Meaning |
 |---|---|---|
-| `--color-glacio` | `#6EC1E4` | Glacio |
+| `--color-glacio` | `#8FE0F0` | Glacio |
 | `--color-fusion` | `#F0744E` | Fusion |
-| `--color-electro` | `#B88CF2` | Electro |
+| `--color-electro` | `#D58FD0` | Electro (an orchid pink, deliberately not a lavender purple) |
 | `--color-aero` | `#5FD0A8` | Aero |
-| `--color-spectro` | `#EADF8C` | Spectro |
-| `--color-havoc` | `#D7669B` | Havoc |
+| `--color-spectro` | `#D6D2BE` | Spectro (a pale bone, deliberately not a yellow) |
+| `--color-havoc` | `#E2647F` | Havoc |
 | `--color-physical` | `#B9BBBE` | Physical |
 | `--color-gain` | `#7FCF8E` | A change that increases damage (always with a plus sign) |
 | `--color-loss` | `#F0806E` | A change that reduces damage (always with a minus sign) |
-| `--color-caution` | `#E9C46A` | "Unverified", "Beta", "Basic model" marks (always with the word) |
 
 Banned: gradients, glass and blur, glow, neon, purple-to-blue washes, coloured shadows, tinted full-bleed backgrounds.
+
+**Owner's rule (11 Nov 2026): no yellows and no purples anywhere in any design.** That covers amber, gold, mustard, lavender, violet and indigo, for the interface, the data colours and the Card presets alike. Spectro and Electro are told apart by their label and icon first; their colours are a pale bone and an orchid pink.
 
 ## Type
 
@@ -118,7 +119,7 @@ The build bar is on every tool, so the shared build is always in view.
 
 ## The signature: the meter
 
-One element carries the identity: a ruled horizontal scale with tick marks and an amber needle.
+One element carries the identity: a ruled horizontal scale with tick marks and a signal-blue needle.
 
 ```
 0            100            200
@@ -153,7 +154,7 @@ Small text marks that travel with any number they affect:
 - "Basic model": this Resonator's special mechanics are not encoded.
 - "Not modelled": a mechanic with no public formula, left out of totals.
 
-Marks use `--color-caution` text on the panel colour with a 1px outline. They always include the word.
+Marks are neutral: `--color-ink` text with a 1px `--color-rule-strong` outline, no fill and no hue. They always include the word.
 
 Every result carries a stamp in `--color-ink-3`: game patch and data date.
 

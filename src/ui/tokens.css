@@ -18,20 +18,19 @@
   --color-ink: #e9e6df;
   --color-ink-2: #b4b5b6;
   --color-ink-3: #a3a5a8;
-  --color-signal: #f0a73a;
-  --color-on-signal: #2a1c05;
-  --color-signal-dim: #5a4420;
+  --color-signal: #4da3ff;
+  --color-on-signal: #06203f;
+  --color-signal-dim: #23466e;
 
-  --color-glacio: #6ec1e4;
+  --color-glacio: #8fe0f0;
   --color-fusion: #f0744e;
-  --color-electro: #b88cf2;
+  --color-electro: #d58fd0;
   --color-aero: #5fd0a8;
-  --color-spectro: #eadf8c;
-  --color-havoc: #d7669b;
+  --color-spectro: #d6d2be;
+  --color-havoc: #e2647f;
   --color-physical: #b9bbbe;
   --color-gain: #7fcf8e;
   --color-loss: #f0806e;
-  --color-caution: #e9c46a;
 
   --font-sans: 'Archivo Variable', system-ui, sans-serif;
 

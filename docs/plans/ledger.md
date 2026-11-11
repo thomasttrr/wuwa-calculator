@@ -10,3 +10,4 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Task 1 (scaffold) complete: commit b56c3d2, build and lint pass.
 - Task 2 (source terms) complete: findings in CLAUDE.md "Data sources".
 - Task 3 (DESIGN.md, tokens, meter, token page) complete: 30/30 contrast tests pass; tokens-1440.png and tokens-390.png rendered and inspected.
+- Ruling (owner instruction, 11 Nov 2026): no yellows or purples in any design. Accent changed from amber #F0A73A to signal blue #4DA3FF; marks made neutral; Electro and Spectro chips moved to orchid pink and pale bone. Enforced by a hue test over every colour token — cost if wrong: one token edit.
