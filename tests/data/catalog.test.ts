@@ -68,6 +68,34 @@ describe('catalog contents are sane', () => {
     }
   })
 
+  it('a value with no matching damage entry in the game data is never counted as a hit', () => {
+    // Skill tables also list shields, speed changes and per-stack bonuses. Only values that
+    // match a raw damage entry are hits.
+    for (const resonator of Object.values(catalog.resonators)) {
+      for (const action of resonator.actions) {
+        if (action.kind !== 'damage' || !action.modelled) continue
+        expect(action.parts.some((part) => part.matched), `${resonator.name} / ${action.name}`).toBe(true)
+      }
+    }
+    const byName = (resonator: string, action: string) =>
+      Object.values(catalog.resonators)
+        .find((r) => r.name === resonator)
+        ?.actions.find((a) => a.name === action)
+    expect(byName('Aalto', 'Movement Speed Increase')?.modelled).toBe(false)
+    expect(byName('Jianxin', 'Minor Zhoutian Final Shield')?.modelled).toBe(false)
+  })
+
+  it('Tune Rupture hits are marked unverified, since no public formula describes them', () => {
+    for (const resonator of Object.values(catalog.resonators)) {
+      for (const action of resonator.actions) {
+        if (action.parts.some((part) => part.damageType === 'tuneRupture')) {
+          expect(action.provenance.verified, `${resonator.name} / ${action.name}`).toBe(false)
+          expect(action.provenance.note).toMatch(/Tune Rupture/)
+        }
+      }
+    }
+  })
+
   it('an action that is not modelled says why', () => {
     for (const resonator of Object.values(catalog.resonators)) {
       for (const action of resonator.actions) {

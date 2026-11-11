@@ -31,8 +31,8 @@
     "sonatas": 37,
     "enemies": 252,
     "actions": 1283,
-    "actionsNotModelled": 28,
-    "actionsWithNotes": 76,
+    "actionsNotModelled": 59,
+    "actionsWithNotes": 74,
     "healActions": 42
   },
   "warnings": []

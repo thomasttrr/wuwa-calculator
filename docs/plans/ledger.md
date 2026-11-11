@@ -19,3 +19,9 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Task 5 (engine) complete: formula, stats, actions, rotation (loops, step effects, breakdowns), compiled evaluator (equals full simulation on 120 random loadouts, relative error < 1e-9), ledger, boundary test (watched it fail on a planted import).
 - Task 6 (hand-checks) complete: Yangyang, Taoqi, Jinhsi with hand-worked expected values in each test.
 - Ruling: the effects audit (which effects touch the rotation) moves to Phase 1 with the effects view that shows it — it is UI-driven and the plan lists it under Area 7 — cost if wrong: none, it reads the same modifiers.
+- Ruling: values in skill tables that match no damage entry in the game data are no longer counted as hits (31 of them: shields, speed changes, per-stack bonuses); matching now also searches the whole Resonator, which recovered real hits filed under another skill (e.g. Galbrena Outro) — cost if wrong: a few real hits shown as "Not modelled" until matching improves.
+- Ruling: Tune Rupture hits computed with the standard formula but marked unverified (the wiki has no formula for them).
+- Ruling: negative-status damage over time (Frazzle, Erosion ticks) is not modelled: the wiki formula is partial ("exact equation remains unknown").
+- Ruling: core set changed from the plan. Out: Jinhsi, Camellya, Carlotta, Zani, Taoqi, Cartethyia (reasons in data/authored/core-set.ts). In: Encore, Xiangli Yao, Calcharo, Zhezhi, Roccia, Sanhua. Rule applied: every damage value modelled and verified. Enforced by tests/data/core-set.test.ts — cost if wrong: the owner may want a dropped Resonator; it stays selectable as a basic model.
+- Ruling: no separate docs/plans/phase-0.md; this ledger served as the step record for Phase 0 — cost if wrong: none.
+- Task 7 (core set and 3.x mechanics) complete.

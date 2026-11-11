@@ -284,7 +284,12 @@ function rowMatches(row: DamageRow, multipliers: number[]): boolean {
 
 const LEVELS = 10
 
-function buildActions(raw: any, skill: any, skillType: SkillType, element: Element): ActionDef[] {
+/**
+ * Matches each term of a skill value to a raw damage row: first among the skill's own rows,
+ * then among all of the Resonator's rows (some hits, such as Outro Skills, list their damage
+ * row under another skill).
+ */
+function buildActions(raw: any, skill: any, skillType: SkillType, element: Element, allRows: DamageRow[]): ActionDef[] {
   const rows = parseRows(skill)
   const used = new Set<number>()
   const actions: ActionDef[] = []
@@ -328,7 +333,8 @@ function buildActions(raw: any, skill: any, skillType: SkillType, element: Eleme
       const multipliers = perLevel.map((terms) => terms?.[index]?.multiplier ?? 0)
       const flats = perLevel.map((terms) => terms?.[index]?.flat ?? 0)
       const isFlatOnly = multipliers.every((m) => m === 0)
-      const candidates = isFlatOnly ? [] : rows.filter((row) => rowMatches(row, multipliers))
+      const own = isFlatOnly ? [] : rows.filter((row) => rowMatches(row, multipliers))
+      const candidates = own.length > 0 || isFlatOnly ? own : allRows.filter((row) => rowMatches(row, multipliers))
       const row = candidates.find((candidate) => !used.has(candidate.id)) ?? candidates[0]
       if (row) {
         used.add(row.id)
@@ -357,14 +363,22 @@ function buildActions(raw: any, skill: any, skillType: SkillType, element: Eleme
     if (ambiguous) notes.push('Several raw damage rows match this value with different types; the first was used.')
     if (unmatched) notes.push('No raw damage row matches this value; its damage type is assumed from the skill.')
     if (parts.some((part) => part.tags.length > 0)) notes.push('Counts as a negative-status damage type; its treatment is unverified.')
+    if (parts.some((part) => part.damageType === 'tuneRupture'))
+      notes.push('Tune Rupture damage may use extra multipliers (such as Tune Break Boost) that no public formula describes.')
+    const anyMatched = parts.some((part) => part.matched)
+    const notModelledReason =
+      specialFormula !== 0
+        ? `Uses a special formula (type ${specialFormula}) that has no public description.`
+        : !anyMatched && !heal
+          ? 'No damage entry in the game data matches this value, so it may not be a hit (for example a shield, a speed change or a bonus per stack).'
+          : undefined
 
     actions.push({
       ...base,
       kind: heal ? 'heal' : 'damage',
       parts,
-      modelled: specialFormula === 0,
-      notModelledReason:
-        specialFormula === 0 ? undefined : `Uses a special formula (type ${specialFormula}) that has no public description.`,
+      modelled: notModelledReason === undefined,
+      ...(notModelledReason ? { notModelledReason } : {}),
       provenance: { source: 'encore', sourceId, verified: false, note: notes.length > 0 ? notes.join(' ') : undefined },
     })
   }
@@ -419,13 +433,14 @@ function normaliseResonator(raw: any): ResonatorDef {
 
   const skills: SkillDef[] = []
   const actions: ActionDef[] = []
+  const allRows = (raw.Skills ?? []).flatMap((skill: any) => parseRows(skill))
   for (const skill of raw.Skills ?? []) {
     const type = SKILL_TYPE[skill.SkillType as string]
     if (!type) {
       warn(`Resonator ${raw.Id}: unknown skill type "${skill.SkillType}"`)
       continue
     }
-    const skillActions = buildActions(raw, skill, type, element)
+    const skillActions = buildActions(raw, skill, type, element, allRows)
     actions.push(...skillActions)
     skills.push({
       id: skill.SkillId,
