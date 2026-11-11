@@ -3,8 +3,9 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
 import { loadCatalog } from '../data/catalog'
 import { createSampleBuild } from '../data/sample-build'
 import { startAutosave } from '../state/persist/autosave'
-import { loadWorkspace, saveWorkspace } from '../state/persist/db'
-import { createWorkspaceStore, emptyWorkspace } from '../state/store'
+import { loadStamped, saveWorkspace } from '../state/persist/db'
+import { choosePending, clearPending, readPending, writePending } from '../state/persist/pending'
+import { createWorkspaceStore, emptyWorkspace, toSaved } from '../state/store'
 import { AppContext } from './context'
 import type { AppServices } from './context'
 import { Shell } from './Shell'
@@ -31,22 +32,42 @@ const router = createBrowserRouter([
 
 type Boot = { state: 'loading' } | { state: 'ready'; services: AppServices } | { state: 'failed'; message: string }
 
+function safeLocalStorage(): Storage | null {
+  try {
+    return window.localStorage
+  } catch {
+    return null
+  }
+}
+
 async function boot(): Promise<AppServices> {
+  const storage = safeLocalStorage()
   const [catalog, saved] = await Promise.all([
     loadCatalog(),
-    loadWorkspace().catch((error: Error) => {
+    loadStamped().catch((error: Error) => {
       notices.show(`Your saved builds could not be read: ${error.message} A fresh start was made; nothing was deleted.`)
       return null
     }),
   ])
-  const store = createWorkspaceStore(saved ?? emptyWorkspace())
+  // The backup written on leaving wins when it is newer than the last completed save.
+  const pending = storage ? readPending(storage) : null
+  const workspace = choosePending(saved, pending)
+  const store = createWorkspaceStore(workspace ?? emptyWorkspace())
   if (store.getState().library.order.length === 0) store.getState().addBuild(createSampleBuild(catalog))
 
-  const autosave = startAutosave(store, saveWorkspace, 300, (message) => notices.show(message))
-  const flush = () => void autosave.flush()
-  window.addEventListener('pagehide', flush)
+  const autosave = startAutosave(store, (w) => saveWorkspace(w), 300, (message) => notices.show(message))
+  if (pending && workspace === pending.workspace) {
+    await saveWorkspace(toSaved(store.getState()))
+  }
+  if (storage) clearPending(storage)
+
+  const leave = () => {
+    if (storage && autosave.isDirty()) writePending(storage, toSaved(store.getState()), Date.now())
+    void autosave.flush()
+  }
+  window.addEventListener('pagehide', leave)
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') flush()
+    if (document.visibilityState === 'hidden') leave()
   })
   return { catalog, store }
 }

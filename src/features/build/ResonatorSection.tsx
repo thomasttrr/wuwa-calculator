@@ -48,7 +48,9 @@ export function ResonatorSection({ build }: { build: Build }) {
             <span>{resonator.rarity} star</span>
           </div>
         </div>
-        <Button onClick={() => setPicking(true)}>Change</Button>
+        <Button onClick={() => setPicking(true)}>
+          Change<span className="sr-only"> Resonator</span>
+        </Button>
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3">
@@ -173,7 +175,9 @@ function WeaponBlock({ build }: { build: Build }) {
                 {weapon.rarity} star. ATK {Math.round(top?.atk ?? 0)}, {weaponSecondaryLabel(weapon.secondaryStat)} {formatPercent(top?.secondary ?? 0)}
               </div>
             </div>
-            <Button onClick={() => setPicking(true)}>Change</Button>
+            <Button onClick={() => setPicking(true)}>
+              Change<span className="sr-only"> weapon</span>
+            </Button>
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3">
             <Stepper

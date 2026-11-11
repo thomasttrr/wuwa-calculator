@@ -144,7 +144,9 @@ function TargetBlock({ build }: { build: Build }) {
               : differing.map((element) => `${ELEMENT_NAME[element]} ${formatPercent(enemy.resistance[element], 0)}`).join(', ') + ', others 10%'}
           </div>
         </div>
-        <Button onClick={() => setPicking(true)}>Change</Button>
+        <Button onClick={() => setPicking(true)}>
+          Change<span className="sr-only"> target</span>
+        </Button>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-3">
         <Stepper

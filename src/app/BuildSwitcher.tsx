@@ -28,11 +28,13 @@ export function BuildSwitcher({ compact = false }: { compact?: boolean }) {
         type="button"
         onClick={() => setOpen(true)}
         className="flex min-h-11 max-w-full min-w-0 items-center gap-2 rounded-control px-2 text-left hover:bg-raised md:min-h-10"
-        aria-label={`Builds. Current: ${active?.name ?? 'none'}`}
       >
         {resonator ? <Portrait name={resonator.name} element={resonator.element} size={compact ? 28 : 32} /> : null}
         <span className="min-w-0">
-          <span className="block truncate font-medium">{active?.name ?? 'No build yet'}</span>
+          <span className="block truncate font-medium">
+            <span className="sr-only">Your builds. Open now: </span>
+            {active?.name ?? 'No build yet'}
+          </span>
           {!compact && resonator ? <span className="block truncate text-12 text-ink-3">{resonator.name}</span> : null}
         </span>
         <ChevronDown size={16} aria-hidden="true" className="shrink-0 text-ink-3" />

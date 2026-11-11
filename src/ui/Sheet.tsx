@@ -29,6 +29,14 @@ export function Sheet({
           className="fixed inset-0 z-50 flex flex-col bg-panel shadow-float md:inset-y-0 md:right-0 md:left-auto md:w-[min(560px,100vw)] md:border-l md:border-rule"
           // Radix links the description automatically; with none, say so explicitly.
           {...(description ? {} : { 'aria-describedby': undefined })}
+          // Focus the field marked data-autofocus (a picker's search box) instead of the close button.
+          onOpenAutoFocus={(event) => {
+            const target = (event.currentTarget as HTMLElement | null)?.querySelector<HTMLElement>('[data-autofocus]')
+            if (target) {
+              event.preventDefault()
+              target.focus()
+            }
+          }}
         >
           <div className="flex items-start justify-between gap-3 border-b border-rule px-4 py-3 md:px-6">
             <div className="min-w-0">

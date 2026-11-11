@@ -5,6 +5,8 @@ import type { Workspace } from '../types'
 export interface Autosave {
   /** Saves now, cancelling any pending save. */
   flush(): Promise<void>
+  /** True when there are changes not yet written. */
+  isDirty(): boolean
   stop(): void
 }
 
@@ -50,6 +52,9 @@ export function startAutosave(
       if (timer !== undefined) clearTimeout(timer)
       dirty = true
       await run()
+    },
+    isDirty() {
+      return dirty || timer !== undefined
     },
     stop() {
       if (timer !== undefined) clearTimeout(timer)

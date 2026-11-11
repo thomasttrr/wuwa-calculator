@@ -88,6 +88,7 @@ export function Picker({
         <Search size={16} aria-hidden="true" className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-ink-3" />
         <input
           type="search"
+          data-autofocus
           role="combobox"
           aria-label={searchLabel}
           aria-controls={listId}

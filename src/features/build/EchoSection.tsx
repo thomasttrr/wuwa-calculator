@@ -70,12 +70,14 @@ export function EchoSection({ build }: { build: Build }) {
                   type="button"
                   onClick={() => setEditing(slot)}
                   className="flex w-full items-center gap-3 rounded-panel border border-rule bg-panel px-3 py-2.5 text-left hover:bg-raised"
-                  aria-label={`Echo ${slot + 1}${slot === 0 ? ', main' : ''}: ${def.name}. Edit`}
                 >
+                  <span className="sr-only">Edit Echo {slot + 1}: {def.name}. </span>
                   <CostBadge cost={echo.cost} />
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-baseline gap-x-2">
-                      <span className="truncate font-medium">{def.name}</span>
+                      <span className="truncate font-medium" aria-hidden="true">
+                        {def.name}
+                      </span>
                       {slot === 0 ? <span className="text-12 text-ink-3">Main Echo</span> : null}
                     </div>
                     <div className="truncate text-13 text-ink-3">
