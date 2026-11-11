@@ -46,7 +46,7 @@ export function TeamSection({ build }: { build: Build }) {
           }
           const weapon = teammate.weaponId ? catalog.weapons[teammate.weaponId] : undefined
           return (
-            <li key={slot} className="rounded-panel border border-rule bg-panel p-3">
+            <li key={slot} className="rounded-panel bg-raised p-3">
               <div className="flex items-center gap-3">
                 <Portrait name={resonator.name} element={resonator.element} />
                 <span className="min-w-0 flex-1 truncate font-medium">{resonator.name}</span>

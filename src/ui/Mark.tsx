@@ -22,7 +22,7 @@ export function Mark({ kind, detail }: { kind: MarkKind; detail?: string }) {
   return (
     <span
       title={detail ?? EXPLAIN[kind]}
-      className="inline-flex shrink-0 items-center rounded-control border border-rule-strong px-1.5 py-px text-12 leading-5 text-ink"
+      className="inline-flex shrink-0 items-center rounded-full border border-rule-strong px-2 py-px text-12 leading-5 text-ink"
     >
       {WORD[kind]}
     </span>

@@ -1,183 +1,167 @@
-# theWuthering design: Tuning bench
+# theWuthering design: Bloom
 
-This is the single locked visual direction. Every screen is built strictly to it. Change this file first, then the code, never the other way round.
+This is the single locked visual direction, chosen by the owner on 11 Nov 2026 from three dark explorations (Mixing Desk, Strata, Bloom). It replaces "Tuning bench". Change this file first, then the code, never the other way round.
 
 ## The idea
 
-The game is about sound: Resonators, Echoes, Sonata, Forte, Tune. This app measures that sound. So it looks like a piece of audio test equipment: a calm graphite panel where the numbers are the content and one signal-blue colour marks what is live right now.
+A build is five Echoes, and an Echo is five substats. Bloom draws exactly that: a flower of five petals, one per Echo, each petal made of its five substats. A substat's colour says what it is, its length says how good the roll was, and grey says it adds nothing to this rotation. The score sits in the centre.
+
+The page around the bloom is a calm night sea: deep navy surfaces, rounded panels, and colour that always carries meaning.
 
 Who it is for: a player who wants to know how good a build is and what to change, on a desktop or a phone.
 What a screen must do: show the answer first in plain words, with every number one tap from its working.
 
 ## Colour
 
-One dark theme. One accent.
+Dark, never black. Many colours, each with one job. No colour is decoration.
+
+### Surfaces and text
 
 | Token | Hex | Use |
 |---|---|---|
-| `--color-page` | `#1F2124` | Page background |
-| `--color-panel` | `#282B2F` | Things you can pick up or edit: an Echo, a step, a sheet |
-| `--color-raised` | `#32363B` | Hover and pressed states, popovers, the selected row |
-| `--color-rule` | `#3A3E44` | 1px rules and control outlines |
-| `--color-rule-strong` | `#565B63` | Meter ticks, focused field outline, dividers that must read |
-| `--color-ink` | `#E9E6DF` | Primary text and numbers |
-| `--color-ink-2` | `#B4B5B6` | Supporting text |
-| `--color-ink-3` | `#A3A5A8` | Hints, units, captions (at least 4.5:1 on page, panel and raised; enforced by `tests/ui/tokens-contrast.test.ts`) |
-| `--color-signal` | `#4DA3FF` | The accent (signal blue): current value, primary action, focus ring, meter needle |
-| `--color-on-signal` | `#06203F` | Text on the accent |
-| `--color-signal-dim` | `#23466E` | Accent at rest: filled part of a meter track behind the needle |
+| `--color-page` | `#111B26` | Page background |
+| `--color-panel` | `#172433` | Section panels, sheets, cards |
+| `--color-raised` | `#1E2E40` | Rows and cards inside a panel, hover, the selected tab |
+| `--color-rule` | `#2A3B50` | 1px rules and control outlines |
+| `--color-rule-strong` | `#4A5F78` | Meter ticks, focused field outline, dividers that must read |
+| `--color-ink` | `#EAF0F5` | Primary text and numbers |
+| `--color-ink-2` | `#C6D3DF` | Supporting text |
+| `--color-ink-3` | `#A2B4C6` | Hints, units, captions (at least 4.5:1 on page, panel and raised; enforced by `tests/ui/tokens-contrast.test.ts`) |
+| `--color-signal` | `#3FD49B` | The action colour (jade): primary button, focus ring, current tab mark, meter fill |
+| `--color-on-signal` | `#0A2A1E` | Text on jade |
+| `--color-signal-dim` | `#1F5A45` | Jade at rest: filled meter track behind the needle |
 
-Accent rules:
-- The accent means "this is the live value" or "this is the main thing to do". It is never decoration.
-- At most one accent-filled button per view.
-- Never use the accent for body text or for large filled areas.
+Action rules: at most one jade-filled button per view; never jade body text.
 
-Data colours exist only to tell data apart. They never style the interface, and each is always paired with a text label, sign or icon so colour is never the only signal.
+### Stat tones (the bloom's colours, used everywhere a stat appears)
 
-| Token | Hex | Meaning |
+| Token | Hex | Stat group |
 |---|---|---|
-| `--color-glacio` | `#8FE0F0` | Glacio |
-| `--color-fusion` | `#F0744E` | Fusion |
-| `--color-electro` | `#D58FD0` | Electro (an orchid pink, deliberately not a lavender purple) |
-| `--color-aero` | `#5FD0A8` | Aero |
-| `--color-spectro` | `#D6D2BE` | Spectro (a pale bone, deliberately not a yellow) |
-| `--color-havoc` | `#E2647F` | Havoc |
-| `--color-physical` | `#B9BBBE` | Physical |
-| `--color-gain` | `#7FCF8E` | A change that increases damage (always with a plus sign) |
-| `--color-loss` | `#F0806E` | A change that reduces damage (always with a minus sign) |
+| `--color-tone-crit-rate` | `#FF7F66` | Crit. Rate (coral) |
+| `--color-tone-crit-dmg` | `#FF5C8A` | Crit. DMG (rose) |
+| `--color-tone-atk` | `#3FD49B` | ATK and ATK% (jade) |
+| `--color-tone-energy-regen` | `#6CB8FF` | Energy Regen (sky) |
+| `--color-tone-bonus` | `#A6EAF2` | Every DMG Bonus (ice) |
+| `--color-tone-hp` | `#F2A98A` | HP and HP% (peach) |
+| `--color-tone-def` | `#93AACB` | DEF and DEF% (steel) |
+| `--color-tone-unused` | `#45556A` | Adds no damage to this rotation (slate) |
 
-Banned: gradients, glass and blur, glow, neon, purple-to-blue washes, coloured shadows, tinted full-bleed backgrounds.
+A tone is always next to the stat's name. "Adds no damage" is measured, not guessed: the substat is taken away and the rotation re-evaluated (`src/explain/echo-bloom.ts`).
 
-**Owner's rule (11 Nov 2026): no yellows and no purples anywhere in any design.** That covers amber, gold, mustard, lavender, violet and indigo, for the interface, the data colours and the Card presets alike. Spectro and Electro are told apart by their label and icon first; their colours are a pale bone and an orchid pink.
+### Elements and change
+
+Glacio `#8FE0F0`, Fusion `#F0744E`, Electro `#D58FD0` (orchid pink, not lavender), Aero `#5FD0A8`, Spectro `#D6D2BE` (pale bone, not yellow), Havoc `#E2647F`, Physical `#B9BBBE`. Gain `#7FCF8E` always with a plus sign, loss `#F0806E` always with a minus sign.
+
+**Owner's rule (11 Nov 2026): no yellows and no purples anywhere in any design.** That covers amber, gold, mustard, lavender, violet and indigo. A test reads every colour token and fails on either hue band.
+
+Banned: gradient washes, glass and blur, glow, neon, coloured shadows, a single colour in many shades standing in for a palette.
 
 ## Type
 
-One family: **Archivo** (variable, width and weight axes), self-hosted from `@fontsource-variable/archivo`. No network font requests.
+Two families, self-hosted from `@fontsource-variable`. No network font requests.
 
-| Role | Width | Weight | Use |
+| Role | Family | Weight | Use |
 |---|---|---|---|
-| Display | 125 (wide) | 600 to 700 | Page titles, section titles, the big score number |
-| Text | 100 | 400 | Body, labels, table cells |
-| Strong | 100 | 500 to 600 | Emphasis, button labels, totals |
+| Display | **Unbounded** | 700 to 800 | Resonator name, score, page and section titles |
+| Text | **Albert Sans** | 400 | Body, labels, table cells |
+| Strong | Albert Sans | 600 to 700 | Emphasis, button labels, totals |
 
-- All numerals are tabular and lining (`font-variant-numeric: tabular-nums lining-nums`) so columns of numbers align and do not jitter when values change.
-- Sentence case everywhere. Never all caps.
-- No monospace anywhere, including data labels.
-- Scale (px): 12, 13, 14, 16, 20, 26, 34, 44. Body is 14 on desktop and 16 on phone. Nothing is smaller than 12.
-- Line height: 1.5 for text, 1.15 for display sizes. Lines of prose stay under 72 characters.
+- Unbounded is wide and round; use it for short things only (a name, a number, a title of a few words). Never for sentences, except the one verdict line under the bloom at 20px or larger.
+- All numerals are tabular and lining.
+- Sentence case everywhere. Never all caps. No monospace.
+- Scale (px): 12, 13, 14, 16, 20, 26, 34, 44, 64, 120. Body is 14 on desktop and 16 on phone.
+- Line height 1.5 for text, 1.1 for display. Prose lines stay under 72 characters.
 
 ## Space and shape
 
-- Spacing scale (px): 4, 8, 12, 16, 24, 32, 48, 64. Nothing in between.
-- Corners: 3px on controls, 4px on panels and sheets. Nothing is a pill except a round toggle thumb.
-- Borders are 1px `--color-rule`.
-- Shadows: none, except one soft shadow under floating layers (popover, sheet, dialog) so they separate from the page.
+- Spacing scale (px): 4, 8, 12, 16, 24, 32, 48, 64.
+- Corners by rank: controls 12px, cards and rows 18px, section panels and sheets 22px, chips and the grade badge fully round.
+- Borders are 1px `--color-rule`. The main Echo's card gets a 2px `--color-ink` border.
+- Shadows only under floating layers.
 
-## Layout: ruled, not boxed
+## Layout
 
-- Sections sit directly on the page, separated by a 1px rule and spacing. They are not wrapped in cards.
-- A filled panel is reserved for a thing the user can pick up, open or edit.
-- Lists of things are ruled rows, not grids of identical cards.
-- Text and labels align left. Numbers align right in tables and lists.
-- Content column: up to 1280px, with 24px gutters on desktop and 16px on phone.
+- Sections are panels (`--color-panel`, 22px corners) on the page. Inside a panel, items are raised rows or cards.
+- Text aligns left. Numbers align right in lists.
+- Content column up to 1280px, 24px gutters on desktop, 16px on phone.
 
-### Desktop (1440px reference)
+### Build page, desktop (1440px reference)
 
 ```
 +--------------------------------------------------------------------------------+
-| theWuthering   [Build name v]  Resonator  Weapon  Target   |0---^--100----200| undo redo |
+| theWuthering  [Build] Saved Compare               [Build name v]   undo redo   |
 +--------------------------------------------------------------------------------+
-| Build   Suggestions   Optimizer   Rotation   Card                              |
-+----------------------------+---------------------------------------------------+
-| Editor                     | Result first: score, verdict, then stats/damage   |
-| (what you change)          | (what it means)                                   |
-+----------------------------+---------------------------------------------------+
+|  J  |                    |  Resonator line                                      |
+|  i  |   ( bloom with  )  |  Verdict sentence (display face, 20px)               |
+|  y  |   (  score in   )  |  [See what changes it]   How this was calculated     |
+|  a  |   (  the centre )  |  Rotation / No Echoes / Reference / Maximum figures  |
+|  n  |                    |  Tone legend                                         |
++--------------------------------------------------------------------------------+
+| Editor panels (Resonator, Echoes, Team, Effects) | Results tabs                  |
++--------------------------------------------------------------------------------+
 ```
 
-The build bar is on every tool, so the shared build is always in view.
+The Resonator's name runs vertically up the left edge at 120px. It is the one large type moment.
 
-### Phone (390px reference): a first-class layout
+### Phone (390px reference)
 
 ```
 +--------------------------------+
-| Build name v      132%  undo   |   compact sticky header
+| Build name v            undo   |
 +--------------------------------+
-| Result first: score + verdict  |
-| -------------------------------|
-| Editor sections, stacked       |
-| ...                            |
+| Name (64px, horizontal)        |
+| Bloom, full width, score       |
+| Tone legend                    |
+| Verdict, primary action        |
+| Figures (2 by 2)               |
+| Editor panels, stacked         |
+| Results                        |
 +--------------------------------+
-| Build  Suggest  Optim  Rot Card|   bottom tab bar, thumb reach
+| Build     Saved     Compare    |  rounded bottom bar
 +--------------------------------+
 ```
 
-- Columns stack in priority order: result first, then what you can change.
+- Every touch target is at least 44 by 44px. No sideways scrolling, ever.
 - Pickers and detail panels open as full-height sheets with the search field at the top.
-- Tables become stacked label and value rows. No sideways scrolling, ever.
-- Every touch target is at least 44 by 44px.
-- Components are designed at 390px first, then given more room.
 
-## The signature: the meter
+## The signature: the bloom
 
-One element carries the identity: a ruled horizontal scale with tick marks and a signal-blue needle.
-
-```
-0            100            200
-|-------------|--------^-----|
-                       132%
-```
-
-- The Build Score is a meter with ticks at 0, 100 and 200.
-- The same meter shape shows suggestion gains, optimizer progress and how much a substat is worth, so the whole app reads as one instrument.
-- A meter always has a number and a label next to it. The needle is never the only way to read the value.
-
-Everything else stays quiet so the meter can be the one bold thing.
+- Five petals, clockwise from the top: slot 1 (main Echo) at the top, marked by a light arc inside it.
+- One wedge per substat. Length = roll tier divided by that stat's number of tiers, so a top ATK roll (4 of 4) and a top Crit. DMG roll (8 of 8) reach equally far.
+- Colour = stat tone. Slate = adds no damage to this rotation.
+- The score and grade sit in the centre. The bloom is never the only way to read anything: the Echo list beside it names every substat, its value and its tier.
+- The meter (0, 100, 200 ticks, jade fill) stays for the score scale, suggestion gains and optimizer progress.
 
 ## Motion
 
-- Only in response to the user's own action: a sheet opening, a row expanding, the needle moving to a new value.
-- 120 to 160ms, ease-out. No entrance animations on page load, no hover lifts, no looping motion.
-- All motion is off under `prefers-reduced-motion: reduce`.
+- Only in response to the user's own action: a sheet opening, a row expanding, a wedge growing to a new length.
+- 120 to 160ms, ease-out. No entrance animations, no hover lifts, no looping motion. Off under `prefers-reduced-motion`.
 
 ## Focus and states
 
-- Keyboard focus: 2px `--color-signal` outline with 2px offset, on every interactive element.
-- Hover: background steps from panel to raised. Pressed: same, no scale.
-- Disabled controls are avoided. Where one is unavoidable, a short reason is shown beside it.
-- Selected: a 2px `--color-signal` bar on the left edge of the row, plus the word or icon that says so.
+- Focus: 2px jade outline with 2px offset on every interactive element.
+- Hover: surface steps up one level (panel to raised).
+- Selected tab: raised background plus a 3px jade underline.
+- Disabled controls are avoided; where one is unavoidable, a short reason is shown beside it.
 
 ## Marks
 
-Small text marks that travel with any number they affect:
-- "Unverified": the two data sources disagree, or only one has the value.
-- "Beta": data from a version that is not live yet.
-- "Basic model": this Resonator's special mechanics are not encoded.
-- "Not modelled": a mechanic with no public formula, left out of totals.
-
-Marks are neutral: `--color-ink` text with a 1px `--color-rule-strong` outline, no fill and no hue. They always include the word.
-
-Every result carries a stamp in `--color-ink-3`: game patch and data date.
+"Unverified", "Beta", "Basic model" and "Not modelled" travel with any number they affect. Marks are neutral: ink text, 1px `--color-rule-strong` outline, fully round, no fill, always the word. Every result carries the stamp "Patch X, data from date" in `--color-ink-3`.
 
 ## Words
 
-- Plain labels first, technical detail one tap behind. "How good is this build?" before "Build Score methodology".
+- Plain labels first, technical detail one tap behind.
 - Buttons say what happens: "Try it", "Keep this change", "Save as build".
-- Empty states say what to do next in one sentence.
-- Errors say what happened and how to fix it. No apologies, no jokes.
-- Stat names follow the game exactly. Everything else is everyday language.
-- No memes, no exclamation marks, no emoji.
+- Empty states say what to do next in one sentence. Errors say what happened and how to fix it.
+- Stat names follow the game exactly. Everything else is everyday language. No memes, exclamation marks or emoji.
 
-## Banned patterns (the usual tells of a templated page)
+## Banned patterns
 
-- All-caps or letter-spaced labels; small "eyebrow" labels above headings.
-- Meta strings joined with middle dots.
-- Monospace for numbers or labels.
-- Arrows appended to button or link text.
-- Grids of identical rounded cards with soft grey shadows.
+- All-caps or letter-spaced labels; eyebrow labels above headings.
+- Meta strings joined with middle dots. Monospace numbers or labels. Arrows appended to button text.
 - A big number, a tiny label and a gradient as the hero.
-- Fade-and-slide-up entrances.
-- One word of a headline in a different colour or style.
+- Fade-and-slide-up entrances. One word of a headline in a different colour.
 
 ## The Card tool is the one exception
 
-The exported build card has its own presets (Calm, Bold, Minimal) with their own palettes, because it is an image the user takes away. Those palettes are scoped to the card canvas and never leak into the interface around it.
+The exported build card has its own presets with their own palettes, scoped to the card canvas. They still obey the no-yellow, no-purple rule.

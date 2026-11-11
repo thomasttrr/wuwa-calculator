@@ -24,13 +24,11 @@ export function BuildPage() {
     <div>
       <h1 className="sr-only">Build: {build.name}</h1>
       <FirstRunGuide />
-      {/* auto then 1fr rows: the editor spans both, so its extra height goes to the results row, not under the score. */}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-x-10 md:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] md:grid-rows-[auto_1fr]">
-        <div className="md:col-start-2 md:row-start-1">
-          <ScorePanel />
-        </div>
-        <div className="md:col-start-1 md:row-span-2 md:row-start-1">
-          <div className="flex items-center justify-between gap-3 border-t border-rule md:border-t-0">
+      {/* The bloom hero spans the page; below it, what you change on the left and what it means on the right. */}
+      <ScorePanel />
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-3 md:grid-cols-[minmax(0,26rem)_minmax(0,1fr)]">
+        <div>
+          <div className="mb-3 flex items-center justify-between gap-3 rounded-section bg-panel px-4 md:px-6">
             <Switch
               label="Show everything"
               description="Skill levels, skill tree, ascension, resistances, teammates' weapons and your own buffs."
@@ -43,7 +41,7 @@ export function BuildPage() {
           <TeamSection build={build} />
           <EffectsSection build={build} />
         </div>
-        <div className="md:col-start-2 md:row-start-2 md:self-start">
+        <div className="self-start rounded-section bg-panel p-4 md:p-6">
           <ResultsTabs />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-/** A section sits on the page between rules, not in a box (DESIGN.md, "Layout"). */
+/** A section is a panel on the page; its items are raised rows inside it (DESIGN.md, "Layout"). */
 export function Section({
   title,
   id,
@@ -17,7 +17,7 @@ export function Section({
   className?: string
 }) {
   return (
-    <section aria-labelledby={id} className={`border-t border-rule pt-4 pb-6 ${className}`}>
+    <section aria-labelledby={id} className={`mb-3 rounded-section bg-panel p-4 md:p-6 ${className}`}>
       <div className="flex min-h-9 items-center justify-between gap-3">
         <h2 id={id} className="font-display text-16 md:text-20">
           {title}

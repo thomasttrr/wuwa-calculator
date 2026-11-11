@@ -50,7 +50,7 @@ function SavedRow({ build, active }: { build: Build; active: boolean }) {
   const weapon = build.weapon ? catalog.weapons[build.weapon.id] : undefined
 
   return (
-    <li className={`border-b border-rule py-3 ${active ? 'shadow-[inset_2px_0_0_var(--color-signal)] pl-3' : ''}`}>
+    <li className={`mb-2 rounded-panel border-2 bg-panel p-3 md:p-4 ${active ? 'border-ink' : 'border-transparent'}`}>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
           type="button"

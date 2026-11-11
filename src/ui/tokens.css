@@ -1,6 +1,7 @@
-/* Design tokens. Source of truth: DESIGN.md. Change that file first. */
+/* Design tokens. Source of truth: DESIGN.md (Bloom). Change that file first. */
 @import 'tailwindcss';
-@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource-variable/unbounded/wght.css';
+@import '@fontsource-variable/albert-sans/wght.css';
 
 @theme {
   /* Tailwind's default palette, radii and type scale are replaced, not extended. */
@@ -10,18 +11,20 @@
   --font-*: initial;
   --shadow-*: initial;
 
-  --color-page: #1f2124;
-  --color-panel: #282b2f;
-  --color-raised: #32363b;
-  --color-rule: #3a3e44;
-  --color-rule-strong: #565b63;
-  --color-ink: #e9e6df;
-  --color-ink-2: #b4b5b6;
-  --color-ink-3: #a3a5a8;
-  --color-signal: #4da3ff;
-  --color-on-signal: #06203f;
-  --color-signal-dim: #23466e;
+  /* Night sea: surfaces step up in lightness, never in hue. */
+  --color-page: #111b26;
+  --color-panel: #172433;
+  --color-raised: #1e2e40;
+  --color-rule: #2a3b50;
+  --color-rule-strong: #4a5f78;
+  --color-ink: #eaf0f5;
+  --color-ink-2: #c6d3df;
+  --color-ink-3: #a2b4c6;
+  --color-signal: #3fd49b;
+  --color-on-signal: #0a2a1e;
+  --color-signal-dim: #1f5a45;
 
+  /* Elements: data colours, always with the element's name. */
   --color-glacio: #8fe0f0;
   --color-fusion: #f0744e;
   --color-electro: #d58fd0;
@@ -32,7 +35,18 @@
   --color-gain: #7fcf8e;
   --color-loss: #f0806e;
 
-  --font-sans: 'Archivo Variable', system-ui, sans-serif;
+  /* Stat tones: one colour per stat group, used by the bloom, Echo rows and stat lists. */
+  --color-tone-crit-rate: #ff7f66;
+  --color-tone-crit-dmg: #ff5c8a;
+  --color-tone-atk: #3fd49b;
+  --color-tone-energy-regen: #6cb8ff;
+  --color-tone-bonus: #a6eaf2;
+  --color-tone-hp: #f2a98a;
+  --color-tone-def: #93aacb;
+  --color-tone-unused: #45556a;
+
+  --font-sans: 'Albert Sans Variable', system-ui, sans-serif;
+  --font-display: 'Unbounded Variable', 'Albert Sans Variable', system-ui, sans-serif;
 
   --text-12: 0.75rem;
   --text-13: 0.8125rem;
@@ -42,14 +56,18 @@
   --text-26: 1.625rem;
   --text-34: 2.125rem;
   --text-44: 2.75rem;
+  --text-64: 4rem;
+  --text-120: 7.5rem;
 
   /* Spacing scale is 4, 8, 12, 16, 24, 32, 48, 64: use p-1, 2, 3, 4, 6, 8, 12, 16 only. */
   --spacing: 0.25rem;
 
-  --radius-control: 3px;
-  --radius-panel: 4px;
+  --radius-control: 12px;
+  --radius-panel: 18px;
+  --radius-section: 22px;
+  --radius-full: 999px;
 
-  --shadow-float: 0 8px 24px rgb(0 0 0 / 0.4);
+  --shadow-float: 0 12px 32px rgb(4 10 18 / 0.55);
 
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
 }
@@ -62,7 +80,6 @@
     font-size: 16px;
     line-height: 1.5;
     font-variant-numeric: tabular-nums lining-nums;
-    font-stretch: 100%;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -93,7 +110,8 @@
 }
 
 @utility font-display {
-  font-stretch: 125%;
-  font-weight: 650;
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }

@@ -131,35 +131,30 @@ export function Shell() {
       </a>
 
       {/* Desktop header: wordmark, build, score, undo; tools beneath. */}
-      <header className="sticky top-0 z-20 border-b border-rule bg-page/95 backdrop-blur-none">
-        <div className="mx-auto flex max-w-[1280px] items-center gap-2 px-2 py-2 md:gap-4 md:px-6">
+      <header className="sticky top-0 z-20 bg-page">
+        <div className="mx-auto flex max-w-[1280px] items-center gap-2 px-2 py-2 md:min-h-18 md:gap-6 md:px-6">
           <span className="hidden font-display text-16 md:inline">theWuthering</span>
-          <div className="min-w-0 flex-1 md:flex-none">
+          <nav aria-label="Tools" className="hidden gap-1 md:flex">
+            {NAV.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `inline-flex min-h-10 items-center rounded-control px-4 text-14 transition-colors duration-150 ${
+                    isActive ? 'bg-raised font-semibold text-ink shadow-[inset_0_-3px_0_var(--color-signal)]' : 'text-ink-2 hover:bg-panel hover:text-ink'
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="min-w-0 flex-1 md:ml-auto md:flex-none">
             <BuildSwitcher compact />
           </div>
-          <div className="ml-auto hidden md:block">
-            <HeaderScore />
-          </div>
-          <div className="md:hidden">
-            <HeaderScore compact />
-          </div>
+          <HeaderScore compact />
           <UndoRedo />
         </div>
-        <nav aria-label="Tools" className="mx-auto hidden max-w-[1280px] gap-1 px-4 md:flex md:px-6">
-          {NAV.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                `inline-flex min-h-10 items-center border-b-2 px-3 text-14 transition-colors duration-150 ${
-                  isActive ? 'border-signal text-ink' : 'border-transparent text-ink-2 hover:text-ink'
-                }`
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
       </header>
 
       <PreviewStrip />
@@ -169,13 +164,15 @@ export function Shell() {
       </main>
 
       {/* Phone: tools in a bottom bar within thumb reach. */}
-      <nav aria-label="Tools" className="fixed inset-x-0 bottom-0 z-20 grid grid-cols-3 border-t border-rule bg-page md:hidden">
+      <nav aria-label="Tools" className="fixed inset-x-3 bottom-3 z-20 grid grid-cols-3 gap-1 rounded-panel bg-panel p-1.5 shadow-float md:hidden">
         {NAV.map(({ to, label, icon: Icon, ...rest }) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
-              `flex min-h-14 flex-col items-center justify-center gap-0.5 text-12 ${isActive ? 'text-signal' : 'text-ink-2'}`
+              `flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-control text-12 ${
+                isActive ? 'bg-raised font-semibold text-ink shadow-[inset_0_-3px_0_var(--color-signal)]' : 'text-ink-2'
+              }`
             }
           >
             <Icon size={20} aria-hidden="true" />

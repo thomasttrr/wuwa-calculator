@@ -171,7 +171,7 @@ export function EchoPicker({ open, onOpenChange, onPick, selectedId, maxCost }: 
 
 export function CostBadge({ cost }: { cost: number }) {
   return (
-    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-control border border-rule text-13 font-semibold" title={`Cost ${cost}`}>
+    <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-page font-display text-14" title={`Cost ${cost}`}>
       {cost}
       <span className="sr-only"> cost</span>
     </span>

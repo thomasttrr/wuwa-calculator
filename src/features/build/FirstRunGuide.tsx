@@ -10,7 +10,7 @@ export function FirstRunGuide() {
   const onSample = useWorkspace((s) => s.session.activeBuildId === SAMPLE_BUILD_ID)
   if (dismissed || !onSample) return null
   return (
-    <aside aria-labelledby="guide-title" className="mb-6 rounded-panel border border-rule bg-panel p-4">
+    <aside aria-labelledby="guide-title" className="mb-3 rounded-section border-2 border-signal-dim bg-panel p-4 md:p-6">
       <div className="flex items-start justify-between gap-3">
         <h2 id="guide-title" className="font-display text-16 md:text-20">
           Start from this build, change one thing

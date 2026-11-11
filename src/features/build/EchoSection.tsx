@@ -12,6 +12,8 @@ import { SelectField } from '../../ui/Field'
 import { formatStatValue, statLabel } from '../../ui/format'
 import { EmptyState, Section } from '../../ui/Section'
 import { Sheet } from '../../ui/Sheet'
+import { substatTone } from '../../explain/echo-bloom'
+import { TONE_COLOUR } from './EchoBloom'
 import { CostBadge, EchoPicker } from './pickers'
 import { useEdit } from './useEdit'
 
@@ -60,7 +62,7 @@ export function EchoSection({ build }: { build: Build }) {
       id="echoes"
       description={`Cost ${total} of ${COST_BUDGET}. Slot 1 is your main Echo: its skill effect applies.`}
     >
-      <ol className="grid gap-2">
+      <ol className="grid grid-cols-[minmax(0,1fr)] gap-2">
         {build.echoes.map((echo, slot) => {
           const def = echo ? catalog.echoes[echo.echoId] : undefined
           return (
@@ -69,7 +71,7 @@ export function EchoSection({ build }: { build: Build }) {
                 <button
                   type="button"
                   onClick={() => setEditing(slot)}
-                  className="flex w-full items-center gap-3 rounded-panel border border-rule bg-panel px-3 py-2.5 text-left hover:bg-raised"
+                  className={`flex w-full items-center gap-3 rounded-panel border-2 bg-raised px-3 py-2.5 text-left hover:border-rule-strong ${slot === 0 ? 'border-ink' : 'border-transparent'}`}
                 >
                   <span className="sr-only">Edit Echo {slot + 1}: {def.name}. </span>
                   <CostBadge cost={echo.cost} />
@@ -84,6 +86,16 @@ export function EchoSection({ build }: { build: Build }) {
                       {catalog.sonatas[echo.sonataId]?.name}. {statLabel(echo.mainStat.stat, echo.mainStat.scope)}{' '}
                       {formatStatValue(echo.mainStat.stat, echo.mainStat.value)}, {echo.substats.length} of 5 substats
                     </div>
+                    {echo.substats.length > 0 ? (
+                      <ul className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-12 text-ink-2">
+                        {echo.substats.map((sub, i) => (
+                          <li key={i} className="flex items-center gap-1.5">
+                            <span className="size-2 rounded-full" style={{ background: TONE_COLOUR[substatTone(sub.stat)] }} aria-hidden="true" />
+                            {statLabel(sub.stat, sub.scope)} {formatStatValue(sub.stat, sub.value)}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 </button>
               ) : (

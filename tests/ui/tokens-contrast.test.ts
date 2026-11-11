@@ -49,6 +49,19 @@ describe('design tokens: text contrast', () => {
     })
   }
 
+  for (const tone of ['crit-rate', 'crit-dmg', 'atk', 'energy-regen', 'bonus', 'hp', 'def']) {
+    it(`stat tone ${tone} is distinguishable on the page and panel (at least 3:1)`, () => {
+      expect(contrast(token(`tone-${tone}`), token('page'))).toBeGreaterThanOrEqual(3)
+      expect(contrast(token(`tone-${tone}`), token('panel'))).toBeGreaterThanOrEqual(3)
+    })
+  }
+
+  it('the "adds no damage" tone stays clearly darker than every live tone', () => {
+    for (const tone of ['crit-rate', 'crit-dmg', 'atk', 'energy-regen', 'bonus', 'hp', 'def']) {
+      expect(contrast(token(`tone-${tone}`), token('tone-unused'))).toBeGreaterThanOrEqual(2)
+    }
+  })
+
   it('meter ticks are visible on the page (at least 2:1)', () => {
     expect(contrast(token('rule-strong'), token('page'))).toBeGreaterThanOrEqual(2)
   })

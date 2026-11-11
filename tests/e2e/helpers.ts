@@ -10,7 +10,7 @@ export async function openFresh(page: Page) {
 
 /** The big score number on the Build page. */
 export function scoreText(page: Page) {
-  return page.getByRole('region', { name: 'Build score' }).locator('span.text-44')
+  return page.getByRole('region', { name: 'Build score' }).locator('[data-score]')
 }
 
 export const isPhone = (page: Page) => (page.viewportSize()?.width ?? 1440) < 768

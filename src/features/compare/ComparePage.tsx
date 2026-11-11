@@ -49,7 +49,7 @@ export function ComparePage() {
 
       {a && b ? (
         <>
-          <section aria-label="Can these be compared?" className="mt-6 border-t border-rule pt-4">
+          <section aria-label="Can these be compared?" className="mt-4 rounded-section bg-panel p-4 md:p-6">
             {differences.length === 0 ? (
               <p className="text-ink">Same setup. These scores and damage numbers can be compared directly.</p>
             ) : (
@@ -119,7 +119,7 @@ function CompareTable({ a, b }: { a: Build; b: Build }) {
   ]
 
   return (
-    <div className="mt-6 border-t border-rule pt-4">
+    <div className="mt-3 rounded-section bg-panel p-4 md:p-6">
       <h2 className="font-display text-20">Side by side</h2>
       <div className="mt-3 overflow-x-auto">
         <table className="w-full min-w-[20rem] text-left">
