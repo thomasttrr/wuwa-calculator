@@ -81,3 +81,5 @@ Known shapes (verified by fetching, 3.8.0): 65 Resonators, 125 weapons, 319 Echo
 - **Effects are generated.** Never hand-edit `data/authored/effects/generated.json`; change `scripts/data/extract-effects.ts` (test first) and run `npm run data:build`. Hand-encoded effects go in `data/authored/effects/weapons.ts` and make the reader skip that owner.
 - **Commit attribution follows the session's model.** Use the attribution line the harness gives at the time of the commit.
 - **The engine has its own tsconfig** (`tsconfig.engine.json`, no DOM, `types: []`). A type error that only appears under `npm run build` and names a DOM or Node global inside `src/engine/` means the engine has leaked a dependency.
+- **`tests/e2e/screens.spec.ts` writes into `verification/phase-1/`.** Running the e2e suite overwrites that phase's evidence. Copy new captures elsewhere and `git checkout -- verification/phase-1` before committing.
+- **The bloom's "adds no damage" grey is measured.** `src/explain/echo-bloom.ts` removes each substat and re-evaluates the compiled rotation. Never replace it with a fixed list of "useless" stats.

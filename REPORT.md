@@ -106,3 +106,14 @@ See `verification/phase-1/REPORT.md`: real phones and touch, browsers other than
 ### NOT CHECKED
 
 See `verification/phase-0/REPORT.md`. In short: no real screens exist yet, and the formula has not been compared with in-game numbers.
+
+## Redesign: Bloom (11 Nov 2026)
+
+The owner judged the Phase 1 look ("Tuning bench") too generic. Six directions were mocked up as private design canvases; the owner picked F, **Bloom**.
+
+- `DESIGN.md` rewritten: night-sea surfaces, jade action colour, one tone per stat group, Unbounded display with Albert Sans text, rounded panels.
+- New signature: the Echo bloom (`src/features/build/EchoBloom.tsx`). One petal per Echo, one wedge per substat. Wedge length is the roll tier divided by that stat's tier count (`src/ui/bloom-geometry.ts`). Slate wedges add no damage, which is measured by removing that substat and re-running the compiled rotation (`src/explain/echo-bloom.ts`), not guessed.
+- Tests added: `tests/explain/echo-bloom.test.ts`, `tests/ui/bloom-geometry.test.ts`, and stat-tone contrast checks in `tests/ui/tokens-contrast.test.ts`.
+- Evidence: `verification/redesign/` (Build, Saved and Compare at 1440px and 390px, plus every captured state). Inspected: the Build page with the sample build and with an empty build, Saved, Compare, and the Echo editor on a phone.
+- Gate: typecheck, lint, 1077 unit tests and 32 end-to-end tests (axe and no-sideways-scroll at both widths) pass.
+- NOT CHECKED: the Resonator picker, ledger sheet and score-meaning sheet captures in `verification/redesign/` were saved but not opened.
