@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+test-results/
+playwright-report/
+.superpowers/
+# Game artwork is Kuro Games' property: cached locally for personal use, never committed.
+public/game-assets/
+# Untrimmed source responses (trimmed snapshots under data/snapshots are committed).
+data/raw/
+.env*
