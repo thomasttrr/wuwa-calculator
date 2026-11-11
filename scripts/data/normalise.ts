@@ -241,6 +241,14 @@ interface DamageRow {
   heal: boolean
 }
 
+/**
+ * Element of every damage row, from the raw game table. The encore.moe API has no element field
+ * on its damage rows (its ElementPowerType is a different thing and is 0 on many elemental hits).
+ */
+const ELEMENT_BY_ROW = new Map<number, number>(
+  read(`${RAW}/arikatsu/BinData/damage/damage.json`).map((row: any) => [row.Id, row.Element]),
+)
+
 function parseRows(skill: any): DamageRow[] {
   return (skill.DamageList ?? []).map((row: any): DamageRow => {
     const damageType = DAMAGE_TYPE[row.Type as string]
@@ -251,7 +259,7 @@ function parseRows(skill: any): DamageRow[] {
       id: row.Id,
       rates: (row.RateLv ?? []).map((rate: string) => pct(rate)),
       damageType: damageType ?? 'other',
-      element: ELEMENT_BY_ID[row.ElementPowerType as number] ?? 'physical',
+      element: rowElement(row.Id),
       scalingStat: scalingStat ?? 'atk',
       energy: typeof row.Energy?.[0] === 'number' ? row.Energy[0] : undefined,
       tag: SUBTYPE_TAG[row.SubType as string],
@@ -259,6 +267,12 @@ function parseRows(skill: any): DamageRow[] {
       heal: row.DmgType === 'Heal',
     }
   })
+}
+
+function rowElement(rowId: number): Element {
+  const element = ELEMENT_BY_ID[ELEMENT_BY_ROW.get(rowId) ?? -1]
+  if (!element) warn(`Damage row ${rowId} has no element in the raw damage table`)
+  return element ?? 'physical'
 }
 
 function rowMatches(row: DamageRow, multipliers: number[]): boolean {
@@ -472,7 +486,8 @@ function resonatorSnapshot(raw: any): unknown {
         SubType: d.SubType,
         RateLv: d.RateLv,
         Energy: d.Energy,
-        ElementPowerType: d.ElementPowerType,
+        // Not in the API response: joined in from Arikatsu BinData/damage/damage.json by row id.
+        ElementFromRawTable: ELEMENT_BY_ROW.get(d.Id),
         FormulaType: d.FormulaType,
       })),
     })),

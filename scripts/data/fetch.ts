@@ -28,6 +28,8 @@ const ARIKATSU_FILES = [
   'BinData/property/propertyindex.json',
   'BinData/property/rolepropertygrowth.json',
   'BinData/property/weaponpropertygrowth.json',
+  // The raw damage table (17 MB). It carries each hit's element, which the encore.moe API does not expose.
+  'BinData/damage/damage.json',
   // English names of the stat ids, in id order. Confirms which id is which stat.
   'Textmaps/en/property/PropertyIndex.json',
   'README.md',

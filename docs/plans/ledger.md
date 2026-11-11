@@ -11,3 +11,8 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Task 2 (source terms) complete: findings in CLAUDE.md "Data sources".
 - Task 3 (DESIGN.md, tokens, meter, token page) complete: 30/30 contrast tests pass; tokens-1440.png and tokens-390.png rendered and inspected.
 - Ruling (owner instruction, 11 Nov 2026): no yellows or purples in any design. Accent changed from amber #F0A73A to signal blue #4DA3FF; marks made neutral; Electro and Spectro chips moved to orchid pink and pale bone. Enforced by a hue test over every colour token — cost if wrong: one token edit.
+- Ruling: substat roll values and chances come from the wiki Echo/Stats page (single source; it cites rates published by Kuro Games) — the raw game tables do not list roll tiers in a readable form — cost if wrong: substat values off; Echo main stats do have two agreeing sources.
+- Ruling: hit elements come from the raw game damage table, not the encore.moe API, whose ElementPowerType field is not the element — cost if wrong: none, nanoka.cc agrees on every row.
+- Ruling: enemy resistances count as verified when they follow the 10% / 40% rule stated on the wiki Damage page (no second database carries them); 5 "Prism" enemies do not and stay unverified.
+- Ruling: Resonator DEF of 0 is allowed (Jingran, both sources agree).
+- Task 4 (data layer) complete: 1,040 requests, 0 failures; catalog 3.8.0 validated; cross-check: 61/61 Resonators, 125/125 weapons, 1,207/1,283 actions verified, 0 value disagreements.

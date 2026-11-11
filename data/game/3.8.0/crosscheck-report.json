@@ -1,0 +1,35 @@
+{
+  "comparedWith": "nanoka.cc 3.8",
+  "summary": {
+    "resonators": {
+      "checked": 61,
+      "verified": 61,
+      "missingInSecondSource": 0
+    },
+    "actions": {
+      "checked": 1283,
+      "verified": 1207
+    },
+    "weapons": {
+      "checked": 125,
+      "verified": 125,
+      "missingInSecondSource": 0
+    },
+    "echoes": {
+      "checked": 227,
+      "verified": 185,
+      "missingInSecondSource": 42
+    },
+    "enemies": {
+      "checked": 252,
+      "verified": 247
+    }
+  },
+  "mismatches": [
+    "Glacio Prism: resistances do not follow the wiki's 10% / 40% rule",
+    "Fusion Prism: resistances do not follow the wiki's 10% / 40% rule",
+    "Spectro Prism: resistances do not follow the wiki's 10% / 40% rule",
+    "Havoc Prism: resistances do not follow the wiki's 10% / 40% rule",
+    "Aero Prism: resistances do not follow the wiki's 10% / 40% rule"
+  ]
+}
