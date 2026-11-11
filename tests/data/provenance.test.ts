@@ -25,13 +25,24 @@ function ownerParams(effect: EffectDef, data: Catalog): readonly (readonly strin
     }
     case 'resonator': {
       const owner = effect.owner
+      if (owner.skillId !== undefined) return []
       if (owner.sequence === undefined) return undefined
       return data.resonators[owner.id]?.sequences.find((s) => s.index === owner.sequence)?.params.map((p) => [p])
     }
     case 'echo':
-      return undefined
+      return data.echoes[effect.owner.id]?.skill.params.at(-1)?.map((p) => [p])
   }
 }
+
+/** The description an effect with no parameters must quote its numbers from. */
+function ownerDescription(effect: EffectDef, data: Catalog): string | undefined {
+  const owner = effect.owner
+  if (owner.kind !== 'resonator' || owner.skillId === undefined) return undefined
+  return data.resonators[owner.id]?.skills.find((skill) => skill.id === owner.skillId)?.description
+}
+
+/** Every percentage written in a text, as fractions. */
+const percentsIn = (text: string): number[] => [...text.matchAll(/(\d+(?:\.\d+)?)%/g)].map((m) => parseParam(`${m[1]}%`))
 
 describe('hand-encoded effects cite real description parameters', () => {
   it('there is at least one authored effect to check', () => {
@@ -52,6 +63,15 @@ describe('hand-encoded effects cite real description parameters', () => {
       })
 
       effect.modifiers.forEach((modifier, index) => {
+        if (modifier.paramIndex === -1) {
+          it(`modifier ${index} (${modifier.stat}) is quoted word for word in the description`, () => {
+            const description = ownerDescription(effect, catalog)
+            expect(description, 'a literal value needs a skill description to quote from').toBeDefined()
+            expect(modifier.values).toHaveLength(1)
+            expect(percentsIn(description ?? '')).toContainEqual(modifier.values[0])
+          })
+          return
+        }
         it(`modifier ${index} (${modifier.stat}) equals parameter ${modifier.paramIndex}`, () => {
           const cited = params?.[modifier.paramIndex]
           expect(cited, `parameter ${modifier.paramIndex} does not exist`).toBeDefined()

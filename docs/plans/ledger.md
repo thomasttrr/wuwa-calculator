@@ -31,3 +31,4 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 ## Phase 1
 
 - Owner (11 Nov 2026): "I will go with whatever you think is the best route and options." Core set of 12 confirmed as recorded in data/authored/core-set.ts.
+- Ruling: weapon passives, set effects, core-Resonator Sequences, passives and Outros, and main-Echo effects are read from game descriptions by a tested pattern reader (scripts/data/extract-effects.ts) instead of being typed by hand. It only encodes sentences it fully understands, every number is checked against its source parameter by the provenance test, conditional sentences become switches labelled with the game's own sentence, and unread sentences (372) are listed for the app. Every always-on and every core-Resonator effect was reviewed by eye. Result: 317 effects, 85 of 94 four- and five-star weapons covered — cost if wrong: a misread stat; mitigated by 26 reader tests and the provenance check.

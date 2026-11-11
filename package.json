@@ -13,7 +13,7 @@
     "test:watch": "vitest",
     "lint": "eslint .",
     "data:fetch": "tsx scripts/data/fetch.ts",
-    "data:build": "tsx scripts/data/normalise.ts && tsx scripts/data/crosscheck.ts",
+    "data:build": "tsx scripts/data/normalise.ts && tsx scripts/data/crosscheck.ts && tsx scripts/data/build-effects.ts",
     "data:check": "tsx scripts/data/check.ts",
     "verify:screens": "tsx scripts/verify/screenshots.ts"
   },

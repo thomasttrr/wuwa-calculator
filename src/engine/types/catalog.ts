@@ -216,7 +216,8 @@ export type EffectControl =
 
 /** What grants an effect. */
 export type EffectOwner =
-  | { kind: 'resonator'; id: number; sequence?: number }
+  /** `sequence`: a Sequence node. `skillId`: a passive or Outro skill, whose numbers are quoted in its description. */
+  | { kind: 'resonator'; id: number; sequence?: number; skillId?: number }
   | { kind: 'weapon'; id: number }
   | { kind: 'sonata'; id: number; pieces: number }
   | { kind: 'echo'; id: number }
@@ -229,7 +230,10 @@ export interface EffectModifier {
   values: readonly number[]
   /** True when the value is multiplied by the number of active stacks. */
   perStack?: boolean
-  /** Index into the owner's description params that this value was read from. */
+  /**
+   * Index into the owner's description params that this value was read from, or -1 when the
+   * owner has no params and the value is quoted word for word in its description.
+   */
   paramIndex: number
 }
 

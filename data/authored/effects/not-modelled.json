@@ -1,0 +1,1866 @@
+{
+ "gameVersion": "3.8.0",
+ "generatedBy": "scripts/data/build-effects.ts",
+ "sentences": [
+  {
+   "owner": "Discord: Ceaseless Aria",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy."
+  },
+  {
+   "owner": "Broadblade#41: Veteran",
+   "ownerKind": "weapon",
+   "sentence": "When the Resonator's HP is below 40%/50%/60%/70%/80%, gives 5%/6.25%/7.5%/8.75%/10% healing when dealing Basic Attack DMG or Heavy Attack DMG."
+  },
+  {
+   "owner": "Wildfire Mark: Blazing Starfire",
+   "ownerKind": "weapon",
+   "sentence": "Dealing Heavy Attack DMG extends this effect by 4/4/4/4/4s, up to 1/1/1/1/1 time."
+  },
+  {
+   "owner": "Helios Cleaver: Plasma Recoiler",
+   "ownerKind": "weapon",
+   "sentence": "When the number of stacks reaches 4/4/4/4/4, all stacks will be reset within 6/6/6/6/6s."
+  },
+  {
+   "owner": "Starfield Calibrator: Definite Solution",
+   "ownerKind": "weapon",
+   "sentence": "Casting Resonance Skill restores 8/10/12/14/16 points of Concerto Energy."
+  },
+  {
+   "owner": "Thousandfold Deliverance: Hark, Spirits and Stars",
+   "ownerKind": "weapon",
+   "sentence": "Cradle of Life: Casting Heavy Attack consumes up to 2/2/2/2/2 stacks of Cradle of Life."
+  },
+  {
+   "owner": "Blazing Brilliance: Crimson Phoenix",
+   "ownerKind": "weapon",
+   "sentence": "After reaching the max stacks, all stacks will be removed in 12/12/12/12/12s."
+  },
+  {
+   "owner": "Somnoire Anchor: Meow!",
+   "ownerKind": "weapon",
+   "sentence": "Gain 1/1/1/1/1 stack of Hiss when dealing damage to the target, with 1/1/1/1/1 stack generated every 1/1/1/1/1s."
+  },
+  {
+   "owner": "Overture: Ceaseless Aria",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy."
+  },
+  {
+   "owner": "Defier's Thorn: A Free Knight's Tarantella",
+   "ownerKind": "weapon",
+   "sentence": "If the target has at least 1 stack of Aero Erosion, the DMG taken by the target is Amplified by 20%/25%/30%/35%/40%."
+  },
+  {
+   "owner": "Lunar Cutter: Preordained",
+   "ownerKind": "weapon",
+   "sentence": "Equipped Resonator gains 6/6/6/6/6 stack(s) of Oath upon entering the battlefield."
+  },
+  {
+   "owner": "Lunar Cutter: Preordained",
+   "ownerKind": "weapon",
+   "sentence": "The equipped Resonator loses 1/1/1/1/1 stack(s) of Oath every 2/2/2/2/2s, and gains 6/6/6/6/6 stack(s) upon defeating an enemy."
+  },
+  {
+   "owner": "Emerald Sentence: When A Heart Settles",
+   "ownerKind": "weapon",
+   "sentence": "Casting Echo Skill within 10/10/10/10/10s after casting Intro Skill or Basic Attack grants 1 stack of Bamboo Cleaver, which grants 30/37.5/45/52.5/60% Heavy Attack DMG Bonus to the wielder."
+  },
+  {
+   "owner": "Lumingloss: Pale Gale",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, increases Basic Attack DMG Bonus and Heavy Attack DMG Bonus by 20%/31%/42%/53%/64%, stacking up to 1/1/1/1/1 time(s)."
+  },
+  {
+   "owner": "Everbright Polestar: Starchaser",
+   "ownerKind": "weapon",
+   "sentence": "When inflicting Tune Rupture Shifting or Fusion Burst, the wielder's Resonance Liberation DMG ignores 32%/40%/48%/56%/64% DEF and 10%/15%/20%/25%/30% Fusion RES on targets for 8/8/8/8/8s."
+  },
+  {
+   "owner": "Frostburn: Self No More",
+   "ownerKind": "weapon",
+   "sentence": "If the wielder is the active Resonator in the team, Glacio Chafe DMG dealt to all targets within a certain range is Amplified by 20%/25%/30%/35%/40% for 6/6/6/6/6s."
+  },
+  {
+   "owner": "Glint of Clouds: Evil's Scourge",
+   "ownerKind": "weapon",
+   "sentence": "Upon reaching the max stack limit, gain the following effects: This Aero DMG Bonus effect's duration is extended to 30/30/30/30/30s."
+  },
+  {
+   "owner": "Cadenza: Ceaseless Aria",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy."
+  },
+  {
+   "owner": "Woodland Aria: Lingering Summer Tune",
+   "ownerKind": "weapon",
+   "sentence": "Hitting targets with Aero Erosion reduces their Aero RES by 10%/11.5%/13%/14.5%/16% for 20/20/20/20/20s."
+  },
+  {
+   "owner": "Pistols#26: Omniscient",
+   "ownerKind": "weapon",
+   "sentence": "When the Resonator takes damage, loses 1/1/1/1/1 stacks and heals 5%/6.25%/7.5%/8.75%/10% of their Max HP."
+  },
+  {
+   "owner": "Lux & Umbra: To Fire She Returns",
+   "ownerKind": "weapon",
+   "sentence": "DMG Amplification on each attack is capped at 24%/30%/36%/42%/48%."
+  },
+  {
+   "owner": "Spectrum Blaster: Attendance Exemption Protocol",
+   "ownerKind": "weapon",
+   "sentence": "Each time the wielder inflicts Tune Rupture Shifting or Tune Strain Shifting during Basic Attacks, all DMG dealt by Resonators in the team is increased by 8%/10%/12%/14%/16% for 30/30/30/30/30s, up to 3/3/3/3/3 stacks."
+  },
+  {
+   "owner": "Lullaby: Dreamland Solace",
+   "ownerKind": "weapon",
+   "sentence": "Increases Max HP by 12%/15%/18%/21%/24%."
+  },
+  {
+   "owner": "Lullaby: Dreamland Solace",
+   "ownerKind": "weapon",
+   "sentence": "Casting Resonance Liberation restores 8/10/12/14/16 points of Concerto Energy, triggered once every 20/20/20/20/20s."
+  },
+  {
+   "owner": "Lullaby: Dreamland Solace",
+   "ownerKind": "weapon",
+   "sentence": "All Resonators in the team gain Soothed Soul for 30/30/30/30/30s when the wielder provides healing with Heavy Attack."
+  },
+  {
+   "owner": "Verity's Handle: Ad Veritatem",
+   "ownerKind": "weapon",
+   "sentence": "This effect can be extended by 5/5/5/5/5s each time Resonance Skills are cast, up to 3/3/3/3/3 times."
+  },
+  {
+   "owner": "Marcato: Ceaseless Aria",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy."
+  },
+  {
+   "owner": "Gauntlets#21D: Mastermind",
+   "ownerKind": "weapon",
+   "sentence": "Increases Dodge Counter DMG by 50%/62.5%/75%/87.5%/100%, lasting for 8/8/8/8/8s."
+  },
+  {
+   "owner": "Gauntlets#21D: Mastermind",
+   "ownerKind": "weapon",
+   "sentence": "When Dodge Counter is performed, heals 5%/6.25%/7.5%/8.75%/10% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Moongazer's Sigil: Plenilune Radiance",
+   "ownerKind": "weapon",
+   "sentence": "This effect is triggered once every 0.5/0.5/0.5/0.5/0.5s."
+  },
+  {
+   "owner": "Moongazer's Sigil: Plenilune Radiance",
+   "ownerKind": "weapon",
+   "sentence": "Upon casting Intro Skill, this effect reaches max stacks immediately, lasting for 3/3/3/3/3s."
+  },
+  {
+   "owner": "Hollow Mirage: Celestial Blessing",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Liberation is cast, grants 3/3/3/3/3 stack(s) of Iron Armor."
+  },
+  {
+   "owner": "Hollow Mirage: Celestial Blessing",
+   "ownerKind": "weapon",
+   "sentence": "Each stack increases ATK and DEF by 3%/3.5%/4%/4.5%/5%, stacking up to 3/3/3/3/3 time(s)."
+  },
+  {
+   "owner": "Hollow Mirage: Celestial Blessing",
+   "ownerKind": "weapon",
+   "sentence": "When the Resonator takes damage, reduces the number of stacks by 1/1/1/1/1."
+  },
+  {
+   "owner": "Variation: Ceaseless Aria",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, restores 8/10/12/14/16 Concerto Energy."
+  },
+  {
+   "owner": "Rectifier#25: Dawnbringer",
+   "ownerKind": "weapon",
+   "sentence": "When Resonance Skill is cast, if the Resonator's HP is below 60%/60%/60%/60%/60%, heals 5%/6.25%/7.5%/8.75%/10% of their Max HP."
+  },
+  {
+   "owner": "Stellar Symphony: Astral Evolvement",
+   "ownerKind": "weapon",
+   "sentence": "Restore 8/10/12/14/16 Concerto Energy when casting Resonance Liberation."
+  },
+  {
+   "owner": "Stellar Symphony: Astral Evolvement",
+   "ownerKind": "weapon",
+   "sentence": "When casting Resonance Skill that heals, increase nearby party members' ATK by 14%/17.5%/21%/24.5%/28% for 30/30/30/30/30s."
+  },
+  {
+   "owner": "Luminous Hymn: Homebuilder's Anthem",
+   "ownerKind": "weapon",
+   "sentence": "Casting Outro Skill Amplifies the Spectro Frazzle DMG on targets around the active Resonator by 30%/37.5%/45%/52.5%/60% for 30/30/30/30/30s."
+  },
+  {
+   "owner": "Whispers of Sirens: From the Deep",
+   "ownerKind": "weapon",
+   "sentence": "Casting Echo Skill within 10/10/10/10/10s after casting Intro Skill or Basic Attacks grants 1/1/1/1/1 times of Gentle Dream."
+  },
+  {
+   "owner": "Whispers of Sirens: From the Deep",
+   "ownerKind": "weapon",
+   "sentence": "Echoes with the same name can only trigger this effect once, stacking up to 2/2/2/2/2 times, lasting for 10/10/10/10/10s."
+  },
+  {
+   "owner": "Whispers of Sirens: From the Deep",
+   "ownerKind": "weapon",
+   "sentence": "With 2/2/2/2/2 times: Ignores 12%/15%/18%/21%/24% of the target's Havoc RES."
+  },
+  {
+   "owner": "Firstlight's Herald: Spring Wreath",
+   "ownerKind": "weapon",
+   "sentence": "Increases Max HP by 12%/15%/18%/21%/24%."
+  },
+  {
+   "owner": "Firstlight's Herald: Spring Wreath",
+   "ownerKind": "weapon",
+   "sentence": "Casting Resonance Liberation restores 8/10/12/14/16 points of Concerto Energy, triggered once every 20s."
+  },
+  {
+   "owner": "Blooming Jadehaven: Hundredfold Artifice",
+   "ownerKind": "weapon",
+   "sentence": "While the wielder is the active Resonator, Electro Flare DMG taken by targets within a certain range is Amplified by 30%/37.5%/45%/52.5%/60% for 30/30/30/30/30s, triggered 1/1/1/1/1 times every 0.1/0.1/0.1/0.1/0.1s."
+  },
+  {
+   "owner": "Freezing Frost (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Glacio DMG + 10% after releasing Basic Attack or Heavy Attack."
+  },
+  {
+   "owner": "Havoc Eclipse (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Havoc DMG + 7.5% after releasing Basic Attack or Heavy Attack."
+  },
+  {
+   "owner": "Moonlit Clouds (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Upon using Outro Skill, increases the ATK of the next Resonator by 22.5% for 15s."
+  },
+  {
+   "owner": "Empyrean Anthem (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Increase the Resonator's Coordinated Attack DMG by 80%."
+  },
+  {
+   "owner": "Empyrean Anthem (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Upon a critical hit of Coordinated Attack, increase the active Resonator's ATK by 20% for 4s."
+  },
+  {
+   "owner": "Gusts of Welkin (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Inflicting Aero Erosion upon enemies increases Aero DMG for all Resonators in the team by 15%, and for the Resonator triggering this effect by an additional 15%, lasting for 20s."
+  },
+  {
+   "owner": "Law of Harmony (3 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "At 4 stacks, casting Echo Skill again resets the duration of this effect."
+  },
+  {
+   "owner": "Pact of Neonlight Leap (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Casting Outro Skill increases the ATK of the incoming Resonator who casts Intro Skill by 15%."
+  },
+  {
+   "owner": "Wishes of Quiet Snowfall (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Inflicting Glacio Chafe on enemies increases Glacio DMG dealt by 10% for 15s."
+  },
+  {
+   "owner": "Wishes of Quiet Snowfall (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "While the effect is active, dealing Resonance Liberation DMG extends its duration by 4s, triggered once every 0.5s, up to 6 times."
+  },
+  {
+   "owner": "Reel of Spliced Memories (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Inflicting Tune Rupture Shifting or Tune Strain Shifting on enemies increases the Tune Break Boost of Resonators in the team by 20 for 30s."
+  },
+  {
+   "owner": "Song of Feathered Trace (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Upon inflicting Havoc Bane, gain Xuanling's Feather, which grants a 20% increase in Crit. Rate and 35% increase in Heavy Attack DMG Bonus to the Resonator, lasting 15s."
+  },
+  {
+   "owner": "Song of Feathered Trace (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Upon inflicting Glacio Chafe, gain Chongming's Feather, which grants a 0.1% increase in ATK to Resonators in the team for every 1% of the Resonator's Energy Regen, up to 25%, lasting 10s."
+  },
+  {
+   "owner": "Lamp of Nether Road (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "Upon gaining a Shield, gain 5% increase in Crit. Rate for 5s, max 4 stacks."
+  },
+  {
+   "owner": "Flower of Tinged Yearning (5 pieces)",
+   "ownerKind": "sonata",
+   "sentence": "While the effect is active, if the Resonator gains Unison or triggers Unison Response, their ATK is further increased by 15%."
+  },
+  {
+   "owner": "Yangyang Sequence 3: Nature Sings in Symphony",
+   "ownerKind": "resonator",
+   "sentence": "The Wind Field's pulling effect on surrounding targets is enhanced, and the pulling range is expanded by 33%."
+  },
+  {
+   "owner": "Yangyang Sequence 4: Close Your Eyes and Listen in",
+   "ownerKind": "resonator",
+   "sentence": "Mid-air Attack Feather Release's damage is increased by 95%."
+  },
+  {
+   "owner": "Yangyang Sequence 5: Winds Whisper in Harmony",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Liberation Wind Spirals's damage is increased by 85%."
+  },
+  {
+   "owner": "Yangyang: Compassion",
+   "ownerKind": "resonator",
+   "sentence": "Yangyang recovers 30 STA after she casts a Mid-air Attack Feather Release."
+  },
+  {
+   "owner": "Yangyang: Whispering Breeze",
+   "ownerKind": "resonator",
+   "sentence": "Restore 4 Resonance Energy per second for 5s for the incoming Resonator."
+  },
+  {
+   "owner": "Jiyan Sequence 1: Benevolence",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Skill Windqueller can be used 1 more time."
+  },
+  {
+   "owner": "Jiyan Sequence 1: Benevolence",
+   "ownerKind": "resonator",
+   "sentence": "When casting Resonance Skill Windqueller, the Resolve cost is decreased by 15."
+  },
+  {
+   "owner": "Jiyan Sequence 5: Resolution",
+   "ownerKind": "resonator",
+   "sentence": "Outro Skill Discipline gains an additional DMG Multiplier of 120%."
+  },
+  {
+   "owner": "Jiyan Sequence 6: Fortitude",
+   "ownerKind": "resonator",
+   "sentence": "Every time Heavy Attack, Intro Skill Tactical Strike or Resonance Skill Windqueller is used, Jiyan gains 1 stack(s) of \"Momentum\", stacking up to 2 times."
+  },
+  {
+   "owner": "Jiyan Sequence 6: Fortitude",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Liberation Emerald Storm: Finale will consume all \"Momentum\", and each stack consumed increases the DMG multiplier of Resonance Liberation Emerald Storm: Finale by 120%."
+  },
+  {
+   "owner": "Jiyan: Discipline",
+   "ownerKind": "resonator",
+   "sentence": "When the incoming Resonator's Heavy Attack hits a target, Jiyan will summon a lance to launch a coordinated attack, dealing Aero DMG equal to 313.40% of Jiyan's ATK."
+  },
+  {
+   "owner": "Changli Sequence 1: Hidden Thoughts",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Skill Tripartite Flames and Heavy Attack Flaming Sacrifice increase Changli's DMG dealt by 10% and resistance to interruption."
+  },
+  {
+   "owner": "Changli Sequence 3: Learned Secrets",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Liberation Radiance of Fealty DMG is increased by 80%."
+  },
+  {
+   "owner": "Changli Sequence 5: Sacrificed Gains",
+   "ownerKind": "resonator",
+   "sentence": "Heavy Attack Flaming Sacrifice's Multiplier is increased by 50% and its DMG dealt is increased by 50%."
+  },
+  {
+   "owner": "Changli Sequence 6: Realized Plans",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Skill Tripartite Flames, Heavy Attack Flaming Sacrifice, and Resonance Liberation Radiance of Fealty ignore an additional 40% of the target's DEF when dealing damage."
+  },
+  {
+   "owner": "Encore Sequence 2: Sheep-counting Lullaby",
+   "ownerKind": "resonator",
+   "sentence": "Encore additionally restores 10 Resonance Energy when casting Basic Attack Wooly Strike or Resonance Skill Energetic Welcome."
+  },
+  {
+   "owner": "Encore Sequence 3: Fog? The Black Shores!",
+   "ownerKind": "resonator",
+   "sentence": "The DMG multiplier of Heavy Attack Cloudy Frenzy and Heavy Attack Cosmos Rupture is increased by 40%."
+  },
+  {
+   "owner": "Encore Sequence 6: Woolies Save the World!",
+   "ownerKind": "resonator",
+   "sentence": "During Resonance Liberation Cosmos Rave, Encore gains 1 stack(s) of \"Lost Lamb\" every time she deals damage, each stack increasing her ATK by 5% for 10s, stacking up to 5 time(s)."
+  },
+  {
+   "owner": "Encore: Angry Cosmos",
+   "ownerKind": "resonator",
+   "sentence": "During the Resonance Liberation Cosmos Rave, when Encore's HP is above 70%, DMG dealt is increased by 10%."
+  },
+  {
+   "owner": "Encore: Thermal Field",
+   "ownerKind": "resonator",
+   "sentence": "Encore generates a Thermal Field centered around skill target, with a radius of 3m."
+  },
+  {
+   "owner": "Encore: Thermal Field",
+   "ownerKind": "resonator",
+   "sentence": "Targets inside the Thermal Field are continuously burned, suffering Fusion DMG equal to 176.76% of Encore's ATK every 1.5s for 6s."
+  },
+  {
+   "owner": "Xiangli Yao Sequence 1: Prodigy of Protégés",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Skill Law of Reigns additionally launches 6 Convolution Matrices at enemies, each dealing Resonance Liberation DMG equal to 8% of the skill's DMG Multiplier."
+  },
+  {
+   "owner": "Xiangli Yao Sequence 3: Ruins of Ancient",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Liberation Cogitation Model increases the DMG of the following Resonance Skill moves by 63% for 24s: Decipher, Deduction, Divergence, and Law of Reigns."
+  },
+  {
+   "owner": "Xiangli Yao Sequence 4: Vessel of Rebirth",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Liberation Cogitation Model grants a 25% DMG Bonus to all team members' Resonance Liberation for 30s."
+  },
+  {
+   "owner": "Xiangli Yao Sequence 5: End of Stars",
+   "ownerKind": "resonator",
+   "sentence": "The DMG Multiplier of Outro Skill Chain Rule is increased by 222%."
+  },
+  {
+   "owner": "Xiangli Yao Sequence 5: End of Stars",
+   "ownerKind": "resonator",
+   "sentence": "The DMG Multiplier of Resonance Liberation Cogitation Model is increased by 100%."
+  },
+  {
+   "owner": "Xiangli Yao Sequence 6: Solace of the Ordinary",
+   "ownerKind": "resonator",
+   "sentence": "The Hypercubes obtained from Resonance Liberation Cogitation Model are enhanced, increasing the DMG Multiplier of Resonance Skill Law of Reigns by 76%."
+  },
+  {
+   "owner": "Xiangli Yao: Chain Rule",
+   "ownerKind": "resonator",
+   "sentence": "Xiangli Yao will call down a laser beam upon the first target the incoming Resonator's Basic Attack hits, dealing Electro DMG equal to 237.63% of Xiangli Yao's ATK to an area."
+  },
+  {
+   "owner": "Calcharo Sequence 1: Covert Negotiation",
+   "ownerKind": "resonator",
+   "sentence": "When Resonance Skill Extermination Order hits a target, it additionally recovers 10 Resonance Energy."
+  },
+  {
+   "owner": "Calcharo Sequence 5: Unconventional Compact",
+   "ownerKind": "resonator",
+   "sentence": "Intro Skill Wanted Criminal and Intro Skill \"Necessary Means\" deal 50% more DMG."
+  },
+  {
+   "owner": "Calcharo Sequence 6: The Ultimatum",
+   "ownerKind": "resonator",
+   "sentence": "When casting Resonance Liberation \"Death Messenger\", Calcharo will summon 2 Phantoms to perform Coordinated Attacks."
+  },
+  {
+   "owner": "Calcharo Sequence 6: The Ultimatum",
+   "ownerKind": "resonator",
+   "sentence": "Each Phantom deals Electro DMG equal to 100.00% of Calcharo's ATK, which is considered Resonance Liberation DMG."
+  },
+  {
+   "owner": "Calcharo: Revenant Rush",
+   "ownerKind": "resonator",
+   "sentence": "When Heavy Attack \"Death Messenger\" hits the target, the damage taken by Calcharo is reduced by 15% for 5s."
+  },
+  {
+   "owner": "Calcharo: Shadowy Raid",
+   "ownerKind": "resonator",
+   "sentence": "The Phantom's attack deals Electro DMG equal to 195.98%+391.96% of Calcharo's ATK."
+  },
+  {
+   "owner": "Phoebe Sequence 1: Warm Light and Bedside Wishes",
+   "ownerKind": "resonator",
+   "sentence": "When in Absolution, Resonance Liberation Dawn of Enlightenment now increases DMG Multiplier by 480% instead of 255%."
+  },
+  {
+   "owner": "Phoebe Sequence 1: Warm Light and Bedside Wishes",
+   "ownerKind": "resonator",
+   "sentence": "When in Confession, Resonance Liberation Dawn of Enlightenment increases DMG Multiplier by 90% and applies Spectro Frazzle to the targets with the maximum stack the targets can receive."
+  },
+  {
+   "owner": "Phoebe Sequence 2: A Boat Adrift in Tears",
+   "ownerKind": "resonator",
+   "sentence": "When in Absolution, DMG dealt by Outro Skills to targets with Spectro Frazzle is Amplified by 120%."
+  },
+  {
+   "owner": "Phoebe Sequence 2: A Boat Adrift in Tears",
+   "ownerKind": "resonator",
+   "sentence": "When in Confession, Silent Prayer grants 120% more DMG Amplification for Spectro Frazzle."
+  },
+  {
+   "owner": "Phoebe Sequence 3: Daisy Wreaths and Dreams",
+   "ownerKind": "resonator",
+   "sentence": "When in Absolution, the DMG Multiplier of Heavy Attack Starflash is increased by 91%."
+  },
+  {
+   "owner": "Phoebe Sequence 3: Daisy Wreaths and Dreams",
+   "ownerKind": "resonator",
+   "sentence": "When in Confession, the DMG Multiplier of Heavy Attack Starflash is increased by 249%."
+  },
+  {
+   "owner": "Phoebe Sequence 4: Ringing Bells on Wings Aloft",
+   "ownerKind": "resonator",
+   "sentence": "When Basic Attack, Basic Attack Chamuel's Star, Dodge Counter, or Chamuel's Star: Dodge Counter hits, the target's Spectro RES is reduced by 10% for 30s."
+  },
+  {
+   "owner": "Phoebe Sequence 6: Whispering Chirps in Silence",
+   "ownerKind": "resonator",
+   "sentence": "Targets entering the Ring of Mirrors are stagnated for an additional 2s."
+  },
+  {
+   "owner": "Phoebe Sequence 6: Whispering Chirps in Silence",
+   "ownerKind": "resonator",
+   "sentence": "The stagnation effect affects all targets entering the Ring of Mirrors and can be applied to 12 targets max for each Ring of Mirrors."
+  },
+  {
+   "owner": "Phoebe: Presence",
+   "ownerKind": "resonator",
+   "sentence": "Mid-air Heavy Attack can be cast 1 more times."
+  },
+  {
+   "owner": "Phoebe: Attentive Heart",
+   "ownerKind": "resonator",
+   "sentence": "Deal Spectro DMG equal to 528.41% of Phoebe's ATK to nearby targets."
+  },
+  {
+   "owner": "Phoebe: Attentive Heart",
+   "ownerKind": "resonator",
+   "sentence": "Absolution Enhancement: Increase DMG Multiplier by 255%."
+  },
+  {
+   "owner": "Phoebe: Attentive Heart",
+   "ownerKind": "resonator",
+   "sentence": "When Spectro Frazzle inflicts DMG, extend Spectro Frazzle's damage interval by 50%."
+  },
+  {
+   "owner": "Phoebe: Attentive Heart",
+   "ownerKind": "resonator",
+   "sentence": "This effect lasts 30s or until Phoebe switches to Absolution status."
+  },
+  {
+   "owner": "Shorekeeper Sequence 1: Unspoken Conjecture",
+   "ownerKind": "resonator",
+   "sentence": "The Stellarealms generated by Resonance Liberation End Loop gain the following enhancements: The effective range of the healing and buffs is extended by 150% The duration is extended by 10s."
+  },
+  {
+   "owner": "Shorekeeper Sequence 3: Infinity Awaits Me",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Liberation End Loop grants Shorekeeper 20 Concerto Energy."
+  },
+  {
+   "owner": "Shorekeeper Sequence 5: Echoes in Silence",
+   "ownerKind": "resonator",
+   "sentence": "Extend the ranges of the pulling effect of Basic Attack Stage 3 by 50% and Illation by 30%."
+  },
+  {
+   "owner": "Shorekeeper Sequence 6: To the New World",
+   "ownerKind": "resonator",
+   "sentence": "Increase the DMG Multiplier of Intro Skill Discernment by 42%."
+  },
+  {
+   "owner": "Shorekeeper: Life Entwined",
+   "ownerKind": "resonator",
+   "sentence": "When a Resonator other than Shorekeeper takes a fatal blow, they will not be knocked out and will instead be healed for 50% of Shorekeeper's HP while Shorekeeper loses the same amount of HP."
+  },
+  {
+   "owner": "Shorekeeper: Life Entwined",
+   "ownerKind": "resonator",
+   "sentence": "Shorekeeper's HP will not go below 1 from this effect."
+  },
+  {
+   "owner": "Shorekeeper: Binary Butterfly",
+   "ownerKind": "resonator",
+   "sentence": "Shorekeeper summons 1 Flare Star Butterfly and 1 Dim Star Butterfly to circle the Resonator on the field for up to 30s, granting the following effects: If the Resonator on the field is hit or launched, tapping the Dodge Button allows the Resonator to immediately recover from the interruption, triggering a successful Dodge."
+  },
+  {
+   "owner": "Shorekeeper: Binary Butterfly",
+   "ownerKind": "resonator",
+   "sentence": "All nearby party members' DMG is Amplified by 15%."
+  },
+  {
+   "owner": "Verina Sequence 1: Moment of Emergence",
+   "ownerKind": "resonator",
+   "sentence": "Outro Skill Blossom grants the next character a continuous Healing effect, recovering HP by 20% of Verina's ATK every 5s for 30s."
+  },
+  {
+   "owner": "Verina Sequence 2: Sprouting Reflections",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Skill Botany Experiment additionally grants 1 [Photosynthesis Energy] and 10 Concerto Energy."
+  },
+  {
+   "owner": "Verina Sequence 3: The Choice to Flourish",
+   "ownerKind": "resonator",
+   "sentence": "Healing of Resonance Liberation's Photosynthesis Mark is increased by 12%."
+  },
+  {
+   "owner": "Verina Sequence 5: Miraculous Blooms",
+   "ownerKind": "resonator",
+   "sentence": "When Verina heals a team member with HP less than 50%, her Healing is increased by 20%."
+  },
+  {
+   "owner": "Verina Sequence 6: Joyous Harvest",
+   "ownerKind": "resonator",
+   "sentence": "Heavy Attack Starflower Blooms and Mid-air Attack Starflower Blooms deal 20% more DMG."
+  },
+  {
+   "owner": "Verina Sequence 6: Joyous Harvest",
+   "ownerKind": "resonator",
+   "sentence": "They will trigger Coordinated Attack 1 time and heal all characters nearby."
+  },
+  {
+   "owner": "Verina: Grace of Life",
+   "ownerKind": "resonator",
+   "sentence": "Verina protects a team member from fatal damage and grants a shield with strength equal to 120% of Verina's ATK, lasting for 10s."
+  },
+  {
+   "owner": "Verina: Blossom",
+   "ownerKind": "resonator",
+   "sentence": "Heal the incoming Resonator by 19% of Verina's ATK per second for 6s."
+  },
+  {
+   "owner": "Zhezhi Sequence 2: Vivid Strokes",
+   "ownerKind": "resonator",
+   "sentence": "Max Inklit Spirits summoned by Resonance Liberation Living Canvas increases by 6."
+  },
+  {
+   "owner": "Zhezhi Sequence 4: Hue's Spectrum",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Liberation Living Canvas increases ATK of Resonators on the team 20% for 30s."
+  },
+  {
+   "owner": "Zhezhi Sequence 5: Composition's Clue",
+   "ownerKind": "resonator",
+   "sentence": "For every 3 Inklit Spirits summoned by Resonance Liberation Living Canvas, 1 extra Inklit Spirit is summoned to perform a Coordinated Attack, dealing DMG equal to 140% of Inklit Spirit's DMG, considered as Basic Attack DMG."
+  },
+  {
+   "owner": "Zhezhi Sequence 6: Infinite Legacy",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Skill Stroke of Genius or Resonance Skill Creation's Zenith summons an extra Ivory Herald to deal DMG equal to 120% of Resonance Skill Stroke of Genius's DMG, considered as Basic Attack DMG."
+  },
+  {
+   "owner": "Zhezhi: Calligrapher's Touch",
+   "ownerKind": "resonator",
+   "sentence": "This can be stacked up to 3 time(s)."
+  },
+  {
+   "owner": "Zhezhi: Flourish",
+   "ownerKind": "resonator",
+   "sentence": "After Outro Skill is cast, restore 15 Resonance Energy for the incoming Resonator."
+  },
+  {
+   "owner": "Roccia Sequence 1: When Shadows Engulf the Hull",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Skill Acrobatic Trick grants 100 additional Imagination and 10 Concerto Energy."
+  },
+  {
+   "owner": "Roccia Sequence 4: When Wonders Gather in the Box",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Skill Acrobatic Trick increases Basic Attack Real Fantasy's DMG Multiplier by 60% for 12s."
+  },
+  {
+   "owner": "Roccia Sequence 5: When Dreams Are Reborn on Stage",
+   "ownerKind": "resonator",
+   "sentence": "Increase Resonance Liberation Commedia Improvviso!'s DMG Multiplier by 20% and Heavy Attack's DMG Multiplier by 80%."
+  },
+  {
+   "owner": "Roccia Sequence 6: When the Golden Wings Fly",
+   "ownerKind": "resonator",
+   "sentence": "Casting Resonance Liberation Commedia Improvviso! grants the following effects for 12s: Basic Attack Real Fantasy ignores enemies' DEF by 60%."
+  },
+  {
+   "owner": "Roccia Sequence 6: When the Golden Wings Fly",
+   "ownerKind": "resonator",
+   "sentence": "When Roccia lands after performing Basic Attack Real Fantasy Stage 3, she is launched into mid-air, activating Beyond Imagination."
+  },
+  {
+   "owner": "Roccia Sequence 6: When the Golden Wings Fly",
+   "ownerKind": "resonator",
+   "sentence": "In this state, Basic Attack becomes Basic Attack Reality Recreation, dealing DMG equal to 100% of Basic Attack Real Fantasy Stage 3 DMG, considered Heavy Attack DMG."
+  },
+  {
+   "owner": "Roccia: Super Attractive Magic Box",
+   "ownerKind": "resonator",
+   "sentence": "Magic Box Upon use, pull nearby targets toward the Magic Box, dealing 100 points of Havoc DMG."
+  },
+  {
+   "owner": "Sanhua Sequence 2: Snowy Clarity",
+   "ownerKind": "resonator",
+   "sentence": "Heavy Attack Detonate STA cost is reduced by 10."
+  },
+  {
+   "owner": "Sanhua Sequence 2: Snowy Clarity",
+   "ownerKind": "resonator",
+   "sentence": "When Sanhua casts Resonance Skill Eternal Frost, her resistance to interruption is enhanced for 10s."
+  },
+  {
+   "owner": "Sanhua Sequence 3: Anomalous Vision",
+   "ownerKind": "resonator",
+   "sentence": "Sanhua's damage dealt is increased by 35% against targets with HP below 70%."
+  },
+  {
+   "owner": "Sanhua Sequence 4: Blade Mastery",
+   "ownerKind": "resonator",
+   "sentence": "Resonance Liberation Glacial Gaze restores 10 Resonance Energy."
+  },
+  {
+   "owner": "Sanhua Sequence 4: Blade Mastery",
+   "ownerKind": "resonator",
+   "sentence": "DMG of the next Heavy Attack Detonate within 5s is increased by 120%."
+  },
+  {
+   "owner": "Sanhua Sequence 5: Unraveling Fate",
+   "ownerKind": "resonator",
+   "sentence": "Crit. DMG of Forte Circuit Ice Burst is increased by 100%."
+  },
+  {
+   "owner": "Sanhua: Avalanche",
+   "ownerKind": "resonator",
+   "sentence": "Damage dealt by Sanhua's Forte Circuit Ice Burst is increased by 20% for 8s after casting Basic Attack 5."
+  },
+  {
+   "owner": "Tempest Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The lightning strike summoned by the tail swing deals 102.48% Electro DMG each time, while the claw attack deals 175.68% Electro DMG."
+  },
+  {
+   "owner": "Hoochief (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Hoochief and smack the enemies, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Crownless and perform up to 4 consecutive attacks."
+  },
+  {
+   "owner": "Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 2 attacks deal 134.08% Havoc DMG each, the 3rd attack deals 100.56% Havoc DMG 2 times, and the 4th attack deals 67.04% Havoc DMG 3 times."
+  },
+  {
+   "owner": "Feilian Beringal (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The kick deals 231.84% Aero DMG, and the follow-up strike deals 283.36% Aero DMG."
+  },
+  {
+   "owner": "Lampylumen Myriad (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Perform up to 3 consecutive attacks."
+  },
+  {
+   "owner": "Lampylumen Myriad (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Unleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting 200.16% and 200.16% Glacio DMG respectively, and the final strike dealing 266.88% Glacio DMG."
+  },
+  {
+   "owner": "Mourning Aix (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing 157.44% and 236.16% Spectro DMG respectively."
+  },
+  {
+   "owner": "Carapace (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Carapace to perform a spinning attack that deals 112.00% Aero DMG, followed by a slash that deals 168.00% Aero DMG."
+  },
+  {
+   "owner": "Mech Abomination (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Strike enemies in front, dealing 48.64% Electro DMG, and summon Mech Waste to attack."
+  },
+  {
+   "owner": "Mech Abomination (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Mech Waste deals 320.00% Electro DMG on hit and explodes after a while, dealing 160.00% Electro DMG."
+  },
+  {
+   "owner": "Autopuppet Scout (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Autopuppet Scout, dealing 272.00% Glacio DMG to the surroundings, and generate up to 3 Ice Walls to block off the enemies."
+  },
+  {
+   "owner": "Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Impermanence Heron to fly up and smack down, dealing 310.56% Havoc DMG."
+  },
+  {
+   "owner": "Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Long press to stay as Impermanence Heron and continuously spit flames, each attack dealing 55.73% Havoc DMG."
+  },
+  {
+   "owner": "Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Once the initial attack lands on any enemy, the current character regains 10 Resonance Energy."
+  },
+  {
+   "owner": "Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If the current character uses their Outro Skill within the next 15s, the next character's damage dealt will be boosted by 12% for 15s."
+  },
+  {
+   "owner": "Dreamless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Dreamless and perform 6 consecutive strikes."
+  },
+  {
+   "owner": "Dreamless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 5 strikes deal 54.08% Havoc DMG each, and the last strike deal 270.40% Havoc DMG."
+  },
+  {
+   "owner": "Dreamless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The DMG of this Echo Skill is increased by 50.00% during the first 5s after Rover: Havoc casts Resonance Liberation: Deadening Abyss."
+  },
+  {
+   "owner": "Glacio Dreadmane (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Lacerate enemies as a Glacio Dreadmane, dealing 214.40% Glacio DMG on each hit."
+  },
+  {
+   "owner": "Glacio Dreadmane (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Equipped with 2 charges and can be cast mid-air."
+  },
+  {
+   "owner": "Glacio Dreadmane (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Glacio Dreadmane deals 20.00% more DMG while in mid-air and generates 6 Icicles upon landing, each dealing 32.00% Glacio DMG."
+  },
+  {
+   "owner": "Lumiscale Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If you are not attacked during the Parry Stance, slash to deal 553.60% Glacio DMG when the stance finishes."
+  },
+  {
+   "owner": "Lumiscale Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If attacked, counterattack instantly, dealing 553.60%+276.80% Glacio DMG."
+  },
+  {
+   "owner": "Lumiscale Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When hit with a Special Skill attack while in the Parry Stance, break the Special Skill and counterattack, dealing 553.60%+276.80% Glacio DMG."
+  },
+  {
+   "owner": "Lightcrusher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Lunge forward as a Lightcrusher, dealing 135.36% Spectro DMG."
+  },
+  {
+   "owner": "Lightcrusher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Generate 6 Ablucence on hit."
+  },
+  {
+   "owner": "Lightcrusher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Each Ablucence explosion deals 15.04% Spectro DMG."
+  },
+  {
+   "owner": "Jué (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Jué soars through the air, dealing 48.64% Spectro DMG, and summons thunderbolts that strike nearby enemies up to 5 times, each hit dealing 19.46% Spectro DMG."
+  },
+  {
+   "owner": "Jué (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Jué then spirals downward, attacking surrounding enemies twice, each hit dealing 48.64% Spectro DMG."
+  },
+  {
+   "owner": "Jué (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When the Resonator's Resonance Skill hits the target, inflict 16.00% Spectro DMG 1 time per second for 15s, considered as the Resonator's Resonance Skill DMG."
+  },
+  {
+   "owner": "Fallacy of No Return (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to 15.86% of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s."
+  },
+  {
+   "owner": "Fallacy of No Return (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Hold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to 1.58% of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to 19.82% of max HP."
+  },
+  {
+   "owner": "Questless Knight (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Questless Knight and smash the surrounding enemies, dealing 313.20% Electro DMG."
+  },
+  {
+   "owner": "Diurnus Knight (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Diurnus Knight and charge forward to attack enemies with the sword, dealing 268.20% Spectro DMG."
+  },
+  {
+   "owner": "Diurnus Knight (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "DMG dealt to enemies inflicted by Spectro Frazzle is increased by 100.00%."
+  },
+  {
+   "owner": "Nocturnus Knight (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nocturnus Knight and strike enemies in front of you from the air, dealing 268.20% Havoc DMG."
+  },
+  {
+   "owner": "Abyssal Patricius (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Abyssal Patricius and charge forward to attack enemies, dealing 268.20% Glacio DMG."
+  },
+  {
+   "owner": "Abyssal Gladius (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Abyssal Gladius and attack enemies in front of you with the sword, dealing 268.20% Glacio DMG."
+  },
+  {
+   "owner": "Abyssal Gladius (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Hold the Echo Skill to maintain the Echo form for a while to slash enemies and cast a ranged attack forward, dealing 268.20% and 670.50% Glacio DMG respectively."
+  },
+  {
+   "owner": "Abyssal Mercator (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Abyssal Mercator and summon 3 Ice Spikes to attack enemies, each dealing 89.39% Glacio DMG."
+  },
+  {
+   "owner": "Chop Chop (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 6 strikes each deal 19.26% Fusion DMG and finishing strike deals 77.04% Fusion DMG."
+  },
+  {
+   "owner": "Vitreum Dancer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Vitreum Dancer and attack surrounding enemies, dealing 313.20% Electro DMG."
+  },
+  {
+   "owner": "Lorelei (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Lorelei and attack surrounding enemies, dealing 405.00% Havoc DMG."
+  },
+  {
+   "owner": "Sentry Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Sentry Construct and attack enemies in front, dealing 405.00% Glacio DMG."
+  },
+  {
+   "owner": "Sentry Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to transform into Sentry Construct and dive into enemies from the air, dealing 405.00% Glacio DMG and freezing the target."
+  },
+  {
+   "owner": "Dragon of Dirge (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Dragon of Dirge and summon a Grief Rift lasting for 5s."
+  },
+  {
+   "owner": "Dragon of Dirge (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Periodically deal 36.81% Fusion DMG to enemies within the area of effect."
+  },
+  {
+   "owner": "Hecate (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon 3 twirling Crescent Servants around you."
+  },
+  {
+   "owner": "Hecate (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Crescent Servants attack enemies with their spinning blades, dealing 45.59% Havoc DMG."
+  },
+  {
+   "owner": "Hecate (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The Resonator with this Echo equipped in the main slot has their Coordinated Attack DMG increased by 40.00%."
+  },
+  {
+   "owner": "Nightmare: Feilian Beringal (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Nightmare: Feilian Beringal to attack enemies, dealing 164.16% Aero DMG."
+  },
+  {
+   "owner": "Nightmare: Feilian Beringal (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The remaining Whirlwind Beam will continuously attack surrounding enemies up to 5 times, each dealing 21.89% Aero DMG."
+  },
+  {
+   "owner": "Nightmare: Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Impermanence Heron and deliver up to 10 consecutive strikes to surrounding enemies, each dealing 40.50% Havoc DMG."
+  },
+  {
+   "owner": "Nightmare: Thundering Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Thundering Mephis and attack enemies in front, dealing 405.00% Electro DMG."
+  },
+  {
+   "owner": "Nightmare: Tempest Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Tempest Mephis and attack surrounding enemies, dealing 405.00% Electro DMG."
+  },
+  {
+   "owner": "Nightmare: Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Crownless and attack enemies in front, dealing 264.60% Havoc DMG."
+  },
+  {
+   "owner": "Nightmare: Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "This skill has 3 initial charges, replenished once every 12s, max 3 charges."
+  },
+  {
+   "owner": "Nightmare: Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When Nightmare: Crownless hits a target, DMG dealt by this skill is increased by 20.00%."
+  },
+  {
+   "owner": "Nightmare: Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Inferno Rider and jump to attack enemies in front, dealing 405.00% Fusion DMG."
+  },
+  {
+   "owner": "Nightmare: Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When exiting Riding Mode, deal 283.50% Fusion DMG to enemies in front."
+  },
+  {
+   "owner": "Nightmare: Mourning Aix (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Nightmare: Mourning Aix to attack surrounding enemies, dealing 273.60% Spectro DMG."
+  },
+  {
+   "owner": "Nightmare: Mourning Aix (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "DMG dealt to enemies inflicted by Spectro Frazzle is increased by 100.00%."
+  },
+  {
+   "owner": "Rage Against the Statue (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Rage Against the Statue to attack enemies, dealing 313.20% Spectro DMG."
+  },
+  {
+   "owner": "Rage Against the Statue (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Hold the Echo Skill to maintain the Echo form and charge towards enemies, dealing 469.80% Spectro DMG."
+  },
+  {
+   "owner": "Hurriclaw (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Hurriclaw and charge forward, dealing 156.60% Aero DMG upon hit plus 156.60% Aero DMG with a sweep attack."
+  },
+  {
+   "owner": "Capitaneus (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Capitaneus to jump up and smash enemies, dealing 118.80% Spectro DMG."
+  },
+  {
+   "owner": "Capitaneus (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "This attack generates 4 extra Merciless Judgements, each dealing 59.40% Spectro DMG."
+  },
+  {
+   "owner": "Nightmare: Lampylumen Myriad (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Nightmare: Lampylumen Myriad and attack surrounding enemies, dealing 273.60% Glacio DMG."
+  },
+  {
+   "owner": "Reminiscence: Fleurdelys (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Windcleaver and attack the target, dealing 27.36% Aero DMG 8 times and 136.80% Aero DMG once."
+  },
+  {
+   "owner": "Reminiscence: Fleurdelys (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When Resonator: Aero or Cartethyia equips this Echo, they gain 10.00% more Aero DMG Bonus."
+  },
+  {
+   "owner": "Pilgrim's Shell (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Pilgrim's Shell to attack nearby enemies, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Kerasaur (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Kerasaur to leap into the air and slam down, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Kerasaur (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Shortly after hitting the target, cast Echo Skill again to charge at the target, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Nightmare: Kelpie (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Kelpie to attack nearby targets, dealing 405.00% Glacio DMG."
+  },
+  {
+   "owner": "Nightmare: Kelpie (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Switching out the Resonator with Outro Skill summons Nightmare: Kelpie to deal 405.00% Aero DMG."
+  },
+  {
+   "owner": "Lioness of Glory (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon the Halberd of Glory to crush an area, dealing 82.08% Fusion DMG to nearby targets, and then blast off after a short delay, dealing 191.52% Fusion DMG."
+  },
+  {
+   "owner": "Nightmare: Hecate (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Leap up and smash down, dealing 3 stages of damage, each dealing Havoc DMG equal to 152.39% of her ATK."
+  },
+  {
+   "owner": "Reminiscence: Fenrico (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon the Talons of Decree to attack nearby enemies, dealing 273.60% Aero DMG."
+  },
+  {
+   "owner": "Nightmare: Tambourinist (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Any Resonator on the team gains the following effect for 10s upon obtaining a Melody of Annihilation: When the Resonator hits a target, the Tambourinist deals 14.40% Havoc DMG to the target, up to 10 times."
+  },
+  {
+   "owner": "Corrosaurus (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Corrosaurus to attack enemies, dealing 273.60% Fusion DMG."
+  },
+  {
+   "owner": "The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into the False Sovereign and dash forward in a spinning strike, dealing 55.35% Electro DMG 4 times."
+  },
+  {
+   "owner": "The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Upon casting Intro Skill, the False Sovereign is also summoned to deal 405.00% Electro DMG."
+  },
+  {
+   "owner": "The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Start with 2 charges."
+  },
+  {
+   "owner": "The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Gain 1 charge every 8s, up to 2 charges."
+  },
+  {
+   "owner": "Phantom: Mourning Aix (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing 157.44% and 236.16% Spectro DMG respectively."
+  },
+  {
+   "owner": "Lady of the Sea (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Tidestorm to deal 13.68% Aero DMG ten times and 164.16% Aero DMG one time to enemies."
+  },
+  {
+   "owner": "Nightmare: Violet-Feathered Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Counterattack when the Parry stance is over, dealing 288.00% Electro DMG."
+  },
+  {
+   "owner": "Nightmare: Violet-Feathered Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If attacked during Parry Stance, you can counterattack in advance and additionally recover 5 Concerto Energy."
+  },
+  {
+   "owner": "Nightmare: Cyan-Feathered Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing 236.80% Aero DMG; This Echo Skill interrupts enemy Special Skills upon dealing damage."
+  },
+  {
+   "owner": "Reminiscence: Threnodian - Leviathan (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Collapsing Horizon, dealing two instances of 131.04% Havoc DMG to the nearby enemies and obtaining the Core of Collapse for 15s."
+  },
+  {
+   "owner": "Reminiscence: Threnodian - Leviathan (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "While it lasts, Core of Collapse deals 24.57% Havoc DMG when the active Resonator in the team deals damage."
+  },
+  {
+   "owner": "Reminiscence: Threnodian - Leviathan (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Enemies with Havoc Bane take 100% more DMG from this effect."
+  },
+  {
+   "owner": "Nightmare: Viridblaze Saurian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Viridblaze Saurian to continuously spit fire, dealing 17.12% Fusion DMG 10 times."
+  },
+  {
+   "owner": "Nightmare: Roseshroom (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Roseshroom that fires a laser, dealing 57.07% Havoc DMG up to 3 times."
+  },
+  {
+   "owner": "Twin Nova: Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Twin Nova: Nebulous Cannon to slash enemies twice, with each attack dealing 80.51% Spectro DMG."
+  },
+  {
+   "owner": "Twin Nova: Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Basic Attacks grants 1 stack of Dyad Origins."
+  },
+  {
+   "owner": "Twin Nova: Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Resonance Skill grants 3 stacks of Dyad Origins."
+  },
+  {
+   "owner": "Twin Nova: Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Initially, this skill can be used 2 times, with 1 use added every 8s."
+  },
+  {
+   "owner": "Twin Nova: Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Twin Nova: Collapsar Blade to rapidly fire at enemies for 5s, with each attack dealing 2.01% Electro DMG."
+  },
+  {
+   "owner": "Twin Nova: Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Basic Attacks grants 1 stack of Dyad Origins."
+  },
+  {
+   "owner": "Twin Nova: Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Resonance Skill grants 3 stacks of Dyad Origins."
+  },
+  {
+   "owner": "Twin Nova: Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "This skill is capped at 2 uses."
+  },
+  {
+   "owner": "Twin Nova: Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Initially, this skill can be used 2 times, with 1 use added every 8s."
+  },
+  {
+   "owner": "Flora Reindeer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Flora Reindeer to attack enemies within a large range, dealing 192.60% Aero DMG."
+  },
+  {
+   "owner": "Mining Reindeer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Mining Reindeer to launch a charged attack at enemies, dealing 237.60% Electro DMG."
+  },
+  {
+   "owner": "Ironhoof (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into an Ironhoof to charge at enemies, dealing 53.64% Fusion DMG."
+  },
+  {
+   "owner": "Ironhoof (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "At the end of the charge, unleash a goring attack that deals 13.41% Fusion DMG 3 times and 174.33% Fusion DMG once."
+  },
+  {
+   "owner": "Spacetrek Explorer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Spacetrek Explorer to grant nearby active Resonators in the team a Shield equal to 10% of the summoner's Max HP for 4s."
+  },
+  {
+   "owner": "Sabercat Reaver (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Sabercat Reaver to attack enemies, dealing 192.60% Fusion DMG."
+  },
+  {
+   "owner": "Sabercat Prowler (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Sabercat Prowler to fire beams at enemies, dealing 192.60% Havoc DMG."
+  },
+  {
+   "owner": "Frostbite Coleoid (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Frostbite Coleoid to punch enemies, dealing 192.60% Glacio DMG."
+  },
+  {
+   "owner": "Windlash Coleoid (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Windlash Coleoid to kick enemies, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Hyvatia (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Hyvatia to fire lasers at enemies from mid-air, dealing 27.36% Spectro DMG 10 times."
+  },
+  {
+   "owner": "Reactor Husk (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Reactor Husk, jumping into the air and unleashing a heavy slash that deals 351.00% Fusion DMG to enemies."
+  },
+  {
+   "owner": "Sigillum (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Sigillum to unleash two attacks, dealing 68.40% and 205.20% Fusion DMG respectively."
+  },
+  {
+   "owner": "Nameless Explorer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Nameless Explorer to attack enemies along its path, dealing 273.60% Aero DMG."
+  },
+  {
+   "owner": "Kronablight (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Kronablight, soar into the air, and dive to deal 268.20% Electro DMG to the enemies."
+  },
+  {
+   "owner": "Reminiscence: Kronaclaw (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Kronaclaw and soar into the air to deal 8.04% Aero DMG up to 8 times and 24.13% Aero DMG 2 times, then dive to deal 155.55% Aero DMG 1 time."
+  },
+  {
+   "owner": "Glommoth (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Glommoth to stomp enemies, dealing 273.60% Glacio DMG."
+  },
+  {
+   "owner": "Voidwing Moth (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "times Echo Skill to transform into Voidwing Moth, dealing 405.00% Spectro DMG to nearby enemies."
+  },
+  {
+   "owner": "Voidwing Moth (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Hold Echo Skill to continuously attack, dealing up to 12 instances of 49.33% Spectro DMG."
+  },
+  {
+   "owner": "Voidwing Moth (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Within 15s after using this Echo skill, casting Outro Skill increases the incoming Resonator's ATK by 12.00% for 15s."
+  },
+  {
+   "owner": "Reminiscence: Threnodian - Voidborne Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Aleph-1's Creation to deal 21.88% Glacio DMG 5 times and 164.16% Glacio DMG 1 time to enemies."
+  },
+  {
+   "owner": "Reminiscence: Denia (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon \"Trickster\" to deal 273.60% Fusion DMG to enemies."
+  },
+  {
+   "owner": "Reminiscence - Nightmare: Adam Smasher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Cast Echo Skill to deal 16 instances of Physical DMG equal to 10.26% of ATK to enemies within range."
+  },
+  {
+   "owner": "Reminiscence - Nightmare: Adam Smasher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If equipped by Lucy: - times the Echo Skill button to deal Spectro DMG equal to 273.60% of ATK to nearby enemies."
+  },
+  {
+   "owner": "Reminiscence - Nightmare: Adam Smasher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Hold the Echo Skill button to deal Spectro DMG equal to 273.60% of ATK to nearby enemies and enter a special moving state, increasing Lucy's movement speed while slowing nearby enemies."
+  },
+  {
+   "owner": "Reminiscence - Nightmare: Adam Smasher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If equipped by Rebecca: Cast Echo Skill to fire missiles, dealing 16 instances of Electro DMG equal to 17.10% of ATK to enemies."
+  },
+  {
+   "owner": "Fog Lionarch (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to summon Fog Lionarch to spit fire toward enemies, dealing 7 stages of 33.93% Fusion DMG."
+  },
+  {
+   "owner": "Forbidden Bastion (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to summon Forbidden Bastion to bash over enemies, dealing 237.60% Glacio DMG."
+  },
+  {
+   "owner": "Myriad Snare: Rustfire Chassis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Myriad Snare: Rustfire Chassis, dealing Fusion DMG equal to 10.20% of the Max HP on initial impact."
+  },
+  {
+   "owner": "Myriad Snare: Rustfire Chassis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "During its duration, it repeatedly crushes enemies along its path up to 19 times, dealing Fusion DMG equal to 0.37% of the Max HP each time."
+  },
+  {
+   "owner": "Thousand-Puppet Pavilion (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to attack nearby enemies, dealing 109.44% Havoc DMG and summoning 4 Blades of Thousand Memories that last 15s."
+  },
+  {
+   "owner": "Thousand-Puppet Pavilion (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "While Blades of Thousand Memories last, when the Resonator inflicts Havoc Bane, consume 1 Blade of Thousand Memories to deal 41.04% Havoc DMG once to the target."
+  },
+  {
+   "owner": "Skywatch Lancer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Skywatch Lancer to attack the target, dealing 32.09% Aero DMG 6 times."
+  },
+  {
+   "owner": "Calamity Effigy (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Calamity Effigy to deal 405.00% Aero DMG."
+  },
+  {
+   "owner": "Formrender (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to summon a Formrender, dealing 273.60% Fusion DMG."
+  },
+  {
+   "owner": "Soulfrayer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to summon a Soulfrayer, dealing 91.18% Electro DMG 3 times."
+  },
+  {
+   "owner": "Reminiscence: Suhsin the Inevitable (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Cast Echo Skill to deal 4 instances of 27.36% Electro DMG and 1 instance of 164.16% Electro DMG."
+  },
+  {
+   "owner": "Reminiscence: Suhsin the Inevitable (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When equipped by Hsin, the Echo Skill instead deals 5 instances of 8.20% Electro DMG and 1 instance of 232.56% Electro DMG to targets within a larger range."
+  },
+  {
+   "owner": "Phantom: Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Crownless and perform up to 4 consecutive attacks."
+  },
+  {
+   "owner": "Phantom: Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 2 attacks deal 134.08% Havoc DMG each, the 3rd attack deals 100.56% Havoc DMG 2 times, and the 4th attack deals 67.04% Havoc DMG 3 times."
+  },
+  {
+   "owner": "Phantom: Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Impermanence Heron to fly up and smack down, dealing 310.56% Havoc DMG."
+  },
+  {
+   "owner": "Phantom: Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Long press to stay as Impermanence Heron and continuously spit flames, each attack dealing 55.73% Havoc DMG."
+  },
+  {
+   "owner": "Phantom: Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Once the initial attack lands on any enemy, the current character regains 10 Resonance Energy."
+  },
+  {
+   "owner": "Phantom: Impermanence Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If the current character uses their Outro Skill within the next 15s, the next character's damage dealt will be boosted by 12% for 15s."
+  },
+  {
+   "owner": "Phantom: Dreamless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Dreamless and perform 6 consecutive strikes."
+  },
+  {
+   "owner": "Phantom: Dreamless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 5 strikes deal 54.08% Havoc DMG each, and the last strike deal 270.40% Havoc DMG."
+  },
+  {
+   "owner": "Phantom: Dreamless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The DMG of this Echo Skill is increased by 50.00% during the first 5s after Rover: Havoc casts Resonance Liberation: Deadening Abyss."
+  },
+  {
+   "owner": "Phantom: Lumiscale Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If you are not attacked during the Parry Stance, slash to deal 553.60% Glacio DMG when the stance finishes."
+  },
+  {
+   "owner": "Phantom: Lumiscale Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If attacked, counterattack instantly, dealing 553.60%+276.80% Glacio DMG."
+  },
+  {
+   "owner": "Phantom: Lumiscale Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When hit with a Special Skill attack while in the Parry Stance, break the Special Skill and counterattack, dealing 553.60%+276.80% Glacio DMG."
+  },
+  {
+   "owner": "Phantom: Lightcrusher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Lunge forward as a Lightcrusher, dealing 135.36% Spectro DMG."
+  },
+  {
+   "owner": "Phantom: Lightcrusher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Generate 6 Ablucence on hit."
+  },
+  {
+   "owner": "Phantom: Lightcrusher (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Each Ablucence explosion deals 15.04% Spectro DMG."
+  },
+  {
+   "owner": "Phantom: Fallacy of No Return (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to 15.86% of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s."
+  },
+  {
+   "owner": "Phantom: Fallacy of No Return (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Hold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to 1.58% of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to 19.82% of max HP."
+  },
+  {
+   "owner": "Phantom: Questless Knight (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Questless Knight and smash the surrounding enemies, dealing 313.20% Electro DMG."
+  },
+  {
+   "owner": "Phantom: Chop Chop (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 6 strikes each deal 19.26% Fusion DMG and finishing strike deals 77.04% Fusion DMG."
+  },
+  {
+   "owner": "Phantom: Vitreum Dancer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Vitreum Dancer and attack surrounding enemies, dealing 313.20% Electro DMG."
+  },
+  {
+   "owner": "Phantom: Cuddle Wuddle (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Cuddle Wuddle and attack enemies with 4 strikes dealing 46.98% Physical DMG and 1 strike dealing 125.28% Physical DMG."
+  },
+  {
+   "owner": "Phantom: Lorelei (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Lorelei and attack surrounding enemies, dealing 405.00% Havoc DMG."
+  },
+  {
+   "owner": "Phantom: Sentry Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Sentry Construct and attack enemies in front, dealing 405.00% Glacio DMG."
+  },
+  {
+   "owner": "Phantom: Sentry Construct (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to transform into Sentry Construct and dive into enemies from the air, dealing 405.00% Glacio DMG and freezing the target."
+  },
+  {
+   "owner": "Phantom: Nightmare Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Crownless and attack enemies in front, dealing 264.60% Havoc DMG."
+  },
+  {
+   "owner": "Phantom: Nightmare Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "This skill has 3 initial charges, replenished once every 12s, max 3 charges."
+  },
+  {
+   "owner": "Phantom: Nightmare Crownless (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When Nightmare: Crownless hits a target, DMG dealt by this skill is increased by 20.00%."
+  },
+  {
+   "owner": "Phantom: Nightmare Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Nightmare: Inferno Rider and jump to attack enemies in front, dealing 405.00% Fusion DMG."
+  },
+  {
+   "owner": "Phantom: Nightmare Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When exiting Riding Mode, deal 283.50% Fusion DMG to enemies in front."
+  },
+  {
+   "owner": "Phantom: Capitaneus (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Capitaneus to jump up and smash enemies, dealing 118.80% Spectro DMG."
+  },
+  {
+   "owner": "Phantom: Capitaneus (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "This attack generates 4 extra Merciless Judgements, each dealing 59.40% Spectro DMG."
+  },
+  {
+   "owner": "Phantom: Kerasaur (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Kerasaur to leap into the air and slam down, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Phantom: Kerasaur (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Shortly after hitting the target, cast Echo Skill again to charge at the target, dealing 268.20% Aero DMG."
+  },
+  {
+   "owner": "Phantom: The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into the False Sovereign and dash forward in a spinning strike, dealing 55.35% Electro DMG 4 times."
+  },
+  {
+   "owner": "Phantom: The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Upon casting Intro Skill, the False Sovereign is also summoned to deal 405.00% Electro DMG."
+  },
+  {
+   "owner": "Phantom: The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Start with 2 charges."
+  },
+  {
+   "owner": "Phantom: The False Sovereign (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Gain 1 charge every 8s, up to 2 charges."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Twin Nova: Nebulous Cannon to slash enemies twice, with each attack dealing 80.51% Spectro DMG."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Basic Attacks grants 1 stack of Dyad Origins."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Resonance Skill grants 3 stacks of Dyad Origins."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Nebulous Cannon (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Initially, this skill can be used 2 times, with 1 use added every 8s."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Twin Nova: Collapsar Blade to rapidly fire at enemies for 5s, with each attack dealing 2.01% Electro DMG."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Basic Attacks grants 1 stack of Dyad Origins."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Casting Resonance Skill grants 3 stacks of Dyad Origins."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "This skill is capped at 2 uses."
+  },
+  {
+   "owner": "Phantom: Twin Nova - Collapsar Blade (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Initially, this skill can be used 2 times, with 1 use added every 8s."
+  },
+  {
+   "owner": "Phantom: Reactor Husk (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Reactor Husk, jumping into the air and unleashing a heavy slash that deals 351.00% Fusion DMG to enemies."
+  },
+  {
+   "owner": "Phantom: Sigillum (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Sigillum to unleash two attacks, dealing 68.40% and 205.20% Fusion DMG respectively."
+  },
+  {
+   "owner": "Phantom: Kronaclaw (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Kronaclaw and soar into the air to deal 8.04% Aero DMG up to 8 times and 24.13% Aero DMG 2 times, then dive to deal 155.55% Aero DMG 1 time."
+  },
+  {
+   "owner": "Phantom: Glommoth (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Glommoth to stomp enemies, dealing 273.60% Glacio DMG."
+  },
+  {
+   "owner": "Phantom: Forbidden Bastion (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Use Echo Skill to summon Forbidden Bastion to bash over enemies, dealing 237.60% Glacio DMG."
+  },
+  {
+   "owner": "Phantom: Myriad Snare: Rustfire Chassis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon Myriad Snare: Rustfire Chassis, dealing Fusion DMG equal to 10.20% of the Max HP on initial impact."
+  },
+  {
+   "owner": "Phantom: Myriad Snare: Rustfire Chassis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "During its duration, it repeatedly crushes enemies along its path up to 19 times, dealing Fusion DMG equal to 0.37% of the Max HP each time."
+  },
+  {
+   "owner": "Phantom: Skywatch Lancer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Skywatch Lancer to attack the target, dealing 32.09% Aero DMG 6 times."
+  },
+  {
+   "owner": "Violet-Feathered Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Counterattack when the Parry stance is over, dealing 288.00% Electro DMG."
+  },
+  {
+   "owner": "Violet-Feathered Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If attacked during Parry Stance, you can counterattack in advance and additionally recover 5 Concerto Energy."
+  },
+  {
+   "owner": "Cyan-Feathered Heron (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing 236.80% Aero DMG; This Echo Skill interrupts enemy Special Skills upon dealing damage."
+  },
+  {
+   "owner": "Stonewall Bracer (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Stonewall Bracer and charge forward, dealing 112.64% Physical DMG on-hit, then smash to deal 168.96% Physical DMG, and gain a shield of 10.00% of current character's Max HP that lasts 7s."
+  },
+  {
+   "owner": "Flautist (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Flautist, continuously emitting Electro lasers, dealing 53.28% Electro DMG for a total of 10 times."
+  },
+  {
+   "owner": "Flautist (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Gain 1 Concerto Energy every time a hit lands."
+  },
+  {
+   "owner": "Tambourinist (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Any Resonator on the team gains the following effect for 10s upon obtaining a Melody of Annihilation: When the Resonator hits a target, the Tambourinist deals 14.40% Havoc DMG to the target, up to 10 times."
+  },
+  {
+   "owner": "Rocksteady Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Upon being attacked, deal Spectro DMG equal to 8.29% of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to 8.29% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Rocksteady Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If the attack received is a Special Skill attack, interrupt the enemy's Special Skill, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to 5.52% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Rocksteady Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to 4.59% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Chasm Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Chasm Guardian to perform a Leap Strike that deals 273.60% Havoc DMG on hit."
+  },
+  {
+   "owner": "Chasm Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Current character loses 10.00% HP after the hit lands."
+  },
+  {
+   "owner": "Chasm Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Periodically restore current character's HP after 5s for up to 10.00% of their Max HP."
+  },
+  {
+   "owner": "Viridblaze Saurian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Viridblaze Saurian to continuously spit fire, dealing 17.12% Fusion DMG 10 times."
+  },
+  {
+   "owner": "Roseshroom (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Roseshroom that fires a laser, dealing 57.07% Havoc DMG up to 3 times."
+  },
+  {
+   "owner": "Havoc Dreadmane (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into a Havoc Dreadmane to perform up to 2 tail strikes."
+  },
+  {
+   "owner": "Havoc Dreadmane (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Each strike deals 116.64% Havoc DMG and inflicts an additional instance of 77.76% Havoc DMG upon hitting the target."
+  },
+  {
+   "owner": "Spearback (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Summon a Spearback to perform 5 consecutive attacks."
+  },
+  {
+   "owner": "Spearback (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 4 attacks deal 29.96% Physical DMG, and the last deals 51.36% Physical DMG."
+  },
+  {
+   "owner": "Thundering Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes."
+  },
+  {
+   "owner": "Thundering Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 5 strikes deal 132.61% Electro DMG each, while the final strike inflicts 189.44% Electro DMG, with an additional 31.57% Electro DMG from the thunder."
+  },
+  {
+   "owner": "Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into the Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing 242.40%, 282.80%, and 282.80% Fusion DMG respectively."
+  },
+  {
+   "owner": "Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "After the final hit, increase the current Resonator's Fusion DMG by 12.00% and Basic Attack DMG by 12.00% for 15s."
+  },
+  {
+   "owner": "Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When exiting Riding Mode, deal 282.80% Fusion DMG to enemies in front."
+  },
+  {
+   "owner": "Phantom: Feilian Beringal (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The kick deals 231.84% Aero DMG, and the follow-up strike deals 283.36% Aero DMG."
+  },
+  {
+   "owner": "Phantom: Rocksteady Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Upon being attacked, deal Spectro DMG equal to 8.29% of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to 8.29% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Phantom: Rocksteady Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "If the attack received is a Special Skill attack, interrupt the enemy's Special Skill, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to 5.52% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Phantom: Rocksteady Guardian (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to 4.59% of the Resonator's Max HP."
+  },
+  {
+   "owner": "Phantom: Thundering Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes."
+  },
+  {
+   "owner": "Phantom: Thundering Mephis (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "The first 5 strikes deal 132.61% Electro DMG each, while the final strike inflicts 189.44% Electro DMG, with an additional 31.57% Electro DMG from the thunder."
+  },
+  {
+   "owner": "Phantom: Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "Transform into the Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing 242.40%, 282.80%, and 282.80% Fusion DMG respectively."
+  },
+  {
+   "owner": "Phantom: Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "After the final hit, increase the current Resonator's Fusion DMG by 12.00% and Basic Attack DMG by 12.00% for 15s."
+  },
+  {
+   "owner": "Phantom: Inferno Rider (main Echo)",
+   "ownerKind": "echo",
+   "sentence": "When exiting Riding Mode, deal 282.80% Fusion DMG to enemies in front."
+  }
+ ]
+}
