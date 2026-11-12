@@ -41,3 +41,13 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Ruling: the two-tabs-open notice is deferred to Phase 5 with the saving work; until then two open tabs can overwrite each other — cost if wrong: lost edits when using two tabs; reported in REPORT.md.
 - Phase 1 gate complete: build, 1,050 unit tests, lint, data check, 32 e2e runs pass; every Phase 1 screen state rendered and inspected at 1440 and 390; six faults found and fixed (see verification/phase-1/REPORT.md).
 - Final review: self-review (no subagent, per plan).
+
+## Phase 2
+
+- Owner (11 Nov 2026): redesign to "Bloom" and the border beam, both landed before Phase 2 (commits cbaf5e9, 2e8d1e8).
+- Ruling: rankings run on the page, not in a worker: a full simulation of the sample takes about 0.8 ms — cost if wrong: a slow mode on large rotations; re-measure in Phase 4.
+- Ruling: gains are damage changes; score points are shown only when the setup fingerprint is unchanged (main stats), because a new weapon or set re-scales the score — cost if wrong: none; the page explains it.
+- Ruling: suggested weapons' and sets' conditional effects keep their default state unless "Count every condition as met" is on — cost if wrong: conditional weapons rank low by default; the switch is beside the list.
+- Ruling: set suggestions are 5 pieces of one set, keeping each Echo's stats and the main Echo — cost if wrong: mixed 2+3 sets not ranked yet.
+- Ruling: the sample build is already the best single-change build (every weapon, set and main stat alternative loses 0.5% to 11%), so the upgrade path is tested on a weakened copy — cost if wrong: none.
+- Phase 2 gate complete: 1110 unit tests, 46 e2e runs, screens inspected at 1440 and 390; four faults found and fixed (verification/phase-2/REPORT.md).

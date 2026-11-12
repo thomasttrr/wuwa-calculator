@@ -117,3 +117,19 @@ The owner judged the Phase 1 look ("Tuning bench") too generic. Six directions w
 - Evidence: `verification/redesign/` (Build, Saved and Compare at 1440px and 390px, plus every captured state). Inspected: the Build page with the sample build and with an empty build, Saved, Compare, and the Echo editor on a phone.
 - Gate: typecheck, lint, 1077 unit tests and 32 end-to-end tests (axe and no-sideways-scroll at both widths) pass.
 - NOT CHECKED: the Resonator picker, ledger sheet and score-meaning sheet captures in `verification/redesign/` were saved but not opened.
+
+## Phase 2: Suggestions (11 Nov 2026)
+
+Built: `/suggestions` with five modes (Weapons, Main stats, Sets, Substats, Whole builds), Try it / Keep / Discard through the shared preview, a step-by-step upgrade path whose steps each enter undo history on their own, an "Only weapons I own" checklist, and a "Count every condition as met" switch.
+
+Improvements over the reference, by the brief's Area 4:
+- One plain sentence per suggestion, generated from which formula term moved most across the rotation's hits (weighted by damage), and whether that bucket was already crowded (`src/explain/suggestion.ts`, unit-tested on built cases).
+- "Apply best, then re-rank" as a visible path with running total and per-step undo.
+- Owned-only restriction for weapons.
+- Substats show priority, damage per average roll and the share each stat gives now, each defined one tap away, plus a one-line farming goal.
+
+Honesty rules: every gain is a full re-simulation (tests compare every ranked item with a direct simulation); score points only appear when the change keeps the setup; a change of weapon or set says the score re-scales; unverified sets are marked; gains under 0.1% read "No real difference" and ties share a place.
+
+Deviations: Echo inventory and owned Echoes arrive with the Optimizer (Phase 3), so "Only what I own" covers weapons only. Set suggestions are 5 pieces of one set (no 2+3 splits yet). Whole builds combine the top 5 weapons and top 5 sets with the best main stats for each.
+
+Evidence and NOT CHECKED items: `verification/phase-2/REPORT.md`.

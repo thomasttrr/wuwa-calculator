@@ -29,6 +29,8 @@ export interface WorkspaceActions {
   dismissFirstRun(): void
   updateSettings(changes: Partial<Settings>): void
   setToolUi(tool: string, value: unknown): void
+  /** The "weapons I own" checklist used by Suggestions. Not an edit to any build, so not in history. */
+  setOwnedWeapon(id: number, owned: boolean): void
   /** Replaces the whole workspace (used by import and "delete everything"). */
   replaceWorkspace(workspace: Workspace): void
 }
@@ -238,6 +240,13 @@ export function createWorkspaceStore(initial: Workspace) {
 
       setToolUi(tool, value) {
         set({ session: { ...get().session, toolUi: { ...get().session.toolUi, [tool]: value } } })
+      },
+
+      setOwnedWeapon(id, owned) {
+        const current = get().library.ownedWeaponIds
+        if (current.includes(id) === owned) return
+        const ownedWeaponIds = owned ? [...current, id] : current.filter((x) => x !== id)
+        set({ library: { ...get().library, ownedWeaponIds } })
       },
 
       replaceWorkspace(workspace) {

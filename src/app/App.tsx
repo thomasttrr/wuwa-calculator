@@ -11,6 +11,7 @@ import type { AppServices } from './context'
 import { Shell } from './Shell'
 import { BuildPage } from '../features/build/BuildPage'
 import { SavedPage } from '../features/saved/SavedPage'
+import { SuggestionsPage } from '../features/suggestions/SuggestionsPage'
 import { ComparePage } from '../features/compare/ComparePage'
 import { NotFound } from './NotFound'
 import { TokenPage } from './TokenPage'
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Navigate to="/build" replace /> },
       { path: '/build', element: <BuildPage /> },
+      { path: '/suggestions', element: <SuggestionsPage /> },
       { path: '/saved', element: <SavedPage /> },
       { path: '/compare', element: <ComparePage /> },
       { path: '/design', element: <TokenPage /> },

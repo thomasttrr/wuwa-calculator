@@ -22,7 +22,7 @@ The spec is `../wuwa-calculator-build-v1.md`. The approved plan is `docs/plan.md
 | `npm run data:check` | Validate the catalog against its schemas |
 | `npm run verify:screens -- <phase> name=route` | Render pages at 1440px and 390px into `verification/<phase>/` (phone pages also as screen slices) |
 | `npm run test:e2e` | Playwright end-to-end tests at 1440px and 390px (`tests/e2e`), including axe and edge checks |
-| `npx playwright test screens` | Capture every screen state into `verification/phase-1/` |
+| `npx playwright test screens` | Capture every screen state into `verification/phase-1/` (and `screens-phase-2` into `verification/phase-2/`) |
 | `npm run data:build` | Normalise, cross-check, then read effects from descriptions (`data/authored/effects/generated.json`) |
 
 ## Layout

@@ -1,4 +1,4 @@
-import { FlaskConical, GitCompareArrows, Layers, Redo2, Undo2, X } from 'lucide-react'
+import { FlaskConical, GitCompareArrows, Layers, Lightbulb, Redo2, Undo2, X } from 'lucide-react'
 import { useEffect } from 'react'
 import { NavLink, Outlet } from 'react-router'
 import { useStore } from 'zustand'
@@ -12,6 +12,7 @@ import { ResultsProvider, useResults } from './results'
 
 const NAV = [
   { to: '/build', label: 'Build', icon: FlaskConical },
+  { to: '/suggestions', label: 'Suggestions', short: 'Suggest', icon: Lightbulb },
   { to: '/saved', label: 'Saved builds', short: 'Saved', icon: Layers },
   { to: '/compare', label: 'Compare', icon: GitCompareArrows },
 ] as const
@@ -65,7 +66,9 @@ function HeaderScore({ compact = false }: { compact?: boolean }) {
   if (!score) return <span className="text-13 text-ink-3">Scoring</span>
   return (
     <div className={`flex items-center gap-3 ${compact ? '' : 'w-64'}`}>
-      <span className="font-display text-20 tabular-nums">{Math.round(score.percent)}%</span>
+      <span data-header-score className="font-display text-20 tabular-nums">
+        {Math.round(score.percent)}%
+      </span>
       {compact ? null : (
         <div className="min-w-0 flex-1 pt-1.5">
           <Meter
@@ -166,7 +169,7 @@ export function Shell() {
       </main>
 
       {/* Phone: tools in a bottom bar within thumb reach. */}
-      <nav aria-label="Tools" className="fixed inset-x-3 bottom-3 z-20 grid grid-cols-3 gap-1 rounded-panel bg-panel p-1.5 shadow-float md:hidden">
+      <nav aria-label="Tools" className="fixed inset-x-3 bottom-3 z-20 grid grid-cols-4 gap-1 rounded-panel bg-panel p-1.5 shadow-float md:hidden">
         {NAV.map(({ to, label, icon: Icon, ...rest }) => (
           <NavLink
             key={to}

@@ -140,3 +140,17 @@ describe('workspace store: preview', () => {
     expect(store.getState().session.preview).toBeNull()
   })
 })
+
+describe('workspace store: owned weapons', () => {
+  it('marks weapons as owned or not, once each, without touching builds or history', () => {
+    const store = storeWith(build('a'))
+    const before = store.getState().history
+    store.getState().setOwnedWeapon(21010016, true)
+    store.getState().setOwnedWeapon(21010016, true)
+    store.getState().setOwnedWeapon(21010026, true)
+    expect(store.getState().library.ownedWeaponIds).toEqual([21010016, 21010026])
+    store.getState().setOwnedWeapon(21010016, false)
+    expect(store.getState().library.ownedWeaponIds).toEqual([21010026])
+    expect(store.getState().history).toBe(before)
+  })
+})
