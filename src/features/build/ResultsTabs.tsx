@@ -136,7 +136,7 @@ function DamageTab() {
   )
 }
 
-function StepRow({ step, share, width }: { step: StepResult; share: number; width: number }) {
+export function StepRow({ step, share, width }: { step: StepResult; share: number; width: number }) {
   const { action } = step
   return (
     <li className="border-b border-rule">

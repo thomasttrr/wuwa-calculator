@@ -143,3 +143,13 @@ Improvements over the reference, by the brief's Area 5: exact results proven aga
 Deviations: no graphics-card search (as planned). Generated plans keep the current main Echo kind and carry no substats of their own (your current substats are added as one total), so they are plans to farm towards, not builds to save. Echo levels and rarities other than 5-star level 25 are not modelled.
 
 Evidence, timing and NOT CHECKED items: `verification/phase-3/REPORT.md`.
+
+## Phase 4: Rotation (11 Nov 2026)
+
+Built: `/rotation` editing the shared build's rotation. Steps by plain name and skill icon, added by typing; drag to reorder by mouse, touch or keyboard (handle only, so phone scrolling still works); switch off, time, note, copy, remove; loops one level deep (repeat a step, join the loop above or below, take a loop apart); buffs that start or end at a step. A timeline beside the numbers (blocks by damage type, buff bars over the steps they cover), every hit with its formula, breakdowns by type, element and skill, a numbered summary to follow in game (copyable), and saved rotations (save, use, compare, copy or save as a file, import with plain errors). Damage per second only when every step has a time.
+
+Improvements over the reference, by the brief's Area 6: plain names and icons, never ids; drag on desktop and phone, plus keyboard; a visual timeline beside the numbers; a one-screen plain summary; each step shows its share of the total.
+
+Deviations: steps move into or out of loops from the step's own panel rather than by dragging across a loop's edge.
+
+Evidence: `verification/phase-4/REPORT.md`.

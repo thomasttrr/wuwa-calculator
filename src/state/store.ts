@@ -4,7 +4,7 @@ import { applyPatches, enablePatches, produceWithPatches } from 'immer'
 import type { Draft } from 'immer'
 import { createStore } from 'zustand/vanilla'
 import type { Build, EchoInstance } from '../engine/types/build'
-import type { BuildHistory, HistoryEntry, Settings, Workspace } from './types'
+import type { BuildHistory, HistoryEntry, SavedRotation, Settings, Workspace } from './types'
 import { CURRENT_SCHEMA_VERSION } from './persist/migrations'
 
 enablePatches()
@@ -35,6 +35,9 @@ export interface WorkspaceActions {
   addEchoes(echoes: readonly EchoInstance[]): void
   updateEcho(echo: EchoInstance): void
   removeEcho(uid: string): void
+  /** Saved rotations: kept apart from builds, so saving or deleting one is not a build edit. */
+  saveRotation(saved: SavedRotation): void
+  deleteRotation(id: string): void
   /** Replaces the whole workspace (used by import and "delete everything"). */
   replaceWorkspace(workspace: Workspace): void
 }
@@ -51,7 +54,7 @@ export const DEFAULT_SETTINGS: Settings = {
 
 export function emptyWorkspace(): Workspace {
   return {
-    library: { builds: {}, order: [], echoInventory: [], ownedWeaponIds: [] },
+    library: { builds: {}, order: [], echoInventory: [], ownedWeaponIds: [], rotations: [] },
     session: { activeBuildId: null, preview: null, toolUi: {} },
     history: {},
     meta: { schemaVersion: CURRENT_SCHEMA_VERSION, firstRunDismissed: false, settings: { ...DEFAULT_SETTINGS } },
@@ -266,6 +269,15 @@ export function createWorkspaceStore(initial: Workspace) {
 
       removeEcho(uid) {
         set({ library: { ...get().library, echoInventory: get().library.echoInventory.filter((e) => e.uid !== uid) } })
+      },
+
+      saveRotation(saved) {
+        const rest = get().library.rotations.filter((r) => r.id !== saved.id)
+        set({ library: { ...get().library, rotations: [...rest, saved] } })
+      },
+
+      deleteRotation(id) {
+        set({ library: { ...get().library, rotations: get().library.rotations.filter((r) => r.id !== id) } })
       },
 
       replaceWorkspace(workspace) {

@@ -19,6 +19,8 @@ export interface StepResult {
   iteration?: number
   note?: string
   seconds?: number
+  /** The effect switches in force for this step, after the rotation's changes. */
+  states: EffectStates
   action: ActionResult
 }
 
@@ -80,7 +82,10 @@ function applyChanges(states: EffectStates, step: RotationStep, lasts: 'onward' 
   if (changes.length === 0) return states
   const next: Record<string, { on: boolean; stacks?: number }> = { ...states }
   for (const change of changes) {
-    next[change.effectId] = change.stacks === undefined ? { on: change.on } : { on: change.on, stacks: change.stacks }
+    // Without a stack count, a change only switches the effect: it keeps the stacks it already had.
+    const before = next[change.effectId]
+    const stacks = change.stacks ?? before?.stacks
+    next[change.effectId] = stacks === undefined ? { on: change.on } : { on: change.on, stacks }
   }
   return next
 }
@@ -148,6 +153,7 @@ export function simulateRotation(build: Build, catalog: Catalog): RotationResult
       ...(loop ? { loopId: loop.id, iteration: loop.iteration } : {}),
       ...(step.note ? { note: step.note } : {}),
       ...(step.seconds !== undefined ? { seconds: step.seconds } : {}),
+      states: stepStates,
       action,
     })
   }

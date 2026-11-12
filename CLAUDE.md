@@ -88,3 +88,5 @@ Known shapes (verified by fetching, 3.8.0): 65 Resonators, 125 weapons, 319 Echo
 - **Never shuffle with `sort(() => random - 0.5)`.** The result depends on the engine's sort, so the same seed differs between Node and the browser. Use Fisher-Yates.
 - **The optimizer's bound needs every set and Echo effect to be zero or more.** If `tests/engine/optimize/monotone.test.ts` fails after a data update, the named effect must be handled exactly, not bounded.
 - **`screens-phase-2` and `screens-phase-3` overwrite their phase's evidence** like `screens` does for phase 1. Restore earlier phases with `git checkout -- verification/phase-N` before committing.
+- **An order check can pass on an empty list.** Comparing "before" and "after" arrays proves nothing if the locator finds no rows. Read rows by a data attribute (`data-step-name`) and wait for enough rows first, as `tests/e2e/rotation.spec.ts` does.
+- **dnd-kit keyboard moves need a pause between keys in tests** (the list measures between moves), and touch drags near the bottom of a phone screen auto-scroll the page: start them mid-screen.

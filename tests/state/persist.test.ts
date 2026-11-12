@@ -51,3 +51,12 @@ describe('migrations', () => {
     expect(() => migrate(null)).toThrow(/not a theWuthering save/)
   })
 })
+
+describe('migration to schema 2', () => {
+  it('gives an older save an empty list of saved rotations', () => {
+    const old = { ...emptyWorkspace(), meta: { ...emptyWorkspace().meta, schemaVersion: 1 }, library: { builds: {}, order: [], echoInventory: [], ownedWeaponIds: [] } }
+    const migrated = migrate(JSON.parse(JSON.stringify(old)))
+    expect(migrated.library.rotations).toEqual([])
+    expect(migrated.meta.schemaVersion).toBe(2)
+  })
+})

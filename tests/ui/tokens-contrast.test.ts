@@ -56,6 +56,13 @@ describe('design tokens: text contrast', () => {
     })
   }
 
+  for (const type of ['basic', 'heavy', 'skill', 'liberation', 'intro', 'outro', 'echo', 'tune-rupture', 'other']) {
+    it(`damage type ${type} is distinguishable on the page and panel (at least 3:1)`, () => {
+      expect(contrast(token(`type-${type}`), token('page'))).toBeGreaterThanOrEqual(3)
+      expect(contrast(token(`type-${type}`), token('panel'))).toBeGreaterThanOrEqual(3)
+    })
+  }
+
   it('the "adds no damage" tone stays clearly darker than every live tone', () => {
     for (const tone of ['crit-rate', 'crit-dmg', 'atk', 'energy-regen', 'bonus', 'hp', 'def']) {
       expect(contrast(token(`tone-${tone}`), token('tone-unused'))).toBeGreaterThanOrEqual(2)

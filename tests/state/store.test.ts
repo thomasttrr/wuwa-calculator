@@ -184,3 +184,17 @@ describe('workspace store: Echo inventory', () => {
     expect(store.getState().library.echoInventory.map((e) => e.uid)).toEqual(['x'])
   })
 })
+
+describe('workspace store: saved rotations', () => {
+  it('saves, replaces by id and deletes rotations, outside build history', () => {
+    const store = storeWith(build('a'))
+    const before = store.getState().history
+    const saved = { id: 's1', resonatorId: 1402, rotation: { id: 'r', name: 'Quick swap', items: [] }, savedAt: '2026-11-11T00:00:00Z' }
+    store.getState().saveRotation(saved)
+    store.getState().saveRotation({ ...saved, rotation: { ...saved.rotation, name: 'Renamed' } })
+    expect(store.getState().library.rotations.map((r) => r.rotation.name)).toEqual(['Renamed'])
+    store.getState().deleteRotation('s1')
+    expect(store.getState().library.rotations).toEqual([])
+    expect(store.getState().history).toBe(before)
+  })
+})

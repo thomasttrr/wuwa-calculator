@@ -48,6 +48,10 @@ Action rules: at most one jade-filled button per view; never jade body text.
 
 A tone is always next to the stat's name. "Adds no damage" is measured, not guessed: the substat is taken away and the rotation re-evaluated (`src/explain/echo-bloom.ts`).
 
+### Damage types (rotation timeline and breakdowns)
+
+Basic Attack `#6CB8FF`, Heavy Attack `#FF7F66`, Resonance Skill `#3FD49B`, Resonance Liberation `#DCE6EE`, Intro `#A6EAF2`, Outro `#93AACB`, Echo Skill `#F2A98A`, Tune Rupture `#FF5C8A`, other `#A2B4C6` (tokens `--color-type-*`). They reuse the stat tones' hues on purpose so the palette stays small; a type colour is never shown without the type's name nearby, and never on the same chart as stat tones.
+
 ### Elements and change
 
 Glacio `#8FE0F0`, Fusion `#F0744E`, Electro `#D58FD0` (orchid pink, not lavender), Aero `#5FD0A8`, Spectro `#D6D2BE` (pale bone, not yellow), Havoc `#E2647F`, Physical `#B9BBBE`. Gain `#7FCF8E` always with a plus sign, loss `#F0806E` always with a minus sign.

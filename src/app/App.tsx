@@ -13,6 +13,7 @@ import { BuildPage } from '../features/build/BuildPage'
 import { SavedPage } from '../features/saved/SavedPage'
 import { SuggestionsPage } from '../features/suggestions/SuggestionsPage'
 import { OptimizerPage } from '../features/optimizer/OptimizerPage'
+import { RotationPage } from '../features/rotation/RotationPage'
 import { ComparePage } from '../features/compare/ComparePage'
 import { NotFound } from './NotFound'
 import { TokenPage } from './TokenPage'
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: '/build', element: <BuildPage /> },
       { path: '/suggestions', element: <SuggestionsPage /> },
       { path: '/optimizer', element: <OptimizerPage /> },
+      { path: '/rotation', element: <RotationPage /> },
       { path: '/saved', element: <SavedPage /> },
       { path: '/compare', element: <ComparePage /> },
       { path: '/design', element: <TokenPage /> },

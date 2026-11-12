@@ -1,5 +1,5 @@
 import type { Patch } from 'immer'
-import type { Build, EchoInstance } from '../engine/types/build'
+import type { Build, EchoInstance, Rotation } from '../engine/types/build'
 
 export interface HistoryEntry {
   /** Plain description of the change, shown after an edit and in undo tooltips. */
@@ -22,12 +22,22 @@ export interface Settings {
   reduceMotion: boolean
 }
 
+export interface SavedRotation {
+  id: string
+  resonatorId: number
+  rotation: Rotation
+  /** ISO time it was saved. */
+  savedAt: string
+}
+
 export interface Workspace {
   library: {
     builds: Record<string, Build>
     order: string[]
     echoInventory: EchoInstance[]
     ownedWeaponIds: number[]
+    /** Rotations saved apart from any build, to use again or compare. Since schema 2. */
+    rotations: SavedRotation[]
   }
   session: {
     activeBuildId: string | null

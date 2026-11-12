@@ -61,3 +61,10 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Ruling: work is split by (main Echo, second Echo), handed to the pool in batches of about 0.2 s, sharing the cut-off between batches (no SharedArrayBuffer: the page is not cross-origin isolated).
 - Found while timing: the test inventory generator shuffled with a random sort comparator, so Node and the browser built different inventories from one seed. Now Fisher-Yates; both agree.
 - Phase 3 gate complete: 1133 unit tests, 52 + 4 e2e runs, timing recorded, screens inspected.
+
+## Phase 4
+
+- Ruling: an effect change with no stack count keeps the stacks the effect already had (it used to reset them to the default, found on the Rotation page) — cost if wrong: none; the panel shows the count that applies.
+- Ruling: saved rotations live in `library.rotations` (schema 2, migration from 1 tested), not in builds.
+- Ruling: steps cross a loop's edge through the step panel, not by drag — cost if wrong: one more tap.
+- Phase 4 gate complete: 1177 unit tests, 68 e2e runs (+2 skipped by design), the shared-build check, screens inspected; five faults found and fixed.

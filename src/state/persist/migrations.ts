@@ -1,12 +1,19 @@
 import type { Workspace } from '../types'
 
 /** Raise this and add a step below whenever the saved shape changes. */
-export const CURRENT_SCHEMA_VERSION = 1
+export const CURRENT_SCHEMA_VERSION = 2
 
 type Step = (raw: Record<string, unknown>) => Record<string, unknown>
 
 /** STEPS[n] turns a version n save into version n + 1. */
-const STEPS: Record<number, Step> = {}
+const STEPS: Record<number, Step> = {
+  // 2: saved rotations.
+  1: (raw) => ({
+    ...raw,
+    library: { ...(raw.library as Record<string, unknown>), rotations: [] },
+    meta: { ...(raw.meta as Record<string, unknown>), schemaVersion: 2 },
+  }),
+}
 
 const isObject = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value)

@@ -45,6 +45,17 @@
   --color-tone-def: #93aacb;
   --color-tone-unused: #45556a;
 
+  /* Damage types: the rotation timeline and breakdowns, always with the type's name. */
+  --color-type-basic: #6cb8ff;
+  --color-type-heavy: #ff7f66;
+  --color-type-skill: #3fd49b;
+  --color-type-liberation: #dce6ee;
+  --color-type-intro: #a6eaf2;
+  --color-type-outro: #93aacb;
+  --color-type-echo: #f2a98a;
+  --color-type-tune-rupture: #ff5c8a;
+  --color-type-other: #a2b4c6;
+
   --font-sans: 'Albert Sans Variable', system-ui, sans-serif;
   --font-display: 'Unbounded Variable', 'Albert Sans Variable', system-ui, sans-serif;
 

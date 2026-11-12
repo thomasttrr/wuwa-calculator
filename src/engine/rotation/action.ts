@@ -38,7 +38,7 @@ export function atLevel(values: readonly number[], level: number): number {
   return values[Math.min(Math.max(level, 1), values.length) - 1] ?? 0
 }
 
-const SKILL_TYPE_NAME: Record<SkillType, string> = {
+export const SKILL_TYPE_NAME: Record<SkillType, string> = {
   normal: 'Basic Attack',
   skill: 'Resonance Skill',
   forte: 'Forte Circuit',
