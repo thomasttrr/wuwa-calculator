@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { createSampleBuild } from '../../src/data/sample-build'
 import { simulateRotation } from '../../src/engine/rotation/simulate'
+import type { RotationResult } from '../../src/engine/rotation/simulate'
 import { applyChange } from '../../src/engine/suggest/change'
 import { rankSubstats } from '../../src/engine/suggest/rank'
 import type { Build } from '../../src/engine/types/build'
@@ -41,6 +42,24 @@ describe('explainChange', () => {
   it('says what is lost when the change makes things worse', () => {
     const hp = applyChange(sample, { kind: 'mainStat', slot: 3, option: option(1, 'hpPct') }, catalog)
     expect(explainChange(sim(sample), sim(hp)).text).toMatch(/^Loses mostly through ATK: 2,500 to 2,\d{3} on average\./)
+  })
+})
+
+describe('explainChange with hits that scale on different stats', () => {
+  // A hand-made pair of results: one ATK hit and one HP hit, both scaling stats up by 10%.
+  const hit = (stat: 'atk' | 'hp', value: number, average: number) => ({
+    average,
+    formula: { scalingStat: stat, scalingValue: value, multiplier: 1, critAverage: 1, terms: [] },
+  })
+  const result = (atk: number, hp: number, total: number) =>
+    ({
+      total: { average: total, nonCrit: total, crit: total },
+      steps: [{ action: { counted: true, parts: [hit('atk', atk, total / 2), hit('hp', hp, total / 2)] } }],
+    }) as unknown as RotationResult
+
+  it('never averages ATK and HP into one number; it gives the change in percent instead', () => {
+    const text = explainChange(result(2000, 20000, 1000), result(2200, 22000, 1100)).text
+    expect(text).toBe('Mostly through the stats your hits scale on: +10.0% on average.')
   })
 })
 

@@ -73,6 +73,14 @@ export function explainChange(before: RotationResult, after: RotationResult): Ex
   }
   if (!best) return { text: `${gain > 0 ? 'Adds' : 'Loses'} about ${(Math.abs(gain) * 100).toFixed(1)}% damage.` }
 
+  const scalingStats = new Set(pairs.map(([hit]) => hit.formula.scalingStat))
+  if (best.term === 'scaling' && scalingStats.size > 1) {
+    // ATK and HP cannot be averaged into one number, so say how much they grew instead.
+    return {
+      text: `${gain > 0 ? 'Mostly' : 'Loses mostly'} through the stats your hits scale on: ${pct(Math.exp(best.log) - 1)} on average.`,
+      term: 'scaling',
+    }
+  }
   const label = best.term === 'scaling' ? SCALING_LABEL[pairs[0]![0].formula.scalingStat] : LABEL[best.term]
   let text = `${gain > 0 ? 'Mostly' : 'Loses mostly'} through ${label}: ${format(best.term, best.from)} to ${format(best.term, best.to)} on average.`
   if (gain > 0 && ADDITIVE.includes(best.term)) {

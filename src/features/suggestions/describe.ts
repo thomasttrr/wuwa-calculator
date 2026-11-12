@@ -9,6 +9,23 @@ export interface ChangeText {
   detail: string
 }
 
+/** The words used for undo history and the "Trying" strip, matching how the Build page names the same edit. */
+export function changeLabel(change: Change, build: Build, catalog: Catalog): string {
+  switch (change.kind) {
+    case 'weapon':
+      return `Equipped ${catalog.weapons[change.weaponId]?.name ?? 'a weapon'}${change.rank > 1 ? ` at rank ${change.rank}` : ''}`
+    case 'mainStat': {
+      const echo = build.echoes[change.slot]
+      const main = echo ? catalog.echoStats.mainStats[echo.cost][change.option] : undefined
+      return `Set Echo ${change.slot + 1} main stat to ${main?.label ?? 'another stat'}`
+    }
+    case 'set':
+      return `Moved every Echo to ${catalog.sonatas[change.sonataId]?.name ?? 'another set'}`
+    case 'combo':
+      return change.changes.map((part) => changeLabel(part, build, catalog)).join('; ')
+  }
+}
+
 export function describeChange(change: Change, build: Build, catalog: Catalog): ChangeText {
   switch (change.kind) {
     case 'weapon': {

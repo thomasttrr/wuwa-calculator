@@ -19,7 +19,7 @@ import { Mark } from '../../ui/Mark'
 import { EmptyState } from '../../ui/Section'
 import { Sheet } from '../../ui/Sheet'
 import { Stamp } from '../build/ScorePanel'
-import { describeChange } from './describe'
+import { changeLabel, describeChange } from './describe'
 
 const MODES = [
   { id: 'weapons', label: 'Weapons' },
@@ -227,7 +227,7 @@ function Ranked({ build, kind, options }: { build: Build; kind: 'weapons' | 'mai
           const tied = i > 0 && Math.abs(ranked[i - 1]!.gain - s.gain) < TIE
           const place = ranked.findIndex((other) => Math.abs(other.gain - s.gain) < TIE) + 1
           const text = describeChange(s.change, build, catalog)
-          const label = `Suggested: ${text.title}`
+          const label = changeLabel(s.change, build, catalog)
           const after = simulateRotation(s.build, catalog)
           const reason = explainChange(base, after).text
           const unverified = (after.hasUnverified && !base.hasUnverified) || usesUnverifiedData(s.change, catalog)
@@ -237,8 +237,9 @@ function Ranked({ build, kind, options }: { build: Build; kind: 'weapons' | 'mai
           return (
             <li key={i} className="rounded-panel bg-raised p-3 md:p-4">
               <div className="flex flex-wrap items-start gap-x-4 gap-y-2">
-                <span className="w-8 shrink-0 pt-0.5 font-display text-16 text-ink-3" aria-label={tied ? `Tied ${place}` : `Number ${place}`}>
-                  {tied ? `=${place}` : place}
+                <span className="w-8 shrink-0 pt-0.5 font-display text-16 text-ink-3">
+                  <span aria-hidden="true">{tied ? `=${place}` : place}</span>
+                  <span className="sr-only">{tied ? `Tied for ${place}.` : `Number ${place}.`}</span>
                 </span>
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold text-ink">{text.title}</p>
@@ -361,7 +362,7 @@ function UpgradePath({ build, options }: { build: Build; options: SuggestOptions
   const apply = (count: number) => {
     let from = build
     for (const step of path.slice(0, count)) {
-      actions.applyEdit(toward(step.build, from), `Suggested: ${describeChange(step.change, from, catalog).title}`)
+      actions.applyEdit(toward(step.build, from), changeLabel(step.change, from, catalog))
       from = step.build
     }
   }

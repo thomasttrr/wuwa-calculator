@@ -25,7 +25,7 @@ test('Try it shows the change everywhere, and Discard puts the build back', asyn
   const before = await headerScore(page).textContent()
   await openSuggestions(page)
   await page.getByRole('button', { name: /^Try it\b/ }).first().click()
-  await expect(page.getByRole('status').filter({ hasText: 'Trying:' })).toBeVisible()
+  await expect(page.getByRole('status').filter({ hasText: /^Trying: Equipped / })).toBeVisible()
   await expect(page.getByText('Trying now')).toBeVisible()
   await expect(headerScore(page)).not.toHaveText(before ?? '')
   await page.getByRole('button', { name: 'Discard' }).click()
@@ -47,7 +47,8 @@ test('the step-by-step path applies three changes, and undo takes them back one 
   const improved = Number((await headerScore(page).textContent())?.replace('%', ''))
   expect(improved).toBeGreaterThan(Number(weakened?.replace('%', '')))
 
-  const undo = page.getByRole('button', { name: /^Undo: Suggested: / }).first()
+  await expect(page.getByRole('button', { name: /^Undo: Set Echo \d main stat to (?!HP%)/ }).first()).toBeVisible()
+  const undo = page.getByRole('button', { name: /^Undo:/ }).first()
   for (let i = 0; i < 3; i += 1) await undo.click()
   await expect(headerScore(page)).toHaveText(weakened ?? '')
   await expect(page.getByRole('button', { name: /^Undo: Set Echo 4 main stat to HP%/ }).first()).toBeVisible()

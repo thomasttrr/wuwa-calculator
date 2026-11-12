@@ -28,3 +28,12 @@ Faults found by looking and fixed:
 ## NOT CHECKED
 
 - `state-mode-main-stats-*`, `state-owned-only-*`, `state-mode-whole-builds-1440.png`, `state-trying-1440.png` and the phone slices after screen 2 were saved but not opened.
+
+## Review (after the gate)
+
+Opened `state-trying-1440.png` and `state-owned-only-1440.png`. Code read of the Phase 2 diff. Fixed:
+1. The strip read "Trying: Suggested: Ages of Harvest" and undo read "Undo: Suggested: ...". Suggestions now use the Build page's own wording ("Equipped Ages of Harvest", "Set Echo 1 main stat to Crit. Rate", "Moved every Echo to ...").
+2. The rank number used `aria-label` on a plain span, which screen readers ignore. Now visible text is hidden from them and a screen-reader sentence is added.
+3. For a Resonator whose hits scale on different stats (ATK and HP), the reason averaged them into one meaningless number. It now gives the percentage change instead (test added; watched it fail first).
+
+Open point, not fixed: the step-by-step panel re-ranks about 270 simulations whenever the build changes (about 0.2 s on this machine). Fine here; worth measuring on a phone in Phase 5.
