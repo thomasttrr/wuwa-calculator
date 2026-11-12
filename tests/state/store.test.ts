@@ -154,3 +154,33 @@ describe('workspace store: owned weapons', () => {
     expect(store.getState().history).toBe(before)
   })
 })
+
+describe('workspace store: Echo inventory', () => {
+  const echo = (uid: string, value = 0.1) => ({
+    uid,
+    echoId: 6000038,
+    cost: 4 as const,
+    sonataId: 4,
+    mainStat: { stat: 'critRate' as const, value: 0.22 },
+    fixedStat: { stat: 'atkFlat' as const, value: 150 },
+    substats: [{ stat: 'critDmg' as const, value }],
+  })
+
+  it('adds Echoes as new copies, skips ones already in, and never touches builds or history', () => {
+    const store = storeWith(build('a'))
+    const before = store.getState().history
+    store.getState().addEchoes([echo('x'), echo('y')])
+    store.getState().addEchoes([echo('x')])
+    expect(store.getState().library.echoInventory.map((e) => e.uid)).toEqual(['x', 'y'])
+    expect(store.getState().history).toBe(before)
+  })
+
+  it('updates and removes an Echo by its id', () => {
+    const store = storeWith(build('a'))
+    store.getState().addEchoes([echo('x'), echo('y')])
+    store.getState().updateEcho(echo('x', 0.21))
+    expect(store.getState().library.echoInventory[0]?.substats[0]?.value).toBe(0.21)
+    store.getState().removeEcho('y')
+    expect(store.getState().library.echoInventory.map((e) => e.uid)).toEqual(['x'])
+  })
+})

@@ -123,4 +123,9 @@ export interface Build {
   customModifiers: readonly CustomModifier[]
   enemy: EnemyConfig
   rotation: Rotation
+  /**
+   * Engine-internal, never saved: replaces the counted set pieces. The optimizer uses it to
+   * evaluate set bonuses for a group of Echoes it has not fully chosen yet.
+   */
+  piecesOverride?: Readonly<Record<number, number>>
 }

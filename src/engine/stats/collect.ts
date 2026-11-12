@@ -5,6 +5,7 @@ import { findGrowthPoint } from './base'
 
 /** How many different Echoes of each Sonata set are equipped. The same Echo twice counts once. */
 export function countSonataPieces(build: Build): Map<number, number> {
+  if (build.piecesOverride) return new Map(Object.entries(build.piecesOverride).map(([id, count]) => [Number(id), count]))
   const distinct = new Map<number, Set<number>>()
   for (const echo of build.echoes) {
     if (!echo) continue

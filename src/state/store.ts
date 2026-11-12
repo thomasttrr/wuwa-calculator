@@ -3,7 +3,7 @@
 import { applyPatches, enablePatches, produceWithPatches } from 'immer'
 import type { Draft } from 'immer'
 import { createStore } from 'zustand/vanilla'
-import type { Build } from '../engine/types/build'
+import type { Build, EchoInstance } from '../engine/types/build'
 import type { BuildHistory, HistoryEntry, Settings, Workspace } from './types'
 import { CURRENT_SCHEMA_VERSION } from './persist/migrations'
 
@@ -31,6 +31,10 @@ export interface WorkspaceActions {
   setToolUi(tool: string, value: unknown): void
   /** The "weapons I own" checklist used by Suggestions. Not an edit to any build, so not in history. */
   setOwnedWeapon(id: number, owned: boolean): void
+  /** The player's Echo inventory, used by the Optimizer. Not build edits, so not in history. */
+  addEchoes(echoes: readonly EchoInstance[]): void
+  updateEcho(echo: EchoInstance): void
+  removeEcho(uid: string): void
   /** Replaces the whole workspace (used by import and "delete everything"). */
   replaceWorkspace(workspace: Workspace): void
 }
@@ -247,6 +251,21 @@ export function createWorkspaceStore(initial: Workspace) {
         if (current.includes(id) === owned) return
         const ownedWeaponIds = owned ? [...current, id] : current.filter((x) => x !== id)
         set({ library: { ...get().library, ownedWeaponIds } })
+      },
+
+      addEchoes(echoes) {
+        const have = new Set(get().library.echoInventory.map((e) => e.uid))
+        const fresh = echoes.filter((e) => !have.has(e.uid))
+        if (fresh.length === 0) return
+        set({ library: { ...get().library, echoInventory: [...get().library.echoInventory, ...fresh] } })
+      },
+
+      updateEcho(echo) {
+        set({ library: { ...get().library, echoInventory: get().library.echoInventory.map((e) => (e.uid === echo.uid ? echo : e)) } })
+      },
+
+      removeEcho(uid) {
+        set({ library: { ...get().library, echoInventory: get().library.echoInventory.filter((e) => e.uid !== uid) } })
       },
 
       replaceWorkspace(workspace) {

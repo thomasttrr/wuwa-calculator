@@ -51,3 +51,13 @@ One line per finished task; every deviation from the plan is a `Ruling:` line.
 - Ruling: set suggestions are 5 pieces of one set, keeping each Echo's stats and the main Echo — cost if wrong: mixed 2+3 sets not ranked yet.
 - Ruling: the sample build is already the best single-change build (every weapon, set and main stat alternative loses 0.5% to 11%), so the upgrade path is tested on a weakened copy — cost if wrong: none.
 - Phase 2 gate complete: 1110 unit tests, 46 e2e runs, screens inspected at 1440 and 390; four faults found and fixed (verification/phase-2/REPORT.md).
+
+## Phase 3
+
+- Ruling: Build gains an engine-only `piecesOverride` so the optimizer can evaluate set bonuses for Echoes it has not fully chosen (tested; never saved).
+- Ruling: results may hold fewer than five Echoes (4-4-4 and 4-4-3-1 are legal at cost 12).
+- Ruling: the bound assumes set and Echo effects never lower a stat; `monotone.test.ts` checks every such effect in the data.
+- Ruling: Generated plans keep the main Echo kind and add the current substats as one total; they offer no Try it or Save — cost if wrong: a player wanting a "full ideal build" uses the score's reference instead.
+- Ruling: work is split by (main Echo, second Echo), handed to the pool in batches of about 0.2 s, sharing the cut-off between batches (no SharedArrayBuffer: the page is not cross-origin isolated).
+- Found while timing: the test inventory generator shuffled with a random sort comparator, so Node and the browser built different inventories from one seed. Now Fisher-Yates; both agree.
+- Phase 3 gate complete: 1133 unit tests, 52 + 4 e2e runs, timing recorded, screens inspected.

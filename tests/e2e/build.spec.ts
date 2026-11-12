@@ -90,7 +90,7 @@ test('compare two builds after duplicating one', async ({ page }) => {
   await expect(page.getByText('Same setup. These scores and damage numbers can be compared directly.')).toBeVisible()
 })
 
-for (const path of ['/build', '/suggestions', '/saved', '/compare']) {
+for (const path of ['/build', '/suggestions', '/optimizer', '/saved', '/compare']) {
   test(`no accessibility violations on ${path}`, async ({ page }) => {
     await openFresh(page)
     await page.goto(path)

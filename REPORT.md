@@ -133,3 +133,13 @@ Honesty rules: every gain is a full re-simulation (tests compare every ranked it
 Deviations: Echo inventory and owned Echoes arrive with the Optimizer (Phase 3), so "Only what I own" covers weapons only. Set suggestions are 5 pieces of one set (no 2+3 splits yet). Whole builds combine the top 5 weapons and top 5 sets with the best main stats for each.
 
 Evidence and NOT CHECKED items: `verification/phase-2/REPORT.md`.
+
+## Phase 3: Optimizer (11 Nov 2026)
+
+Built: `/optimizer` with My Echoes (an inventory saved in the browser, filled from the equipped Echoes or added one by one with the Build page's own Echo fields) and Generated plans (sets and main stats to aim for). Settings: damage target (whole rotation or one action), main Echo lock, allowed sets and main stats, stat limits (Energy Regen, Crit. Rate, Crit. DMG, ATK), count conditions as met, results to keep. Live progress, a time estimate, Cancel, Try it, and Save as build.
+
+Improvements over the reference, by the brief's Area 5: exact results proven against trying every combination; a cancel that really stops (workers are terminated); a plain time estimate; a reason for each result; results saved as named builds; the page stays usable while a search runs.
+
+Deviations: no graphics-card search (as planned). Generated plans keep the current main Echo kind and carry no substats of their own (your current substats are added as one total), so they are plans to farm towards, not builds to save. Echo levels and rarities other than 5-star level 25 are not modelled.
+
+Evidence, timing and NOT CHECKED items: `verification/phase-3/REPORT.md`.

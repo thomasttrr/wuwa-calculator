@@ -3,42 +3,21 @@ import { Plus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 import { useCatalog } from '../../app/context'
 import { countSonataPieces } from '../../engine/stats/collect'
-import type { Build, EchoInstance, EchoSubstat } from '../../engine/types/build'
-import type { Catalog } from '../../engine/types/catalog'
-import type { Scope } from '../../engine/types/stats'
+import type { Build } from '../../engine/types/build'
 import { COST_BUDGET } from '../../engine/score/ideal'
 import { BorderBeam } from '../../ui/BorderBeam'
 import { Button } from '../../ui/Button'
-import { SelectField } from '../../ui/Field'
 import { formatStatValue, statLabel } from '../../ui/format'
-import { EmptyState, Section } from '../../ui/Section'
+import { Section } from '../../ui/Section'
 import { Sheet } from '../../ui/Sheet'
 import { substatTone } from '../../explain/echo-bloom'
+import { EchoFields, newEcho } from '../echoes/EchoFields'
 import { TONE_COLOUR } from './EchoBloom'
 import { CostBadge, EchoPicker } from './pickers'
 import { useEdit } from './useEdit'
 
-const sameScope = (a?: Scope, b?: Scope) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null)
-
 function usedCost(build: Build, exceptSlot: number): number {
   return build.echoes.reduce((total, echo, slot) => total + (echo && slot !== exceptSlot ? echo.cost : 0), 0)
-}
-
-function newEcho(catalog: Catalog, echoId: number): EchoInstance {
-  const def = catalog.echoes[echoId]
-  if (!def) throw new Error(`Unknown Echo ${echoId}`)
-  const main = catalog.echoStats.mainStats[def.cost][0]
-  const fixed = catalog.echoStats.fixedStats[def.cost]
-  if (!main) throw new Error(`No main stats for cost ${def.cost}`)
-  return {
-    uid: globalThis.crypto.randomUUID(),
-    echoId,
-    cost: def.cost,
-    sonataId: def.sonataIds[0] ?? 0,
-    mainStat: { stat: main.stat, ...(main.scope ? { scope: main.scope } : {}), value: main.value },
-    fixedStat: { stat: fixed.stat, value: fixed.value },
-    substats: [],
-  }
 }
 
 export function EchoSection({ build }: { build: Build }) {
@@ -164,21 +143,6 @@ function EchoEditor({ build, slot, onClose, onChangeEcho }: { build: Build; slot
   const echo = build.echoes[slot]
   const def = echo ? catalog.echoes[echo.echoId] : undefined
   if (!echo || !def) return null
-  const tables = catalog.echoStats
-  const mains = tables.mainStats[echo.cost]
-  const mainIndex = mains.findIndex((main) => main.stat === echo.mainStat.stat && sameScope(main.scope, echo.mainStat.scope))
-
-  const setSub = (index: number, sub: EchoSubstat | null, label: string) =>
-    edit(label, (draft) => {
-      const target = draft.echoes[slot]
-      if (!target) return
-      const subs = [...target.substats]
-      if (sub) subs[index] = castDraft(sub)
-      else subs.splice(index, 1)
-      target.substats = subs
-    })
-
-  const rows = [...echo.substats, ...(echo.substats.length < 5 ? [null] : [])]
 
   return (
     <Sheet
@@ -205,81 +169,15 @@ function EchoEditor({ build, slot, onClose, onChangeEcho }: { build: Build; slot
         </div>
       }
     >
-      <div className="grid gap-4">
-        <SelectField
-          label="Sonata set"
-          value={String(echo.sonataId)}
-          options={def.sonataIds.map((id) => ({ value: String(id), label: catalog.sonatas[id]?.name ?? String(id) }))}
-          onChange={(value) =>
-            edit(`Set Echo ${slot + 1} to ${catalog.sonatas[Number(value)]?.name}`, (draft) => {
-              const target = draft.echoes[slot]
-              if (target) target.sonataId = Number(value)
-            })
-          }
-        />
-        <SelectField
-          label="Main stat"
-          value={String(mainIndex)}
-          options={mains.map((main, i) => ({ value: String(i), label: `${main.label} ${formatStatValue(main.stat, main.value)}` }))}
-          onChange={(value) => {
-            const main = mains[Number(value)]
-            if (!main) return
-            edit(`Set Echo ${slot + 1} main stat to ${main.label}`, (draft) => {
-              const target = draft.echoes[slot]
-              if (target) target.mainStat = castDraft({ stat: main.stat, ...(main.scope ? { scope: main.scope } : {}), value: main.value })
-            })
-          }}
-        />
-        <p className="text-13 text-ink-3">
-          Fixed stat: {tables.fixedStats[echo.cost].label} {formatStatValue(echo.fixedStat.stat, echo.fixedStat.value)}
-        </p>
-
-        <fieldset className="grid gap-3">
-          <legend className="font-medium">Substats</legend>
-          {rows.map((sub, index) => {
-            const tableIndex = sub ? tables.substats.findIndex((row) => row.stat === sub.stat && sameScope(row.scope, sub.scope)) : -1
-            const row = tables.substats[tableIndex]
-            const taken = new Set(
-              echo.substats
-                .filter((_, i) => i !== index)
-                .map((other) => tables.substats.findIndex((r) => r.stat === other.stat && sameScope(r.scope, other.scope))),
-            )
-            return (
-              <div key={index} className="grid grid-cols-[minmax(0,1fr)_minmax(0,8rem)] gap-2">
-                <SelectField
-                  label={`Substat ${index + 1}`}
-                  value={String(tableIndex)}
-                  options={[
-                    { value: '-1', label: sub ? 'Remove this substat' : 'Add a substat' },
-                    ...tables.substats.map((r, i) => ({ value: String(i), label: r.label })).filter((option) => !taken.has(Number(option.value))),
-                  ]}
-                  onChange={(value) => {
-                    const chosen = tables.substats[Number(value)]
-                    if (!chosen) return setSub(index, null, `Removed a substat from Echo ${slot + 1}`)
-                    const mid = chosen.rolls[Math.floor((chosen.rolls.length - 1) / 2)] ?? chosen.rolls[0] ?? 0
-                    setSub(index, { stat: chosen.stat, ...(chosen.scope ? { scope: chosen.scope } : {}), value: mid }, `Set Echo ${slot + 1} substat to ${chosen.label}`)
-                  }}
-                />
-                {sub && row ? (
-                  <SelectField
-                    label="Roll"
-                    value={String(sub.value)}
-                    options={row.rolls.map((roll) => ({ value: String(roll), label: formatStatValue(row.stat, roll) }))}
-                    onChange={(value) =>
-                      setSub(index, { ...sub, value: Number(value) }, `Set Echo ${slot + 1} ${row.label} to ${formatStatValue(row.stat, Number(value))}`)
-                    }
-                  />
-                ) : (
-                  <div />
-                )}
-              </div>
-            )
-          })}
-          {echo.substats.length === 0 ? (
-            <EmptyState>No substats yet. Add the ones this Echo rolled, in any order.</EmptyState>
-          ) : null}
-        </fieldset>
-      </div>
+      <EchoFields
+        echo={echo}
+        name={`Echo ${slot + 1}`}
+        onChange={(next, label) =>
+          edit(label, (draft) => {
+            draft.echoes[slot] = castDraft(next)
+          })
+        }
+      />
     </Sheet>
   )
 }

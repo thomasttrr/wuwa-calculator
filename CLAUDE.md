@@ -83,3 +83,8 @@ Known shapes (verified by fetching, 3.8.0): 65 Resonators, 125 weapons, 319 Echo
 - **The engine has its own tsconfig** (`tsconfig.engine.json`, no DOM, `types: []`). A type error that only appears under `npm run build` and names a DOM or Node global inside `src/engine/` means the engine has leaked a dependency.
 - **`tests/e2e/screens.spec.ts` writes into `verification/phase-1/`.** Running the e2e suite overwrites that phase's evidence. Copy new captures elsewhere and `git checkout -- verification/phase-1` before committing.
 - **The bloom's "adds no damage" grey is measured.** `src/explain/echo-bloom.ts` removes each substat and re-evaluates the compiled rotation. Never replace it with a fixed list of "useless" stats.
+- **There is no formatter in this project.** `npx prettier` downloads Prettier and rewrites files to its defaults (double quotes, semicolons). Do not run it. House style: single quotes, no semicolons, lines up to about 160 characters.
+- **Functions passed to `page.evaluate` from a tsx script break** with `__name is not defined` (tsx adds helpers). Pass the browser code as a string (see `scripts/verify/optimizer-timing.ts`).
+- **Never shuffle with `sort(() => random - 0.5)`.** The result depends on the engine's sort, so the same seed differs between Node and the browser. Use Fisher-Yates.
+- **The optimizer's bound needs every set and Echo effect to be zero or more.** If `tests/engine/optimize/monotone.test.ts` fails after a data update, the named effect must be handled exactly, not bounded.
+- **`screens-phase-2` and `screens-phase-3` overwrite their phase's evidence** like `screens` does for phase 1. Restore earlier phases with `git checkout -- verification/phase-N` before committing.
