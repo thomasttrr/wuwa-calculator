@@ -171,6 +171,32 @@
   }
 }
 
+/* Settings: higher contrast steps surfaces down and supporting text up, without changing hue. */
+html[data-contrast='high'] {
+  --color-page: #0a121b;
+  --color-panel: #101b28;
+  --color-raised: #172433;
+  --color-rule: #3c526d;
+  --color-rule-strong: #7790aa;
+  --color-ink: #f7fafc;
+  --color-ink-2: #dee9f2;
+  --color-ink-3: #c3d1df;
+  --color-signal: #5fe7b0;
+  --color-on-signal: #06231a;
+}
+
+/* Settings: reduce motion does here what the system preference does, without needing it. */
+html[data-motion='reduce'] .border-beam {
+  display: none;
+}
+
+html[data-motion='reduce'] *,
+html[data-motion='reduce'] *::before,
+html[data-motion='reduce'] *::after {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+}
+
 @supports not (offset-path: rect(0 auto auto 0)) {
   .border-beam {
     display: none;
