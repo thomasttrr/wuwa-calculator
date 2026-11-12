@@ -1,9 +1,11 @@
 import type { Workspace } from '../types'
 
 /** Raise this and add a step below whenever the saved shape changes. */
-export const CURRENT_SCHEMA_VERSION = 2
+export const CURRENT_SCHEMA_VERSION = 3
 
 type Step = (raw: Record<string, unknown>) => Record<string, unknown>
+
+const RESISTANCE_DEFAULTS = { physical: 0.1, glacio: 0.1, fusion: 0.1, electro: 0.1, aero: 0.1, spectro: 0.1, havoc: 0.1 }
 
 /** STEPS[n] turns a version n save into version n + 1. */
 const STEPS: Record<number, Step> = {
@@ -13,6 +15,28 @@ const STEPS: Record<number, Step> = {
     library: { ...(raw.library as Record<string, unknown>), rotations: [] },
     meta: { ...(raw.meta as Record<string, unknown>), schemaVersion: 2 },
   }),
+  // 3: defaults for new builds (target level and resistances).
+  2: (raw) => {
+    const meta = raw.meta as Record<string, unknown>
+    const settings = (meta.settings ?? {}) as Record<string, unknown>
+    return {
+      ...raw,
+      meta: {
+        ...meta,
+        schemaVersion: 3,
+        settings: {
+          playerName: '',
+          playerId: '',
+          showEverything: false,
+          highContrast: false,
+          reduceMotion: false,
+          defaultTargetLevel: 100,
+          defaultResistances: RESISTANCE_DEFAULTS,
+          ...settings,
+        },
+      },
+    }
+  },
 }
 
 const isObject = (value: unknown): value is Record<string, unknown> =>

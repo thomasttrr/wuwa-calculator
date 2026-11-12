@@ -53,10 +53,31 @@ describe('migrations', () => {
 })
 
 describe('migration to schema 2', () => {
-  it('gives an older save an empty list of saved rotations', () => {
+  it('gives an older save an empty list of saved rotations, then the newer defaults', () => {
     const old = { ...emptyWorkspace(), meta: { ...emptyWorkspace().meta, schemaVersion: 1 }, library: { builds: {}, order: [], echoInventory: [], ownedWeaponIds: [] } }
     const migrated = migrate(JSON.parse(JSON.stringify(old)))
     expect(migrated.library.rotations).toEqual([])
-    expect(migrated.meta.schemaVersion).toBe(2)
+    expect(migrated.meta.schemaVersion).toBe(CURRENT_SCHEMA_VERSION)
+  })
+})
+
+describe('migration to schema 3', () => {
+  it('gives a schema 2 save the new-build defaults', () => {
+    const old = { ...emptyWorkspace(), meta: { ...emptyWorkspace().meta, schemaVersion: 2 } }
+    const settings = old.meta.settings as unknown as Record<string, unknown>
+    delete settings.defaultTargetLevel
+    delete settings.defaultResistances
+    const migrated = migrate(JSON.parse(JSON.stringify(old)))
+    expect(migrated.meta.settings.defaultTargetLevel).toBe(100)
+    expect(migrated.meta.settings.defaultResistances).toEqual({
+      physical: 0.1,
+      glacio: 0.1,
+      fusion: 0.1,
+      electro: 0.1,
+      aero: 0.1,
+      spectro: 0.1,
+      havoc: 0.1,
+    })
+    expect(migrated.meta.schemaVersion).toBe(3)
   })
 })

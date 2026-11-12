@@ -48,6 +48,8 @@ async function main() {
 
       for (const route of routes) {
         await page.goto(`http://localhost:5199${route.path}`, { waitUntil: 'networkidle' })
+        // Let the first autosave (300 ms) finish so the captured screen shows the settled state.
+        await page.waitForTimeout(600)
         await page.evaluate(() => document.fonts.ready)
         const overflow = await page.evaluate(
           () => document.documentElement.scrollWidth - document.documentElement.clientWidth,

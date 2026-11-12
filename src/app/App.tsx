@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
+import { createBrowserRouter, RouterProvider } from 'react-router'
 import { loadCatalog } from '../data/catalog'
 import { createSampleBuild } from '../data/sample-build'
-import { startAutosave } from '../state/persist/autosave'
-import { loadStamped, saveWorkspace } from '../state/persist/db'
+import { clearWorkspace, loadStamped, saveWorkspace } from '../state/persist/db'
 import { choosePending, clearPending, readPending, writePending } from '../state/persist/pending'
+import { createStorageChannel, startSaving } from '../state/persist/saving'
 import { createWorkspaceStore, emptyWorkspace, toSaved } from '../state/store'
 import { AppContext } from './context'
 import type { AppServices } from './context'
@@ -15,6 +15,10 @@ import { SuggestionsPage } from '../features/suggestions/SuggestionsPage'
 import { OptimizerPage } from '../features/optimizer/OptimizerPage'
 import { RotationPage } from '../features/rotation/RotationPage'
 import { ComparePage } from '../features/compare/ComparePage'
+import { CardPage } from '../features/card/CardPage'
+import { HomePage } from '../features/home/HomePage'
+import { GuideComparing, GuideFormula, GuideOverview, GuidePage, GuideScore } from '../features/guide/GuidePage'
+import { SettingsPage } from '../features/settings/SettingsPage'
 import { NotFound } from './NotFound'
 import { TokenPage } from './TokenPage'
 import { notices } from './notices'
@@ -23,13 +27,25 @@ const router = createBrowserRouter([
   {
     element: <Shell />,
     children: [
-      { path: '/', element: <Navigate to="/build" replace /> },
+      { path: '/', element: <HomePage /> },
       { path: '/build', element: <BuildPage /> },
       { path: '/suggestions', element: <SuggestionsPage /> },
       { path: '/optimizer', element: <OptimizerPage /> },
       { path: '/rotation', element: <RotationPage /> },
       { path: '/saved', element: <SavedPage /> },
       { path: '/compare', element: <ComparePage /> },
+      { path: '/card', element: <CardPage /> },
+      {
+        path: '/guide',
+        element: <GuidePage />,
+        children: [
+          { index: true, element: <GuideOverview /> },
+          { path: 'score', element: <GuideScore /> },
+          { path: 'formula', element: <GuideFormula /> },
+          { path: 'comparing', element: <GuideComparing /> },
+        ],
+      },
+      { path: '/settings', element: <SettingsPage /> },
       { path: '/design', element: <TokenPage /> },
       { path: '*', element: <NotFound /> },
     ],
@@ -46,6 +62,19 @@ function safeLocalStorage(): Storage | null {
   }
 }
 
+/** One identity per tab. Survives a reload, so a tab does not conflict with its own last save. */
+function tabIdentity(): string {
+  try {
+    const existing = window.sessionStorage.getItem('thewuthering:tab')
+    if (existing) return existing
+    const id = globalThis.crypto.randomUUID()
+    window.sessionStorage.setItem('thewuthering:tab', id)
+    return id
+  } catch {
+    return globalThis.crypto.randomUUID()
+  }
+}
+
 async function boot(): Promise<AppServices> {
   const storage = safeLocalStorage()
   const [catalog, saved] = await Promise.all([
@@ -58,24 +87,54 @@ async function boot(): Promise<AppServices> {
   // The backup written on leaving wins when it is newer than the last completed save.
   const pending = storage ? readPending(storage) : null
   const workspace = choosePending(saved, pending)
-  const store = createWorkspaceStore(workspace ?? emptyWorkspace())
-  if (store.getState().library.order.length === 0) store.getState().addBuild(createSampleBuild(catalog))
-
-  const autosave = startAutosave(store, (w) => saveWorkspace(w), 300, (message) => notices.show(message))
-  if (pending && workspace === pending.workspace) {
-    await saveWorkspace(toSaved(store.getState()))
+  const fromPending = pending !== null && workspace === pending.workspace
+  const initial = {
+    revision: (fromPending ? pending.revision : saved?.revision) ?? 0,
+    writer: (fromPending ? pending.writer : saved?.writer) ?? '',
+    savedAt: (fromPending ? pending.savedAt : saved?.savedAt) ?? 0,
   }
+  const store = createWorkspaceStore(workspace ?? emptyWorkspace())
+  const seeded = store.getState().library.order.length === 0 && !(workspace?.meta.firstRunDismissed ?? false)
+  if (seeded) store.getState().addBuild(createSampleBuild(catalog))
+
+  const tabId = tabIdentity()
+  // A first run is worth persisting before the user touches anything, so the sample build and
+  // "saved at" are real. The backup taken on leaving is also written back as a completed save.
+  if (fromPending || seeded) {
+    const savedAt = Date.now()
+    try {
+      await saveWorkspace(toSaved(store.getState()), savedAt, { revision: initial.revision, writer: initial.writer || tabId })
+      initial.savedAt = savedAt
+    } catch (error) {
+      notices.show(`Your builds could not be saved in this browser yet: ${(error as Error).message}`)
+    }
+  }
+
+  const channel = storage ? createStorageChannel(storage) : { publish: () => {}, subscribe: () => () => {} }
+  const saving = startSaving({
+    store,
+    channel,
+    tabId,
+    initial,
+    save: (next, meta) => saveWorkspace(next, meta.savedAt, { revision: meta.revision, writer: meta.writer }),
+    load: loadStamped,
+    clearStored: async () => {
+      await clearWorkspace()
+      if (storage) clearPending(storage)
+    },
+    onError: (message) => notices.show(message),
+  })
   if (storage) clearPending(storage)
 
   const leave = () => {
-    if (storage && autosave.isDirty()) writePending(storage, toSaved(store.getState()), Date.now())
-    void autosave.flush()
+    if (storage && saving.autosave.isDirty() && !saving.isConflicted()) writePending(storage, toSaved(store.getState()), Date.now(), saving.known())
+    void saving.autosave.flush()
   }
   window.addEventListener('pagehide', leave)
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') leave()
   })
-  return { catalog, store }
+  return { catalog, store, saving }
 }
 
 export function App() {

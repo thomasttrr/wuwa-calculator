@@ -2,6 +2,63 @@
 
 Running report for the v1 build. One section per phase. Evidence for each phase is in `verification/phase-N/`.
 
+## Phase 5: Card, saving hardening, Settings, Home, Guide and navigation (complete, 11 Nov 2026)
+
+### What works now
+
+The app has all seven tools and the pages around them. `/` is a dashboard for the open build and the next useful step; `/card` exports a real 1080 by 1350 picture made from the same calculation as the Build page; `/settings` holds player details, comfort options, new-build defaults, backup/restore, builds-and-rotations export/import, and a two-step erase; `/guide` explains the score, the formula and fair comparison. The desktop header shows every tool, with Home on the wordmark and Guide and Settings as icon links; the phone bottom bar shows all seven tools and puts Home, Guide and Settings behind **More pages**.
+
+Saving now refuses to let two tabs overwrite each other silently. Each completed save carries a revision and the tab that wrote it. A newer save from another tab raises a visible notice and pauses autosave; the user chooses **Keep this tab's version** or **Use the other tab's version**, and nothing is overwritten before that choice. The leave-behind backup keeps revision and writer, so a stale tab's newer-looking backup cannot replace a newer save. Erasing broadcasts a reset so other tabs do not write their old copy back. A first run is saved immediately after the sample build is seeded, so the "saved" state is true before the first edit.
+
+### Gate
+
+- `npm run typecheck`, `npm run lint`: pass.
+- `npm test`: 44 files, 1281 tests pass (baseline 1,177). New: two-tab saving (8), library file and backup (11), card model (5), card palette contrast across three palettes (66), and a leave-behind timestamp regression test. Existing persistence tests were extended for revisions and schema 3.
+- `npm run test:e2e`: 98 tests, 96 pass, 2 skipped by design (mouse drag is desktop-only, touch drag phone-only). Phase 5 adds 28 passing runs, 14 at 1440 and 14 at 390: two-tab keep/use with reloads, export/erase/import plus a damaged file, real card numbers and a 1080 by 1350 PNG, and axe plus the screen-edge check on `/`, `/card`, `/settings`, `/guide` and `/guide/formula`.
+
+### Improvements over the reference, by area
+
+**Area 1, the shared build**
+- Revisions and writer identity make two-tab saves explicit instead of last-write-wins.
+- First-run persistence, a saved-time/revision readout, and one workspace behind every tool.
+- One-click whole-workspace backup, validated restore, builds-and-rotations round trip, and a two-step erase.
+
+**Area 5, sharing and the card**
+- A phone-sized 1080 by 1350 card with the real score, damage, Echoes, bloom, team, rotation, patch and disclaimer.
+- Three measured palettes, download, copy, and a data export.
+- The card is honest about having no official art: its portrait is built from the Resonator's name, element, rarity and weapon type.
+
+**Area 6, help and orientation**
+- Home shows the open build and picks the next tool that is likely to help.
+- Guide explains the live score anchors, the live hit formula and the conditions for fair comparison, without invented values.
+- Settings owns the new-build defaults, comfort options and every data operation in one place.
+
+**Navigation and design**
+- All seven tools are always visible at 1440 and 390.
+- Page links are labelled icon links; phone gets a seven-column bottom bar plus a **More pages** sheet.
+- No arrows appended to button text; no yellow or purple on the card; higher contrast and reduced motion are real document-wide settings.
+
+### Deviations from the plan, with reasons
+
+1. **Card art is data-derived.** No Resonator art exists in the committed data. Fetching it would add unlicensed assets; drawing a made-up face would invent a portrayal. The existing monogram portrait pattern is used and the card states that this copy of the app has no game art.
+2. **Restore has a confirmation step.** Backup is one click; restore replaces everything and therefore asks once before doing it. A stray click cannot erase a workspace.
+3. **"Show everything" appears in Settings and stays on the Build page.** They are the same setting. Keeping the Build switch avoids changing finished-phase behaviour.
+4. **First-run persistence is new.** Saving the seeded sample immediately is a deliberate small behaviour change so the saved state and revision are real. No game values, engine output or Build Score changed.
+5. **Desktop has a second header row for tools.** Seven tools, three page links, the build switcher, score and undo do not fit on one row at 1440px without crowding the build name.
+6. **Desktop keeps "Saved builds"; phone shortens it to "Saved".** Earlier phases and their tests use those exact labels.
+
+### Known gaps carried forward
+
+- Jiyan's Forte and Liberation hits count as Heavy Attack because that is the game data.
+- Energy affordability of a rotation is still not checked.
+- Main bundle is still large; splitting was not part of this phase.
+- A duplicate build name on import is refused rather than merged or renamed interactively.
+- Card JSON can be exported but not imported; builds and rotations have the full round trip.
+
+### NOT CHECKED
+
+See `verification/phase-5/REPORT.md`: real phones and touch hardware, browsers other than Chromium, screen-reader use by a person, clipboard behaviour outside Chromium, and two-tab conflicts across separate browser profiles (which do not share storage). The full-length phone composites were not opened; their screen slices were.
+
 ## Phase 1: shared build and the Build tool (complete, 11 Nov 2026)
 
 ### What works now

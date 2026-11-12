@@ -38,6 +38,8 @@ export interface WorkspaceActions {
   /** Saved rotations: kept apart from builds, so saving or deleting one is not a build edit. */
   saveRotation(saved: SavedRotation): void
   deleteRotation(id: string): void
+  /** Appends builds and rotations read from a file. Names are checked before this is called. */
+  mergeLibrary(builds: readonly Build[], rotations: readonly SavedRotation[]): void
   /** Replaces the whole workspace (used by import and "delete everything"). */
   replaceWorkspace(workspace: Workspace): void
 }
@@ -50,6 +52,8 @@ export const DEFAULT_SETTINGS: Settings = {
   showEverything: false,
   highContrast: false,
   reduceMotion: false,
+  defaultTargetLevel: 100,
+  defaultResistances: { physical: 0.1, glacio: 0.1, fusion: 0.1, electro: 0.1, aero: 0.1, spectro: 0.1, havoc: 0.1 },
 }
 
 export function emptyWorkspace(): Workspace {
@@ -278,6 +282,23 @@ export function createWorkspaceStore(initial: Workspace) {
 
       deleteRotation(id) {
         set({ library: { ...get().library, rotations: get().library.rotations.filter((r) => r.id !== id) } })
+      },
+
+      mergeLibrary(builds, rotations) {
+        const state = get()
+        if (builds.length === 0 && rotations.length === 0) return
+        const nextBuilds = { ...state.library.builds }
+        const order = [...state.library.order]
+        for (const build of builds) {
+          nextBuilds[build.id] = build
+          if (!order.includes(build.id)) order.push(build.id)
+        }
+        const seen = new Set(state.library.rotations.map((r) => r.id))
+        const nextRotations = [...state.library.rotations, ...rotations.filter((r) => !seen.has(r.id))]
+        set({
+          library: { ...state.library, builds: nextBuilds, order, rotations: nextRotations },
+          session: { ...state.session, activeBuildId: state.session.activeBuildId ?? (builds[0]?.id ?? null) },
+        })
       },
 
       replaceWorkspace(workspace) {

@@ -14,6 +14,7 @@ export function BuildSwitcher({ compact = false }: { compact?: boolean }) {
   const builds = useWorkspace((s) => s.library.builds)
   const order = useWorkspace((s) => s.library.order)
   const activeId = useWorkspace((s) => s.session.activeBuildId)
+  const defaults = useWorkspace((s) => s.meta.settings)
   const [open, setOpen] = useState(false)
   const [picking, setPicking] = useState(false)
   const [renaming, setRenaming] = useState<string | null>(null)
@@ -144,7 +145,9 @@ export function BuildSwitcher({ compact = false }: { compact?: boolean }) {
         onOpenChange={setPicking}
         title="Start a new build"
         onPick={(id) => {
-          actions.addBuild(defaultBuildFor(id, catalog))
+          actions.addBuild(
+            defaultBuildFor(id, catalog, undefined, { targetLevel: defaults.defaultTargetLevel, resistances: defaults.defaultResistances }),
+          )
           setPicking(false)
           setOpen(false)
         }}

@@ -51,10 +51,17 @@ export function startingRotation(resonator: ResonatorDef): Rotation {
   return { id: `rotation-${resonator.id}`, name: `${resonator.name} starting rotation`, items }
 }
 
+/** Defaults a new build starts from, set on the Settings page. */
+export interface NewBuildDefaults {
+  targetLevel?: number
+  resistances?: Partial<Record<Element, number>>
+}
+
 /** A fresh level 90 build with every skill at 10 and every skill-tree node unlocked, nothing equipped. */
-export function defaultBuildFor(resonatorId: number, catalog: Catalog, name?: string): Build {
+export function defaultBuildFor(resonatorId: number, catalog: Catalog, name?: string, defaults: NewBuildDefaults = {}): Build {
   const resonator = catalog.resonators[resonatorId]
   if (!resonator) throw new Error(`Unknown Resonator ${resonatorId}`)
+  const level = Math.min(120, Math.max(1, Math.round(defaults.targetLevel ?? DEFAULT_ENEMY.level)))
   return {
     id: globalThis.crypto.randomUUID(),
     name: name ?? resonator.name,
@@ -71,7 +78,13 @@ export function defaultBuildFor(resonatorId: number, catalog: Catalog, name?: st
     teammates: [null, null],
     effects: {},
     customModifiers: [],
-    enemy: DEFAULT_ENEMY,
+    enemy: {
+      name: level === DEFAULT_ENEMY.level ? 'Level 100 target' : `Level ${level} target`,
+      level,
+      resistance: Object.fromEntries(
+        ELEMENTS.map((element) => [element, defaults.resistances?.[element] ?? DEFAULT_ENEMY.resistance[element]]),
+      ) as Record<Element, number>,
+    },
     rotation: startingRotation(resonator),
   }
 }

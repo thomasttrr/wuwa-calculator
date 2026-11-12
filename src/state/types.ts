@@ -1,5 +1,6 @@
 import type { Patch } from 'immer'
 import type { Build, EchoInstance, Rotation } from '../engine/types/build'
+import type { Element } from '../engine/types/stats'
 
 export interface HistoryEntry {
   /** Plain description of the change, shown after an edit and in undo tooltips. */
@@ -20,6 +21,10 @@ export interface Settings {
   showEverything: boolean
   highContrast: boolean
   reduceMotion: boolean
+  /** Target level a new build starts with. */
+  defaultTargetLevel: number
+  /** Enemy resistance to each element a new build starts with, as a fraction (0.1 is 10%). */
+  defaultResistances: Record<Element, number>
 }
 
 export interface SavedRotation {

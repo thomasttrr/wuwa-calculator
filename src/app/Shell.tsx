@@ -1,22 +1,30 @@
-import { FlaskConical, Gauge, GitCompareArrows, Layers, Lightbulb, ListOrdered, Redo2, Undo2, X } from 'lucide-react'
-import { useEffect } from 'react'
-import { NavLink, Outlet } from 'react-router'
+import { BookOpen, FlaskConical, Gauge, GitCompareArrows, Home, Image, Layers, Lightbulb, ListOrdered, Menu, Redo2, Settings, Undo2, X } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Link, NavLink, Outlet } from 'react-router'
 import { useStore } from 'zustand'
 import { BorderBeam } from '../ui/BorderBeam'
 import { Button, IconButton } from '../ui/Button'
 import { Meter } from '../ui/Meter'
+import { Sheet } from '../ui/Sheet'
 import { BuildSwitcher } from './BuildSwitcher'
-import { useActions, useWorkspace } from './context'
+import { useActions, useSaving, useSavingActions, useWorkspace } from './context'
 import { notices } from './notices'
 import { ResultsProvider, useResults } from './results'
 
-const NAV = [
-  { to: '/build', label: 'Build', icon: FlaskConical },
+const TOOLS = [
+  { to: '/build', label: 'Build', short: 'Build', icon: FlaskConical },
   { to: '/suggestions', label: 'Suggestions', short: 'Suggest', icon: Lightbulb },
   { to: '/optimizer', label: 'Optimizer', short: 'Optimize', icon: Gauge },
-  { to: '/rotation', label: 'Rotation', icon: ListOrdered },
+  { to: '/rotation', label: 'Rotation', short: 'Rotation', icon: ListOrdered },
   { to: '/saved', label: 'Saved builds', short: 'Saved', icon: Layers },
-  { to: '/compare', label: 'Compare', icon: GitCompareArrows },
+  { to: '/compare', label: 'Compare', short: 'Compare', icon: GitCompareArrows },
+  { to: '/card', label: 'Card', short: 'Card', icon: Image },
+] as const
+
+const PAGES = [
+  { to: '/', label: 'Home', icon: Home, end: true },
+  { to: '/guide', label: 'Guide', icon: BookOpen, end: false },
+  { to: '/settings', label: 'Settings', icon: Settings, end: false },
 ] as const
 
 function isTyping(target: EventTarget | null): boolean {
@@ -113,6 +121,29 @@ function PreviewStrip() {
   )
 }
 
+/** A second tab saved a newer version. Both choices are explicit; nothing is overwritten until you pick. */
+function SaveConflictNotice() {
+  const { conflict } = useSaving()
+  const saving = useSavingActions()
+  if (!conflict) return null
+  return (
+    <div role="alert" className="mx-auto max-w-[1280px] px-4 pt-2 md:px-6">
+      <div className="rounded-panel border border-rule-strong bg-raised px-4 py-3">
+        <p className="font-medium text-ink">Another tab saved a newer version of your builds.</p>
+        <p className="mt-1 max-w-[72ch] text-ink-2">
+          This tab has changes that are not saved. Choose which version to keep. Nothing is overwritten until you choose.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Button variant="primary" onClick={() => void saving.keepLocal()}>
+            Keep this tab's version
+          </Button>
+          <Button onClick={() => void saving.useRemote()}>Use the other tab's version</Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Notices() {
   const messages = useStore(notices.store, (s) => s.messages)
   return (
@@ -129,25 +160,92 @@ function Notices() {
   )
 }
 
+/** Settings that change the whole document: higher contrast and less motion. */
+function useAppearance() {
+  const highContrast = useWorkspace((s) => s.meta.settings.highContrast)
+  const reduceMotion = useWorkspace((s) => s.meta.settings.reduceMotion)
+  useEffect(() => {
+    const root = document.documentElement
+    root.dataset.contrast = highContrast ? 'high' : 'normal'
+    root.dataset.motion = reduceMotion ? 'reduce' : 'full'
+  }, [highContrast, reduceMotion])
+}
+
+const iconLink = (isActive: boolean) =>
+  `inline-flex size-11 items-center justify-center rounded-control md:size-9 ${
+    isActive ? 'bg-raised text-ink shadow-[inset_0_-3px_0_var(--color-signal)]' : 'text-ink-2 hover:bg-raised hover:text-ink'
+  }`
+
+/** Below md the extra pages live behind one button, beside the tools in the bottom bar. */
+function MorePages() {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <IconButton label="More pages" className="md:hidden" onClick={() => setOpen(true)}>
+        <Menu size={18} aria-hidden="true" />
+      </IconButton>
+      <Sheet open={open} onOpenChange={setOpen} title="Pages" description="Home, the guide, and where your data lives.">
+        <ul className="grid gap-1">
+          {PAGES.map(({ to, label, icon: Icon, end }) => (
+            <li key={to}>
+              <NavLink
+                to={to}
+                end={end}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `flex min-h-12 items-center gap-3 rounded-control px-3 ${
+                    isActive ? 'bg-raised font-semibold text-ink' : 'text-ink-2 hover:bg-raised hover:text-ink'
+                  }`
+                }
+              >
+                <Icon size={20} aria-hidden="true" />
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </Sheet>
+    </>
+  )
+}
+
 export function Shell() {
   useUndoKeys()
+  useAppearance()
   return (
     <ResultsProvider>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-control focus:bg-signal focus:px-3 focus:py-2 focus:text-on-signal">
         Skip to content
       </a>
 
-      {/* Desktop header: wordmark, build, score, undo; tools beneath. */}
+      {/* Header: build, score and undo; every tool sits on the row beneath. */}
       <header className="sticky top-0 z-20 bg-page">
-        <div className="mx-auto flex max-w-[1280px] items-center gap-2 px-2 py-2 md:min-h-18 md:gap-6 md:px-6">
-          <span className="hidden font-display text-16 md:inline">theWuthering</span>
-          <nav aria-label="Tools" className="hidden gap-1 md:flex">
-            {NAV.map(({ to, label }) => (
+        <div className="mx-auto flex max-w-[1280px] items-center gap-2 px-2 py-2 md:min-h-18 md:gap-4 md:px-6">
+          <Link to="/" aria-label="theWuthering home" className="hidden shrink-0 rounded-control font-display text-16 md:inline-flex md:items-center">
+            theWuthering
+          </Link>
+          <div className="min-w-0 flex-1 md:ml-auto md:flex-none">
+            <BuildSwitcher compact />
+          </div>
+          <HeaderScore compact />
+          <UndoRedo />
+          <div className="hidden items-center md:flex">
+            {PAGES.map(({ to, label, icon: Icon, end }) => (
+              <NavLink key={to} to={to} end={end} aria-label={label} title={label} className={({ isActive }) => iconLink(isActive)}>
+                <Icon size={18} aria-hidden="true" />
+              </NavLink>
+            ))}
+          </div>
+          <MorePages />
+        </div>
+        <div className="hidden border-t border-rule md:block">
+          <nav aria-label="Tools" className="mx-auto flex max-w-[1280px] gap-1 px-6">
+            {TOOLS.map(({ to, label }) => (
               <NavLink
                 key={to}
                 to={to}
                 className={({ isActive }) =>
-                  `inline-flex min-h-10 items-center rounded-control px-4 text-14 transition-colors duration-150 ${
+                  `inline-flex min-h-10 items-center rounded-control px-3 text-14 transition-colors duration-150 ${
                     isActive ? 'bg-raised font-semibold text-ink shadow-[inset_0_-3px_0_var(--color-signal)]' : 'text-ink-2 hover:bg-panel hover:text-ink'
                   }`
                 }
@@ -156,23 +254,19 @@ export function Shell() {
               </NavLink>
             ))}
           </nav>
-          <div className="min-w-0 flex-1 md:ml-auto md:flex-none">
-            <BuildSwitcher compact />
-          </div>
-          <HeaderScore compact />
-          <UndoRedo />
         </div>
       </header>
 
+      <SaveConflictNotice />
       <PreviewStrip />
 
       <main id="main" className="mx-auto max-w-[1280px] px-4 pt-4 pb-28 md:px-6 md:pb-12">
         <Outlet />
       </main>
 
-      {/* Phone: tools in a bottom bar within thumb reach. */}
-      <nav aria-label="Tools" className="fixed inset-x-3 bottom-3 z-20 grid grid-cols-6 gap-1 rounded-panel bg-panel p-1.5 shadow-float md:hidden">
-        {NAV.map(({ to, label, icon: Icon, ...rest }) => (
+      {/* Phone: all seven tools in a bottom bar within thumb reach. */}
+      <nav aria-label="Tools" className="fixed inset-x-3 bottom-3 z-20 grid grid-cols-7 gap-1 rounded-panel bg-panel p-1.5 shadow-float md:hidden">
+        {TOOLS.map(({ to, label, short, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
@@ -182,8 +276,8 @@ export function Shell() {
               }`
             }
           >
-            <Icon size={20} aria-hidden="true" />
-            {'short' in rest ? rest.short : label}
+            <Icon size={18} aria-hidden="true" />
+            {short || label}
           </NavLink>
         ))}
       </nav>

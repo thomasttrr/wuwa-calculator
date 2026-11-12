@@ -24,6 +24,29 @@ describe('pending backup', () => {
     expect(readPending(storage)).toBeNull()
   })
 
+  it('keeps the revision and writer with the backup', () => {
+    const storage = fakeStorage()
+    const workspace = emptyWorkspace()
+    writePending(storage, workspace, 1000, { revision: 4, writer: 'tab-a' })
+    expect(readPending(storage)).toEqual({ savedAt: 1000, revision: 4, writer: 'tab-a', workspace })
+  })
+
+  it('stamps the backup with the leave time, not the last completed save', () => {
+    const storage = fakeStorage()
+    const workspace = emptyWorkspace()
+    // Callers pass their last save metadata; its savedAt is older than this backup.
+    const identity = { revision: 4, writer: 'tab-a', savedAt: 500 }
+    writePending(storage, workspace, 1000, identity)
+    expect(readPending(storage)).toEqual({ savedAt: 1000, revision: 4, writer: 'tab-a', workspace })
+  })
+
+  it('prefers a newer revision even when a stale tab wrote a newer timestamp', () => {
+    const stale = { savedAt: 3000, revision: 2, writer: 'tab-b', workspace: { ...emptyWorkspace(), meta: { ...emptyWorkspace().meta, firstRunDismissed: true } } }
+    const newest = { savedAt: 2000, revision: 3, writer: 'tab-a', workspace: emptyWorkspace() }
+    expect(choosePending(newest, stale)).toBe(newest.workspace)
+    expect(choosePending(stale, newest)).toBe(newest.workspace)
+  })
+
   it('prefers the backup only when it is newer than the saved copy', () => {
     const older = { savedAt: 1000, workspace: emptyWorkspace() }
     const newer = { savedAt: 2000, workspace: { ...emptyWorkspace(), meta: { ...emptyWorkspace().meta, firstRunDismissed: true } } }
